@@ -24,6 +24,9 @@
 }
 
 .cocktail-body{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -32,26 +35,23 @@
 
 .cocktail-body p {
   position: absolute;
-  height: 100%;
-  top: 30%;
   text-align: center;
   font-size: 2rem;
   padding: 2rem;
 }
 
-.btn-angles{
+.btn-angles button{
   position: absolute;
-  bottom: 1rem;
-  font-size: 5rem;
-  color: white;
-  background-color: transparent;
+  right: 40%;
+  bottom: 0;
+  font-size: 6rem;
+  color: var(--white);
+  background-color:rgba(1, 1, 1, .7);
   border: none;
 }
 
-.backdrop-filter{
-  backdrop-filter: blur(5px) ;
-}
 
+/* backdrop-filter: blur(5px); */
 
 
 
