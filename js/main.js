@@ -37,27 +37,32 @@ function showToggle(){
    }
 }
 */
-function showLogin()
+function showPopPup(pagina)
 {
 
  elemento = document.getElementById('PopUp');
  
  elemento.style.visibility='visible';
+FetchPage(pagina);
+ 
+}
 
- fetch("/login/index.html")
+function FetchPage(pagina) //Funcion que lee la página y la devuelve su contenido
+{
+  
+  var data = fetch(pagina)
   .then(response => {
+   
     return response.text()
+    
   })
   .then(data => {
     elemento2 = document.getElementById('Mensaje');
     elemento2.innerHTML=data;
   });
  
-
-
- 
-
 }
+
 // media.addEventListener('change', ({media, matches}) => {
 
 //   if(matches === true) {
