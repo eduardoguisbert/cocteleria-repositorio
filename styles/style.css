@@ -142,7 +142,7 @@ img {
   bottom: 0;
   width: 4rem;
   height: 8rem;
-  animation: serve 3s 1;
+  animation: serve 3s 2;
   transition-timing-function: ease-in-out;
 }
 
