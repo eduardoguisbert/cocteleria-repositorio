@@ -1,5 +1,5 @@
-/*
-const media = matchMedia('(min-width: 1024px)');
+
+/* const media = matchMedia('(min-width: 1024px)'); */
 
 //Botones
 var btnShow = document.querySelector("#btn-show");
@@ -15,6 +15,7 @@ btnShowToggle.addEventListener("click", showToggle);
 
 
 //Funciones
+
 function show(){
   recipePreparation.style.display = "block";
   btnShow.style.display = "none";
@@ -36,7 +37,7 @@ function showToggle(){
     
    }
 }
-*/
+
 function showPopPup(pagina)
 {
 
@@ -68,6 +69,7 @@ function FetchPage(pagina) //Funcion que lee la página y la devuelve su conteni
   });
  
 }
+
 
 // media.addEventListener('change', ({media, matches}) => {
 
