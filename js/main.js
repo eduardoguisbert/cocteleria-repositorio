@@ -46,7 +46,13 @@ function showPopPup(pagina)
 FetchPage(pagina);
  
 }
+function closePopUp()
+{
+  elemento = document.getElementById('PopUp');
+ 
+ elemento.style.visibility='hidden';
 
+}
 function FetchPage(pagina) //Funcion que lee la página y la devuelve su contenido
 {
   
