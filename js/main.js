@@ -1,4 +1,4 @@
-
+/*
 const media = matchMedia('(min-width: 1024px)');
 
 //Botones
@@ -36,8 +36,28 @@ function showToggle(){
     
    }
 }
+*/
+function showLogin()
+{
+
+ elemento = document.getElementById('PopUp');
+ 
+ elemento.style.visibility='visible';
+
+ fetch("/login/index.html")
+  .then(response => {
+    return response.text()
+  })
+  .then(data => {
+    elemento2 = document.getElementById('Mensaje');
+    elemento2.innerHTML=data;
+  });
+ 
 
 
+ 
+
+}
 // media.addEventListener('change', ({media, matches}) => {
 
 //   if(matches === true) {
