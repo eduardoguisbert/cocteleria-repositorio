@@ -517,7 +517,7 @@ img {
     grid-column: 2/3;
     color: transparent;
     background-color: rgb(255, 169, 169);
-    z-index: 8;
+    
   }
   
   .backdrop-filter-on,
