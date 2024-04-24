@@ -41,7 +41,7 @@ function showToggle(){
 function showPopPup(pagina)
 {
 
- elemento = document.getElementById('PopUp');
+ var elemento = document.getElementById('PopUp');
  
  elemento.style.visibility='visible';
 FetchPage(pagina);
@@ -49,7 +49,7 @@ FetchPage(pagina);
 }
 function closePopUp()
 {
-  elemento = document.getElementById('PopUp');
+ var elemento = document.getElementById('PopUp');
  
  elemento.style.visibility='hidden';
 
@@ -64,7 +64,7 @@ function FetchPage(pagina) //Funcion que lee la página y la devuelve su conteni
     
   })
   .then(data => {
-    elemento2 = document.getElementById('Mensaje');
+    var elemento2 = document.getElementById('Mensaje');
     elemento2.innerHTML=data;
   });
  
