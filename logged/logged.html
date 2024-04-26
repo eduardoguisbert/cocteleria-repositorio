@@ -29,10 +29,10 @@
         <div class="header-content container">
 
             <div class="logo text-center">
-                <div class="logo-title no-margin">
+                <div  class="logo-title no-margin">
                     <h1>Bartender <span> On trial</span> </h1>
                 </div>
-
+                
                 <div class="animacion-container">
                     <img class="animacion-img-coctelera animacion2-img-coctelera" src="../img/coctelera.png"
                         alt="coctelera">
@@ -43,19 +43,94 @@
 
 
             <nav class="nav text-center">
-                <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
-                <a class="nav-link" href="./about-cocktails.html"><i class="fa-solid fa-martini-glass-citrus"></i> Tipos
-                    de Cocteles</a>
-                <a class="nav-link" href="../utensils/utensils.html"><i class="fa-solid fa-spoon"></i>Equipos y
-                    Utensillos</a>
-                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
-                        class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
-                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar
-                    sesion</a>
+                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-magnifying-glass"></i>Cocteles</a>
+                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
+                <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
+                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesion</a>
             </nav>
         </div>
 
     </header>
+
+
+
+
+    <div class="banner text-center">
+
+        <div class="form-lg-center">
+
+            <form class="form text-center">
+
+                <div class="form-group">
+                    <label class="form-label">Ingrediente Principal</label>
+                    <select class=" form-select text-center">
+                        <option value="">Brandy</option>
+                        <option value="">Ginebra</option>
+                        <option value="">Whisky</option>
+                        <option value="">Cava</option>
+                        <option value="">Ron</option>
+                        <option value="">Tequila</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tipo de Preparación</label>
+                    <select class="form-select text-center">
+                        <option value="">Directos</option>
+                        <option value="">En vaso mezclador</option>
+                        <option value="">En coctelera</option>
+                        <option value="">En licuadora</option>
+                        <option value="">Flambeados</option>
+                    </select>
+                </div>
+
+                <div class="form-group form-group-check">
+                    <input type="checkbox" id="checkbox" class="form-input">
+                    <label for="checkbox" class="form-label-check">De Autor</label>
+                </div>
+
+                <button type="submit" class="btn-search">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="recipe-container-major">
+        <h2 class=" recipe-title text-center no-margin">Bombay</h2>
+        <div class="recipe-container">
+            <div class="recipe-img">
+                <img src="../img/bombay.jpg" alt="bombay-img">
+            </div>
+
+            <div class=" recipe-ingredients">
+                <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                <ul>
+                    <li>1/2 de brandy</li>
+                    <li>1/4 de vermut blanco seco</li>
+                    <li>1/4 de vermut rojo</li>
+                    <li>1/4 de vermut rojo</li>
+                    <li>2 golpes de Curaçao (naranja a ser posible)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-buttom text-center">
+                <button class="btn-show" id="btn-show">Ver Preparación</button>
+                <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
+            </div>
+
+            <div class="recipe-preparation text-center">
+                <div id="backdrop">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
+                        Preparación
+                    </h3>
+                    <p class="no-margin">Se echan en vaso mezclador con unos cubitos de hielo.
+                        Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
+                        dos cubitos de hielo
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <h1 class="cocktails-container-title">Tipos de Cocteles</h1>
     <section class="cocktails-container">
@@ -173,13 +248,12 @@
 
     </section>
 
-
     <footer class="footer text-center">
         <p>Todos los derechos reservados</p>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script src="../js/about-cocktails.js"></script>
-
 </body>
 
 </html>
