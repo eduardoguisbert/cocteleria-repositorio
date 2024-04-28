@@ -592,10 +592,10 @@ z-index: 20;
 #PopUp #Mensaje
 {
 width: 40%;
-height: 60%;
+min-height: 60%;
 /* visibility: hidden;*/
 margin-left: 30%;
-margin-top: 10%;
+margin-top: 5%;
 z-index: 21;
 border-radius: 5px;
 border-style: solid;
@@ -605,6 +605,7 @@ position:fixed;
 color:white;
 text-align: center;
 vertical-align: middle;
+padding: 20px;
 }
 .logAction
 {
