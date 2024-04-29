@@ -52,13 +52,15 @@
                 <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesion</a>
                 -->
                 <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar sesion o Registrarse</a>
-                </nav>
+            </nav>
+            
         </div>
-
+        <div class="Busqueda"><input class="recipe-buttom text-center" id="inBusqueda" type="text" placeholder="Ingrese su busqueda"><img src="/img/Search.png" alt="Buscar" id="imgBusqueda" onclick="doBusqueda();"></div>
     </header>
 
     
-    <div id="PopUp"> <div id="Mensaje"> texto de prueba </div></div> <!-- div para agregar los "iniciar sesion y registro"-->
+    <div id="PopUp"> <div id="Mensaje"> No funciona si ve esto </div></div> <!-- div para agregar los "iniciar sesion y registro"-->
+
 <!--
     <div class="banner text-center">
 
@@ -99,16 +101,16 @@
         </div>
     </div>
 -->
-    <section class="recipe-container-major">
-        <h2 class=" recipe-title text-center no-margin">Bombay</h2>
+    <section class="recipe-container-major" id="resultados">
+        <h2 class=" recipe-title text-center no-margin" id="TituloBusqueda">Bombay</h2>
         <div class="recipe-container">
-            <div class="recipe-img">
+            <div class="recipe-img" id="ResultadoImagen">
                 <img src="./img/bombay.jpg" alt="bombay-img">
             </div>
 
             <div class=" recipe-ingredients">
                 <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
-                <ul>
+                <ul id = "Ingredientes">
                     <li>1/2 de brandy</li>
                     <li>1/4 de vermut blanco seco</li>
                     <li>1/4 de vermut rojo</li>
@@ -116,7 +118,7 @@
                     <li>2 golpes de Curaçao (naranja a ser posible)</li>
                 </ul>
             </div>
-            <div id="test">aa</div>
+          
             <div class="recipe-buttom text-center">
                 <button class="btn-show" id="btn-show" >Ver Preparación</button>
                 <button class="btn-show-toggle d-none"  id="btn-show-toggle">Ver preparacion</button>
@@ -127,7 +129,7 @@
                     <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
                         Preparación
                     </h3>
-                    <p class="no-margin">Se echan en vaso mezclador con unos cubitos de hielo.
+                    <p class="no-margin" id="Preparacion">Se echan en vaso mezclador con unos cubitos de hielo.
                         Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
                         dos cubitos de hielo
                     </p>
@@ -143,6 +145,7 @@
     </footer>
 
     <script src="./js/main.js"></script>
+    <script src="./Resultados/search.js"></script>
 </body>
 
 </html>

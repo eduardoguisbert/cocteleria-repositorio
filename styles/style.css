@@ -585,7 +585,7 @@ img {
 width: 100%;
 height: 100%;
 visibility: hidden;
-background-color: rgba(61, 52, 52, 0.7);
+/* background-color: rgba(71, 60, 60, 0.7);*/
 position:fixed;
 z-index: 20;
 }
@@ -629,4 +629,21 @@ margin-top: 15px;
 {
 margin-top: 5%;
 }
-
+.Busqueda
+{
+  float: right;
+  margin-right: 3%;
+  margin-bottom: 2%;
+  width: 20%;
+}
+.Busqueda input
+{
+  border-radius: 5px;
+  height: 35px;
+  width: 75%;
+}
+#imgBusqueda
+{
+  max-width: 60px;
+  float: right;
+}
