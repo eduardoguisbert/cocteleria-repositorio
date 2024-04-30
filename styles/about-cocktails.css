@@ -1,6 +1,6 @@
 .cocktails-container {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
   overflow-x: auto;
   width: 90%;
@@ -9,10 +9,14 @@
   margin-bottom: 5rem;
 }
 
+.cocktails-container::-webkit-scrollbar {
+  display: none;
+}
+
 .cocktails-container-title {
   text-align: center;
   font-family: var(--fuenteCursiva);
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: 300;
 }
 
@@ -23,9 +27,6 @@
   color: white;
   overflow-y: hidden;
   border-radius: 0.8rem;
-  -webkit-box-shadow: 0px 0px 8px 10px rgba(219, 219, 219, 1);
-  -moz-box-shadow: 0px 0px 8px 10px rgba(219, 219, 219, 1);
-  box-shadow: 0px 0px 8px 10px rgba(219, 219, 219, 1);
 }
 
 .cocktail-body {
@@ -95,6 +96,7 @@
 @media (min-width: 1200px) {
   .cocktails-container {
     width: 95%;
+    gap: 3.5rem;
     overflow-x: scroll;
   }
 
@@ -102,3 +104,108 @@
     margin-right: 0rem;
   }
 }
+
+/* Seccion utensillos */
+
+.utensils-section-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  background-color: var(--white);
+  
+}
+
+.utensils-container {
+  display: flex;
+  width: 90%;
+  max-width: 95rem;
+  overflow-x: hidden;
+}
+
+.utensils-container::-webkit-scrollbar {
+  display: none;
+}
+
+.utensils-container-title {
+  font-family: var(--fuenteCursiva);
+  font-weight: 400;
+  text-align: center;
+  font-size: 4.8rem;
+  
+}
+
+.utensil-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100%;
+  text-align: justify;
+  background-color: var(--white);
+  padding: 2rem;
+ 
+}
+
+.utensil-body {
+  font-size: 1.8rem;
+  max-height: 50rem;
+}
+
+.utensil-body h2 {
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: var(--maroon);
+}
+
+.utensil-img {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.btns-carousel-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btns-carousel-container button {
+  border:none;
+  font-size: 5rem;
+  color: var(--maroon);
+  background-color: var(--white);
+  
+}
+
+
+@media (min-width: 1020px) {
+    .utensils-container {
+      display: flex;
+      overflow-x: auto;
+      
+    }
+    .utensil-container {
+      flex-direction: row;
+      align-items: center;
+    } 
+
+    .utensil-body {
+      font-size: 1.7rem;
+      padding: 2rem;
+    }
+
+    .utensil-img {
+    padding-left: 3rem;
+ }
+
+
+
+
+
+
+
