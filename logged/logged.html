@@ -43,7 +43,7 @@
 
 
             <nav class="nav text-center">
-                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-magnifying-glass"></i>Cocteles</a>
+                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i></i>Cocteles</a>
                 <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
                         class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
                 <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
@@ -54,44 +54,71 @@
 
     </header>
 
-
-
-
     <div class="banner text-center">
 
         <div class="form-lg-center">
 
+            <div class="selector-major-container">
+                <p>Seleccionar Buscador</p>
+                <div class="selector-container">
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op1">
+                        <label for="chk-op1">Nombre del cóctel </label>
+                    </div>
+
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op2">
+                        <label for="chk-op2">Ingrediente Principal</label>
+                    </div>
+                </div>
+            </div>
+
+            <form class="search-for-name">
+                <div class="search-for-name-group">
+                    <label for="name">
+                        Escribe el nombre del Coctel
+                    </label>
+                    <input id="name" type="text" placeholder="  Ejemplo: daikiri">
+                </div>
+
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </form>
+
+
             <form class="form text-center">
 
-                <div class="form-group">
-                    <label class="form-label">Ingrediente Principal</label>
-                    <select class=" form-select text-center">
-                        <option value="">Brandy</option>
-                        <option value="">Ginebra</option>
-                        <option value="">Whisky</option>
-                        <option value="">Cava</option>
-                        <option value="">Ron</option>
-                        <option value="">Tequila</option>
-                    </select>
-                </div>
+                <div>
+                    <div class="form-group">
+                        <label class="form-label">Ingrediente Principal</label>
+                        <select class=" form-select text-center">
+                            <option value="">Brandy</option>
+                            <option value="">Ginebra</option>
+                            <option value="">Whisky</option>
+                            <option value="">Cava</option>
+                            <option value="">Ron</option>
+                            <option value="">Tequila</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">Tipo de Preparación</label>
-                    <select class="form-select text-center">
-                        <option value="">Directos</option>
-                        <option value="">En vaso mezclador</option>
-                        <option value="">En coctelera</option>
-                        <option value="">En licuadora</option>
-                        <option value="">Flambeados</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label">Tipo de Preparación</label>
+                        <select class="form-select text-center">
+                            <option value="">Directos</option>
+                            <option value="">En vaso mezclador</option>
+                            <option value="">En coctelera</option>
+                            <option value="">En licuadora</option>
+                            <option value="">Flambeados</option>
+                        </select>
+                    </div>
 
-                <div class="form-group form-group-check">
-                    <input type="checkbox" id="checkbox" class="form-input">
-                    <label for="checkbox" class="form-label-check">De Autor</label>
-                </div>
+                    <div class="form-group form-group-check">
+                        <input type="checkbox" id="checkbox" class="form-input">
+                        <label for="checkbox" class="form-label-check">De Autor</label>
+                    </div>
 
-                <button type="submit" class="btn-search">Buscar</button>
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+
+                </div>
             </form>
         </div>
     </div>
@@ -250,27 +277,28 @@
 
     </section>
 
-    
+
     <section class="utensils-section-container">
 
         <div class="btns-carousel-container">
-            <button id="btn-prev" ><i class="fa-solid fa-left-long"></i></button>
+            <button id="btn-prev"><i class="fa-solid fa-left-long"></i></button>
             <h1 class="utensils-container-title">Utensillos</h1>
             <button id="btn-next"><i class="fa-solid fa-right-long"></i></button>
         </div>
 
         <div class="utensils-container">
-            
+
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Coctelera</h2>
                     <p>Es fundamental cuando en la preparación intervienen huevos, frutas,
                         crema de nata, miel, leche o licores.
-                        Los beneficios son dobles, uno es que obviamente sirve para mezclar los ingredientes de una bebida y otro, posiblemente más importante, es que permite enfriar la bebida..
+                        Los beneficios son dobles, uno es que obviamente sirve para mezclar los ingredientes de una
+                        bebida y otro, posiblemente más importante, es que permite enfriar la bebida..
                     </p>
                 </div>
                 <img class="utensil-img" src="../img/shakers.jpg" alt="img-coctelera">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
@@ -280,8 +308,8 @@
                         También se puede emplear una jarra de boca ancha.</p>
                 </div>
                 <img class="utensil-img" src="../img/vasoMezclador.png" alt="img-vaso">
-            </div> 
-    
+            </div>
+
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Cuchara Mezcladora</h2>
@@ -291,16 +319,18 @@
                         como las hojas de mentap>
                 </div>
                 <img class="utensil-img" src="../img/cuchara.jpeg" alt="img-cuchara">
-            </div> 
+            </div>
 
 
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Colador de coctel (Passeoir) </h2>
-                    <p>Para las bebidas agitadas, preparadas con shaker, que se sirven solas o sobre hielo nuevo, se necesita un colador para separar, además del hielo, cualquier tipo de frutas, hierbas u otros ingredientes sólidos del líquido.</p>
+                    <p>Para las bebidas agitadas, preparadas con shaker, que se sirven solas o sobre hielo nuevo, se
+                        necesita un colador para separar, además del hielo, cualquier tipo de frutas, hierbas u otros
+                        ingredientes sólidos del líquido.</p>
                 </div>
                 <img class="utensil-img" src="../img/colador.png" alt="img-vaso">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
@@ -309,44 +339,60 @@
                         el control sobre la cantidad de los ingredientes líquidos.
                         Obviamente sirve para medir las cantidades de líquido que se van a mezclar.
                         Existen varios modelos: de una copa de metal de 45 mililitros y con dos
-                        copitas de un lado la copita es de 30 ml y del otro de 45 ml..<p>
+                        copitas de un lado la copita es de 30 ml y del otro de 45 ml..
+                    <p>
                 </div>
                 <img class="utensil-img" src="../img/jiggers.jpg" alt="img-macerador">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Macerador</h2>
-                    <p>Un macerador, también conocido como mortero, es un palo delgado que puede estar hecho de madera, metal o plástico, y sirve básicamente para triturar muchos de los ingredientes que se utilizan en la coctelería. <br>Usualmente es usado para mezclar azúcares o para extraer mejor el jugo o los aceites de una fruta<p>
+                    <p>Un macerador, también conocido como mortero, es un palo delgado que puede estar hecho de madera,
+                        metal o plástico, y sirve básicamente para triturar muchos de los ingredientes que se utilizan
+                        en la coctelería. <br>Usualmente es usado para mezclar azúcares o para extraer mejor el jugo o
+                        los aceites de una fruta
+                    <p>
                 </div>
                 <img class="utensil-img" src="../img/Macerador.jpg" alt="img-macerador">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Vertedor de botella</h2>
-                    <p>Los vertedores son como unas tapas con un tubo corto y fino que reemplaza a la tapa de una botella normal; con estas el bartender puede verter los líquidos y mezclarlos con mayor facilidad en cualquier recipiente.
+                    <p>Los vertedores son como unas tapas con un tubo corto y fino que reemplaza a la tapa de una
+                        botella normal; con estas el bartender puede verter los líquidos y mezclarlos con mayor
+                        facilidad en cualquier recipiente.
 
-                        Sin embargo, si son licores que no se van a utilizar muy seguido, lo mejor es ponerles su tapa original y colocar el vertedor en aquellos que son de uso frecuente<p>
+                        Sin embargo, si son licores que no se van a utilizar muy seguido, lo mejor es ponerles su tapa
+                        original y colocar el vertedor en aquellos que son de uso frecuente
+                    <p>
                 </div>
                 <img class="utensil-img" src="../img/Vertedor-de-botella.jpg" alt="img-vertedor">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Ralladores</h2>
-                    <p>El rallador ayuda mucho, sobre todo en la presentación de los cocteles o en los toques, por ejemplo, cuando se necesita añadir un poco de chocolate rallado, o bien cáscara de limón o naranja.<p>
+                    <p>El rallador ayuda mucho, sobre todo en la presentación de los cocteles o en los toques, por
+                        ejemplo, cuando se necesita añadir un poco de chocolate rallado, o bien cáscara de limón o
+                        naranja.
+                    <p>
                 </div>
                 <img class="utensil-img" src="../img/ralladores.jpg" alt="img-ralladores">
-            </div> 
+            </div>
 
             <div class="utensil-container">
                 <div class="utensil-body">
                     <h2 class="text-center">Pinzas y cuchara de hielo</h2>
-                    <p>Estas dos herramientas son imprescindibles, ya que todos los cocteles llevan hielo. Dependiendo de tu bebida, requerirás o las pinzas o la cuchara. <br> Hay cocteles que requieren hielo grande en forma de cubo o esfera y en estos casos se usan las pinzas, u otros que requieren pequeños cubitos para enfriar en el shaker, por lo que resulta más fácil recogerlos con la cuchara<p>
+                    <p>Estas dos herramientas son imprescindibles, ya que todos los cocteles llevan hielo. Dependiendo
+                        de tu bebida, requerirás o las pinzas o la cuchara. <br> Hay cocteles que requieren hielo grande
+                        en forma de cubo o esfera y en estos casos se usan las pinzas, u otros que requieren pequeños
+                        cubitos para enfriar en el shaker, por lo que resulta más fácil recogerlos con la cuchara
+                    <p>
                 </div>
                 <img class="utensil-img" src="../img/Pinzas-y-cuchara-de-hielo.jpg" alt="img-pinzas">
-            </div> 
+            </div>
 
         </div>
 
