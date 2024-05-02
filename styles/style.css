@@ -740,3 +740,31 @@ margin-top: 5%;
   color: white;
  
 }
+
+#cookie-policy h1{
+  font-size: 2.5em; 
+  text-align: center;
+  font-family: var(--fuenteHeading);
+}
+
+#cookie-policy h2{
+  font-size: 2em; 
+  text-align: center;
+  font-family: var(--fuenteHeading);
+}
+
+#cookie-policy #last-update{
+  display: block;
+  text-align: center;
+}
+
+#cookie-policy .cookie-policy-text{
+  text-align: justify;
+  margin: 1%;
+  font-family: var(--fuenteParrafos);
+}
+
+#cookie-policy #cookie-type .cookie-type-name{
+  display: inline;
+  font-weight: bold;
+}
