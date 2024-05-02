@@ -1,5 +1,5 @@
 
-const media = matchMedia('(min-width: 1024px)');
+/* const media = matchMedia('(min-width: 1024px)'); */
 
 //Botones
 var btnShow = document.querySelector("#btn-show");
@@ -15,6 +15,7 @@ btnShowToggle.addEventListener("click", showToggle);
 
 
 //Funciones
+
 function show(){
   recipePreparation.style.display = "block";
   btnShow.style.display = "none";
@@ -37,6 +38,61 @@ function showToggle(){
    }
 }
 
+function showPopPup(pagina)
+{
+
+ var elemento = document.getElementById('PopUp');
+ 
+ elemento.style.visibility='visible';
+FetchPage(pagina);
+ 
+}
+function closePopUp()
+{
+ var elemento = document.getElementById('PopUp');
+ 
+ elemento.style.visibility='hidden';
+
+}
+function FetchPage(pagina) //Funcion que lee la página y la devuelve su contenido
+{
+  
+  var data = fetch(pagina)
+  .then(response => {
+   
+    return response.text()
+    
+  })
+  .then(data => {
+    var elemento2 = document.getElementById('Mensaje');
+    elemento2.innerHTML=data;
+  });
+ 
+}
+
+function showMensajeBr()
+{
+ alert("Te voy a llenar la casilla de spam, quita ese tilde de NewsLetter ya!");
+ return;
+}
+function revisarPol()
+{
+  var chkpol = document.getElementById("aceptPol");
+  if(chkpol.checked==false)
+  {
+  alert("Debe aceptar las políticas de privacidad para registrarse");
+  return;
+  }
+  ch=document.getElementById("cknews");
+if(ch.checked==true)
+{
+  //este mensaje es solo para demostrar el filtro
+  showMensajeBr();
+  return;
+}
+  location.href="/registro/doReg.html";
+
+}
 
 // media.addEventListener('change', ({media, matches}) => {
 

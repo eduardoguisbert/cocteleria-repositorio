@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../fontawesome/fontawesome-free-6.5.2-web/css/all.css">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/about-cocktails.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Cocteleria</title>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header-content container">
+
+            <div class="logo text-center">
+                <div class="logo-title no-margin">
+                    <h1>Bartender <span> On trial</span> </h1>
+                </div>
+
+                <div class="animacion-container">
+                    <img class="animacion-img-coctelera animacion2-img-coctelera" src="../img/coctelera.png"
+                        alt="coctelera">
+                    <img class="animacion-img-copa" src="../img/copa.png" alt="copa">
+                    <img class="animacion-img-copallena" src="../img/copallena.png" alt="copa-llena">
+                </div>
+            </div>
+
+
+            <nav class="nav text-center">
+                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i></i>Cocteles</a>
+                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
+                        class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
+                <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
+                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar
+                    sesion</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="banner text-center">
+
+        <div class="form-lg-center">
+
+            <div class="selector-major-container">
+                <p>Seleccionar Buscador</p>
+                <div class="selector-container">
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op1">
+                        <label for="chk-op1">Nombre del cóctel </label>
+                    </div>
+
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op2">
+                        <label for="chk-op2">Ingrediente Principal</label>
+                    </div>
+                </div>
+            </div>
+
+            <form class="search-for-name">
+                <div class="search-for-name-group">
+                    <label for="name">
+                        Escribe el nombre del Coctel
+                    </label>
+                    <input id="name" type="text" placeholder="  Ejemplo: daikiri">
+                </div>
+
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </form>
+
+
+            <form class="form text-center">
+
+                <div>
+                    <div class="form-group">
+                        <label class="form-label">Ingrediente Principal</label>
+                        <select class=" form-select text-center">
+                            <option value="">Brandy</option>
+                            <option value="">Ginebra</option>
+                            <option value="">Whisky</option>
+                            <option value="">Cava</option>
+                            <option value="">Ron</option>
+                            <option value="">Tequila</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Tipo de Preparación</label>
+                        <select class="form-select text-center">
+                            <option value="">Directos</option>
+                            <option value="">En vaso mezclador</option>
+                            <option value="">En coctelera</option>
+                            <option value="">En licuadora</option>
+                            <option value="">Flambeados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group-check">
+                        <input type="checkbox" id="checkbox" class="form-input">
+                        <label for="checkbox" class="form-label-check">De Autor</label>
+                    </div>
+
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="recipe-container-major">
+        <h2 class=" recipe-title text-center no-margin">Bombay</h2>
+        <div class="recipe-container">
+            <div class="recipe-img">
+                <img src="../img/bombay.jpg" alt="bombay-img">
+            </div>
+
+            <div class=" recipe-ingredients">
+                <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                <ul>
+                    <li>1/2 de brandy</li>
+                    <li>1/4 de vermut blanco seco</li>
+                    <li>1/4 de vermut rojo</li>
+                    <li>1/4 de vermut rojo</li>
+                    <li>2 golpes de Curaçao (naranja a ser posible)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-buttom text-center">
+                <button class="btn-show" id="btn-show">Ver Preparación</button>
+                <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
+            </div>
+
+            <div class="recipe-preparation text-center">
+                <div id="backdrop">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
+                        Preparación
+                    </h3>
+                    <p class="no-margin">Se echan en vaso mezclador con unos cubitos de hielo.
+                        Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
+                        dos cubitos de hielo
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <h1 class="cocktails-container-title">Tipos de Cocteles</h1>
+    <section class="cocktails-container">
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/cobbler.webp" alt="img-cobbler">
+            <div class="cocktail-body">
+                <h1>Cobbler</h1>
+                <p class="p-hidden">Mezclas preparadas directamente en el vaso, y que contienen
+                    alguna base fuerte (vino, destilado, licor...) y azúcar. Lo demás depende
+                    de cada cóctel en particular.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/collins.webp" alt="img-collins">
+            <div class="cocktail-body">
+                <h1>Collins</h1>
+                <p class="p-hidden">Bebida larga (long-drink) refrescante que se prepara
+                    directamente en el vaso y lleva una base fuerte a la que se le añade azúcar
+                    y soda. Suele adornarse con una rodaja de limón.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/cooler.webp" alt="img-cooler">
+            <div class="cocktail-body">
+                <h1>Cooler</h1>
+                <p class="p-hidden">Bebida larga que se prepara directamente en el vaso. Se puede
+                    emplear cualquier destilado como base, al que se le añade ginger ale, sidra,
+                    cerveza o champán/cava o vino.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/eggNog.webp" alt="img-eggnog">
+            <div class="cocktail-body">
+                <h1>Egg-Nog</h1>
+                <p class="p-hidden">Bebida preparada a base de yema de huevo, azúcar, un
+                    destilado y crema de leche. Se puede servir fría o caliente.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/fizz.webp" alt="img-fizz">
+            <div class="cocktail-body">
+                <h1>Fizz</h1>
+                <p class="p-hidden">Bebida larga preparada en coctelera a base de un destilado, jugo
+                    de limón y azúcar, alargando luego con soda.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/highBall.webp" alt="img-highball">
+            <div class="cocktail-body">
+                <h1>High-ball</h1>
+                <p class="p-hidden">Bebida larga consistente en un destilado al que se le añade
+                    cualquier refresco con gas. Es la clase de combinado más consumido.Es el típico
+                    “whisky con cola”, “gin con tónica”, “vodka con naranja”...</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/julep.webp" alt="img-julep">
+            <div class="cocktail-body">
+                <h1>Julep</h1>
+                <p class="p-hidden">Bebida larga preparada directamente en el vaso, con hierbabuena
+                    fresca, azúcar y algún destilado. Se suele decorar con rodajas de limón y
+                    hojas de hierbabuena.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail-container">
+            <img class="cocktail-img" src="../img/sour.webp" alt="img-sour">
+            <div class="cocktail-body">
+                <h1>Sour</h1>
+                <p class="p-hidden">Bebida corta preparada en coctelera con azúcar, zumo de limón y
+                    un destilado.</p>
+                <div class="btn-angles" id="btn-angles">
+                    <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
+                    <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="utensils-section-container">
+
+        <div class="btns-carousel-container">
+            <button id="btn-prev"><i class="fa-solid fa-left-long"></i></button>
+            <h1 class="utensils-container-title">Utensillos</h1>
+            <button id="btn-next"><i class="fa-solid fa-right-long"></i></button>
+        </div>
+
+        <div class="utensils-container">
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Coctelera</h2>
+                    <p>Es fundamental cuando en la preparación intervienen huevos, frutas,
+                        crema de nata, miel, leche o licores.
+                        Los beneficios son dobles, uno es que obviamente sirve para mezclar los ingredientes de una
+                        bebida y otro, posiblemente más importante, es que permite enfriar la bebida..
+                    </p>
+                </div>
+                <img class="utensil-img" src="../img/shakers.jpg" alt="img-coctelera">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Vaso Mezclador</h2>
+                    <p>Es un recipiente de cristal de gran tamaño que se usa para bebidas que no
+                        deben ser agitadas, sino mezcladas. Puede formar parte de la coctelera.
+                        También se puede emplear una jarra de boca ancha.</p>
+                </div>
+                <img class="utensil-img" src="../img/vasoMezclador.png" alt="img-vaso">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Cuchara Mezcladora</h2>
+                    <p>Es el accesorio que acompaña al vaso mezclador. Se trata de una cuchara de
+                        metal con mango largo y cuerpo redondeado en espiral, que termina en un
+                        pequeño pilón que puede usarse para macerar determinados ingredientes,
+                        como las hojas de mentap>
+                </div>
+                <img class="utensil-img" src="../img/cuchara.jpeg" alt="img-cuchara">
+            </div>
+
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Colador de coctel (Passeoir) </h2>
+                    <p>Para las bebidas agitadas, preparadas con shaker, que se sirven solas o sobre hielo nuevo, se
+                        necesita un colador para separar, además del hielo, cualquier tipo de frutas, hierbas u otros
+                        ingredientes sólidos del líquido.</p>
+                </div>
+                <img class="utensil-img" src="../img/colador.png" alt="img-vaso">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Vaso Medidor (Jigger) </h2>
+                    <p>Vaso de cristal graduado con una escala de medición en el lateral. Para tener
+                        el control sobre la cantidad de los ingredientes líquidos.
+                        Obviamente sirve para medir las cantidades de líquido que se van a mezclar.
+                        Existen varios modelos: de una copa de metal de 45 mililitros y con dos
+                        copitas de un lado la copita es de 30 ml y del otro de 45 ml..
+                    <p>
+                </div>
+                <img class="utensil-img" src="../img/jiggers.jpg" alt="img-macerador">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Macerador</h2>
+                    <p>Un macerador, también conocido como mortero, es un palo delgado que puede estar hecho de madera,
+                        metal o plástico, y sirve básicamente para triturar muchos de los ingredientes que se utilizan
+                        en la coctelería. <br>Usualmente es usado para mezclar azúcares o para extraer mejor el jugo o
+                        los aceites de una fruta
+                    <p>
+                </div>
+                <img class="utensil-img" src="../img/Macerador.jpg" alt="img-macerador">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Vertedor de botella</h2>
+                    <p>Los vertedores son como unas tapas con un tubo corto y fino que reemplaza a la tapa de una
+                        botella normal; con estas el bartender puede verter los líquidos y mezclarlos con mayor
+                        facilidad en cualquier recipiente.
+
+                        Sin embargo, si son licores que no se van a utilizar muy seguido, lo mejor es ponerles su tapa
+                        original y colocar el vertedor en aquellos que son de uso frecuente
+                    <p>
+                </div>
+                <img class="utensil-img" src="../img/Vertedor-de-botella.jpg" alt="img-vertedor">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Ralladores</h2>
+                    <p>El rallador ayuda mucho, sobre todo en la presentación de los cocteles o en los toques, por
+                        ejemplo, cuando se necesita añadir un poco de chocolate rallado, o bien cáscara de limón o
+                        naranja.
+                    <p>
+                </div>
+                <img class="utensil-img" src="../img/ralladores.jpg" alt="img-ralladores">
+            </div>
+
+            <div class="utensil-container">
+                <div class="utensil-body">
+                    <h2 class="text-center">Pinzas y cuchara de hielo</h2>
+                    <p>Estas dos herramientas son imprescindibles, ya que todos los cocteles llevan hielo. Dependiendo
+                        de tu bebida, requerirás o las pinzas o la cuchara. <br> Hay cocteles que requieren hielo grande
+                        en forma de cubo o esfera y en estos casos se usan las pinzas, u otros que requieren pequeños
+                        cubitos para enfriar en el shaker, por lo que resulta más fácil recogerlos con la cuchara
+                    <p>
+                </div>
+                <img class="utensil-img" src="../img/Pinzas-y-cuchara-de-hielo.jpg" alt="img-pinzas">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="footer text-center">
+        <p>Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/about-cocktails.js"></script>
+</body>
+
+</html>
