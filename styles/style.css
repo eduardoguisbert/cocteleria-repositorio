@@ -730,3 +730,12 @@ margin-top: 5%;
   max-width: 60px;
   float: right;
 }
+#Cookie
+{
+  background-color: rgba(61, 52, 52, 0.8);
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
