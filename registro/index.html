@@ -7,7 +7,10 @@
    <input type="password" class="btn-show-toggle" placeholder="Contraseña" name="pass" required>
    <input type="password" class="btn-show-toggle" placeholder="Repetir Contraseña" name="rpass" required>
    <input type="email" class="btn-show-toggle" placeholder="Correo Electronico" name="mail" required>
-   <a href="/registro/doReg.html"><button type="button"  class="btn-show-toggle d-none btnlogin"> Registrarse</button></a>
+   <br>
+   <input type="checkbox" name="aceptPol" id="aceptPol" value=""><a>Acepto que leí las </a><a href="Politicas.html">Politicas de privacidad</a><a> y las comprendo</a><br>
+   <input type="checkbox" name="cknews" id="cknews" value=""><a>Acepto recibir NewsLetters con las últimas novedades sobre recetas y cambios</a><br>
+   <a><button type="button"   onclick="revisarPol();" class="btn-show-toggle d-none btnlogin"> Registrarse</button></a>
    <!-- no se pone button submit porque no funciona correctamente en vscode-->
 </form>
 </div>

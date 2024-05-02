@@ -75,6 +75,29 @@ function AceptarCookie()
 elemento2.style.visibility="hidden";
 /* no se aplican cambios a los check de cookies debido a que se harán en el backend*/
 }
+function showMensajeBr()
+{
+ alert("Te voy a llenar la casilla de spam, quita ese tilde de NewsLetter ya!");
+ return;
+}
+function revisarPol()
+{
+  var chkpol = document.getElementById("aceptPol");
+  if(chkpol.checked==false)
+  {
+  alert("Debe aceptar las políticas de privacidad para registrarse");
+  return;
+  }
+  ch=document.getElementById("cknews");
+if(ch.checked==true)
+{
+  //este mensaje es solo para demostrar el filtro
+  showMensajeBr();
+  return;
+}
+  location.href="/registro/doReg.html";
+
+}
 
 // media.addEventListener('change', ({media, matches}) => {
 
