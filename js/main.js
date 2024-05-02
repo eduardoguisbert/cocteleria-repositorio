@@ -69,12 +69,7 @@ function FetchPage(pagina) //Funcion que lee la página y la devuelve su conteni
   });
  
 }
-function AceptarCookie()
-{
-  var elemento2 = document.getElementById('Cookie');
-elemento2.style.visibility="hidden";
-/* no se aplican cambios a los check de cookies debido a que se harán en el backend*/
-}
+
 function showMensajeBr()
 {
  alert("Te voy a llenar la casilla de spam, quita ese tilde de NewsLetter ya!");
