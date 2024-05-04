@@ -67,46 +67,83 @@
         <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
     </div> <!-- div para agregar politicas de cookies-->
 
-<!--
     <div class="banner text-center">
 
         <div class="form-lg-center">
+            <div id="Bienvenida"> <a>Bienvenido a Bartender <span> On trial</span> La página mas completa para preparar su coctel. <br>
+                En esta página usted puede buscar su cockel de preferencia, ya sea por su nombre o su ingrediente de
+                preparación. Si usted sabe preparar tragos, ya sea de autor o general, puede registrarse y completar
+                nuestro catalogo de bebidas para que otros puedan disfrutarla. <br>
+                Esperamos que su visita sea agradable</a>
+                </div>
+            <div class="selector-major-container">
+                
+                <p>Buscar Coctel</p>
+                <div class="selector-container">
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op1" name="chk-op1" onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
+                        <label for="chk-op1">Nombre del cóctel </label>
+                    </div>
 
-            <form class="form text-center">
-
-                <div class="form-group">
-                    <label class="form-label">Ingrediente Principal</label>
-                    <select class=" form-select text-center">
-                        <option value="">Brandy</option>
-                        <option value="">Ginebra</option>
-                        <option value="">Whisky</option>
-                        <option value="">Cava</option>
-                        <option value="">Ron</option>
-                        <option value="">Tequila</option>
-                    </select>
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op2" name="chk-op2" onclick="BusquedaCoctel('search-ingred', 'search-for-name','chk-op1')">
+                        <label for="chk-op2">Ingrediente Principal</label>
+                    </div>
+                </div>
+            </div>
+            <div class="Buscadores">
+            <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+                <div class="search-for-name-group">
+                    <input type="hidden" name="TipoBusqueda" value="1">
+                    <label for="name">
+                        Escribe el nombre del Coctel
+                    </label>
+                    <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Tipo de Preparación</label>
-                    <select class="form-select text-center">
-                        <option value="">Directos</option>
-                        <option value="">En vaso mezclador</option>
-                        <option value="">En coctelera</option>
-                        <option value="">En licuadora</option>
-                        <option value="">Flambeados</option>
-                    </select>
-                </div>
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </form>
 
-                <div class="form-group form-group-check">
-                    <input type="checkbox" id="checkbox" class="form-input">
-                    <label for="checkbox" class="form-label-check">De Autor</label>
-                </div>
 
-                <button type="submit" class="btn-search">Buscar</button>
+            <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+
+                <div>
+                    <div class="form-group">
+                        <input type="hidden" name="TipoBusqueda" value="2">
+                        <label class="form-label" >Ingrediente Principal</label>
+                        <select class=" form-select text-center" name="ingredientePr">
+                            <option value="brandy">Brandy</option>
+                            <option value="ginebra">Ginebra</option>
+                            <option value="whisky">Whisky</option>
+                            <option value="cava">Cava</option>
+                            <option value="ron">Ron</option>
+                            <option value="tequila">Tequila</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" >Tipo de Preparación</label>
+                        <select class="form-select text-center" name="TipoPrep">
+                            <option value="directos">Directos</option>
+                            <option value="vasomez">En vaso mezclador</option>
+                            <option value="coctelera">En coctelera</option>
+                            <option value="licuad">En licuadora</option>
+                            <option value="flambead">Flambeados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group-check">
+                        <input type="checkbox" id="checkbox" class="form-input" name="Autor">
+                        <label for="checkbox" class="form-label-check">De Autor</label>
+                    </div>
+
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+
+                </div>
             </form>
         </div>
+        </div>
     </div>
--->
     <section class="recipe-container-major" id="resultados">
         <h2 class=" recipe-title text-center no-margin" id="TituloBusqueda">Bombay</h2>
         <div class="recipe-container">

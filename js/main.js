@@ -93,7 +93,22 @@ if(ch.checked==true)
   location.href="/registro/doReg.html";
 
 }
+function BusquedaCoctel(idBusq,idNobusq, chkNoBusq)
+{
+var idBusqueda = document.getElementById(idBusq);
+var idEsconde = document.getElementById(idNobusq);
+var checkNoSel = document.getElementById(chkNoBusq);
+idEsconde.style.visibility="hidden";
+idBusqueda.style.visibility="visible";
+checkNoSel.checked = false; 
 
+}
+function getData()
+{
+  var formData = document.sessionStorage["form-data"];
+  alert(formData);
+}
+getData();
 // media.addEventListener('change', ({media, matches}) => {
 
 //   if(matches === true) {
