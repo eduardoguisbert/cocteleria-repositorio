@@ -1,3 +1,0 @@
-La busqueda se realizara con casos concretos hasta que halla Backend y bases de datos.
-
-ATTE: Grupo 17.

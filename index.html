@@ -45,17 +45,12 @@
 
             <nav class="nav text-center">
                 <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
-                <!--
-                <a class="nav-link" href="../logged/logged.html"><i class="fa-solid fa-magnifying-glass"></i>Cocteles</a>
-                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
-                <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
-                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesion</a>
-                -->
+
                 <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar sesion o Registrarse</a>
             </nav>
             
         </div>
-   <!--     <div class="Busqueda"><input class="recipe-buttom text-center" id="inBusqueda" type="text" placeholder="Ingrese su busqueda"><img src="/img/Search.png" alt="Buscar" id="imgBusqueda" onclick="doBusqueda();"></div> -->
+   
     </header>
 
     
@@ -145,41 +140,39 @@
         </div>
     </div>
     <section class="recipe-container-major" id="resultados">
-        <h2 class=" recipe-title text-center no-margin" id="TituloBusqueda">Bombay</h2>
-        <div class="recipe-container">
-            <div class="recipe-img" id="ResultadoImagen">
-                <img src="./img/bombay.jpg" alt="bombay-img">
-            </div>
+    </section>
+    <section class="ResList">
 
-            <div class=" recipe-ingredients">
-                <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
-                <ul id = "Ingredientes">
-                    <li>1/2 de brandy</li>
-                    <li>1/4 de vermut blanco seco</li>
-                    <li>1/4 de vermut rojo</li>
-                    <li>1/4 de vermut rojo</li>
-                    <li>2 golpes de Curaçao (naranja a ser posible)</li>
-                </ul>
-            </div>
-          
-            <div class="recipe-buttom text-center">
-                <button class="btn-show" id="btn-show" >Ver Preparación</button>
-                <button class="btn-show-toggle d-none"  id="btn-show-toggle">Ver preparacion</button>
-            </div>
-
-            <div class="recipe-preparation text-center">
-                <div id="backdrop">
-                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
-                        Preparación
-                    </h3>
-                    <p class="no-margin" id="Preparacion">Se echan en vaso mezclador con unos cubitos de hielo.
-                        Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
-                        dos cubitos de hielo
-                    </p>
+        <div class="Resultado-Lista">
+            <div class="Resultado-Contenedor">
+                <div class="Resultado-Detalles">
+                    <div class="Resultado-Lista-Titulo">
+                        <h3>Bombay</h3>
+                    </div>
+                    <div class="Resultado-Lista-Subtitulo">
+                        <li>Receta a base de Brandy</li>
+                    </div>
+                </div>
+                <div class="resultadoImagen">
+                    <img src="./img/bombay.jpg" alt="imagen resultado"> 
                 </div>
             </div>
         </div>
-
+<div class="Resultado-Lista">
+            <div class="Resultado-Contenedor">
+                <div class="Resultado-Detalles">
+                    <div class="Resultado-Lista-Titulo">
+                        <h3>Daikiri de frutilla</h3>
+                    </div>
+                    <div class="Resultado-Lista-Subtitulo">
+                        <li>Receta a base de Ron</li>
+                    </div>
+                </div>
+                <div class="resultadoImagen">
+                    <img src="./img/daikiri.png" alt="imagen resultado"> 
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="footer text-center">
