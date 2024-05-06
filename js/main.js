@@ -72,7 +72,7 @@ function FetchPage(pagina) //Funcion que lee la página y la devuelve su conteni
 
 function showMensajeBr()
 {
- alert("Te voy a llenar la casilla de spam, quita ese tilde de NewsLetter ya!");
+
  return;
 }
 function revisarPol()

@@ -682,7 +682,7 @@ visibility: hidden;
 position:fixed;
 z-index: 20;
 }
-#PopUp #Mensaje
+#Mensaje
 {
 width: 40%;
 min-height: 60%;
@@ -692,7 +692,10 @@ margin-top: 5%;
 z-index: 21;
 border-radius: 5px;
 border-style: solid;
-border-color:#22092c ;
+border-color:#22092c;
+background-image: url("../img/banner.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 background-color: rgba(157, 139, 139, 0.645);
 position:fixed;
 color:white;
@@ -708,14 +711,18 @@ margin-top: 20%;
 {
 margin-top: 15px;
 }
-#PopUp #Mensaje img{
+#Mensaje img{
   width: 25px;
+  float: right;
+  background-color: #9e4a3dcb;
+  margin-bottom:20px;
+  border-radius: 5px;
 }
 
 .frm_80pc
 {
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 80%;
 }
 .btnlogin
