@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="./fontawesome/fontawesome-free-6.5.2-web/css/all.css">
+
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Cocteleria</title>
+
+</head>
+
+<body>
+   
+
+    <header class="header">
+
+        <div class="header-content container">
+
+            <div class="logo text-center">
+                <div  class="logo-title no-margin">
+                    <h1>Bartender <span> On trial</span> </h1>
+                </div>
+                
+                <div class="animacion-container">
+                    <img class="animacion-img-coctelera animacion2-img-coctelera" src="./img/coctelera.png"
+                        alt="coctelera">
+                    <img class="animacion-img-copa" src="./img/copa.png" alt="copa">
+                    <img class="animacion-img-copallena" src="./img/copallena.png" alt="copa-llena">
+                </div>
+            </div>
+
+
+            <nav class="nav text-center">
+                <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+
+                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar sesion o Registrarse</a>
+            </nav>
+            
+        </div>
+   
+    </header>
+
+    
+    <div id="PopUp"> <div id="Mensaje"> No funciona si ve esto </div></div> <!-- div para agregar los "iniciar sesion y registro"-->
+    <div id="Cookie"> 
+        <input type="checkbox" name="mejor" id="mejor" value=""><a> Acepto el uso de mis datos con el fin de mejorar la experiencia de navegación.</a><br>
+        <input type="checkbox" name="marke" id="marke" value=""><a> Acepto el uso de mis datos con fines de análisis de datos y marketing. (Tus datos nunca se compartirán con terceros)</a><br>
+        <input type="checkbox" name="Acept" id="AceptCookie" value=""><a> He leído la</a><a href="./politica.html" target="_blank"> <u>Politica de Cookies</u></a><br>
+        <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
+    </div> <!-- div para agregar politicas de cookies-->
+
+    <div class="banner text-center">
+
+        <div class="form-lg-center">
+            <div id="Bienvenida"> <a>Bienvenido a Bartender <span> On trial</span> La página mas completa para preparar su coctel. <br>
+                En esta página usted puede buscar su cockel de preferencia, ya sea por su nombre o su ingrediente de
+                preparación. Si usted sabe preparar tragos, ya sea de autor o general, puede registrarse y completar
+                nuestro catalogo de bebidas para que otros puedan disfrutarla. <br>
+                Esperamos que su visita sea agradable</a>
+                </div>
+            <div class="selector-major-container">
+                
+                <p>Buscar Coctel</p>
+                <div class="selector-container">
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op1" name="chk-op1" onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
+                        <label for="chk-op1">Nombre del cóctel </label>
+                    </div>
+
+                    <div class="selector-group">
+                        <input type="radio" value="" id="chk-op2" name="chk-op2" onclick="BusquedaCoctel('search-ingred', 'search-for-name','chk-op1')">
+                        <label for="chk-op2">Ingrediente Principal</label>
+                    </div>
+                </div>
+            </div>
+            <div class="Buscadores">
+            <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+                <div class="search-for-name-group">
+                    <input type="hidden" name="TipoBusqueda" value="1">
+                    <label for="name">
+                        Escribe el nombre del Coctel
+                    </label>
+                    <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
+                </div>
+
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </form>
+
+
+            <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+
+                <div>
+                    <div class="form-group">
+                        <input type="hidden" name="TipoBusqueda" value="2">
+                        <label class="form-label" >Ingrediente Principal</label>
+                        <select class=" form-select text-center" name="ingredientePr">
+                            <option value="brandy">Brandy</option>
+                            <option value="ginebra">Ginebra</option>
+                            <option value="whisky">Whisky</option>
+                            <option value="cava">Cava</option>
+                            <option value="ron">Ron</option>
+                            <option value="tequila">Tequila</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" >Tipo de Preparación</label>
+                        <select class="form-select text-center" name="TipoPrep">
+                            <option value="directos">Directos</option>
+                            <option value="vasomez">En vaso mezclador</option>
+                            <option value="coctelera">En coctelera</option>
+                            <option value="licuad">En licuadora</option>
+                            <option value="flambead">Flambeados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group-check">
+                        <input type="checkbox" id="checkbox" class="form-input" name="Autor">
+                        <label for="checkbox" class="form-label-check">De Autor</label>
+                    </div>
+
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <section class="recipe-container-major" id="resultados">
+    </section>
+    <section class="ResList">
+
+        <div class="Resultado-Lista">
+            <div class="Resultado-Contenedor">
+                <div class="Resultado-Detalles">
+                    <div class="Resultado-Lista-Titulo">
+                        <h3>Bombay</h3>
+                    </div>
+                    <div class="Resultado-Lista-Subtitulo">
+                        <li>Receta a base de Brandy</li>
+                    </div>
+                </div>
+                <div class="resultadoImagen">
+                    <img src="./img/bombay.jpg" alt="imagen resultado"> 
+                </div>
+            </div>
+        </div>
+<div class="Resultado-Lista">
+            <div class="Resultado-Contenedor">
+                <div class="Resultado-Detalles">
+                    <div class="Resultado-Lista-Titulo">
+                        <h3>Daikiri de frutilla</h3>
+                    </div>
+                    <div class="Resultado-Lista-Subtitulo">
+                        <li>Receta a base de Ron</li>
+                    </div>
+                </div>
+                <div class="resultadoImagen">
+                    <img src="./img/daikiri.png" alt="imagen resultado"> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <p>Contacto: <a href="mailto: bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i> </a> <a href="https://www.facebook.com/bartenderontrial/"> <i class="fa-brands fa-facebook"> </i> </a> <a href="https://www.instagram.com/bartenderontrial.ok/"> <i class="fa-brands fa-instagram"></i> </a> <a href="https://wa.link/7rzq05"><i class="fa-brands fa-whatsapp"></i> </a> </p>
+        <p>Todos los derechos reservados 
+            <script>document.write( new Date().getFullYear() );</script>. BartenderOnTrial SRL ©
+        </p>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./Resultados/search.js"></script>
+    <script src="./Cookies/Cookies.js"></script>
+</body>
+
+</html>
