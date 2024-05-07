@@ -397,7 +397,11 @@ img {
 #search-ingred
 {
   position:relative;
-visibility: hidden;
+  visibility: visible;
+}
+#search-ingred a{
+  font-family: var(--fuenteParrafos);
+  font-size: 1.2rem;
 }
 .form {
   background-color: rgba(61, 52, 52, 0.7);
@@ -800,6 +804,10 @@ width: 100%;
    /*position: fixed;*/
   z-index: 100;
   margin-bottom: 1px;
+}
+.Resultado-Contenedor:hover
+{
+  cursor: pointer;
 }
 .Resultado-Detalles
 {

@@ -44,7 +44,9 @@ function showPopPup(pagina)
  var elemento = document.getElementById('PopUp');
  
  elemento.style.visibility='visible';
-FetchPage(pagina);
+ var id = 'Mensaje';
+ 
+FetchPage(pagina,id);
  
 }
 function closePopUp()
@@ -54,7 +56,7 @@ function closePopUp()
  elemento.style.visibility='hidden';
 
 }
-function FetchPage(pagina) //Funcion que lee la página y la devuelve su contenido
+function FetchPage(pagina, destino) //Funcion que lee la página y la devuelve su contenido
 {
   
   var data = fetch(pagina)
@@ -64,7 +66,8 @@ function FetchPage(pagina) //Funcion que lee la página y la devuelve su conteni
     
   })
   .then(data => {
-    var elemento2 = document.getElementById('Mensaje');
+    
+    var elemento2 = document.getElementById(destino);
     elemento2.innerHTML=data;
   });
  
@@ -109,16 +112,25 @@ function getData()
   alert(formData);
 }
 getData();
-// media.addEventListener('change', ({media, matches}) => {
-
-//   if(matches === true) {
-
-//   }else {
-
-//   }
-
-// })
-
+function getResult(resultado)
+{
+alert(resultado);
+switch(resultado)
+{
+ case 'Bombay':
+  FetchPage('../Resultados/r_Bombay.html','resultados');
+  break;
+  case 'Daikiri':
+    FetchPage('../Resultados/r_daikiri.html','resultados');
+  break;
+}
+var ocultar = document.getElementById('ResList');
+ocultar.style.visibility ='hidden';
+}
+function agregarAnim()
+{
+  
+}
 
 
 
