@@ -134,12 +134,18 @@
 /* footer */
 
 .welcome-footer {
-  background-color: black;
+  background-image: linear-gradient(
+    to bottom,
+    #22092c,
+    #3a0e36,
+    #54133d,
+    #6e1941,
+    #872341
+  );
   color: var(--white);
   font-size: 1.5rem;
   padding: 4rem 1rem 1rem;
   margin-top: 1rem;
-  border-top: thin solid var(--grey);
 }
 
 .welcome-footer p {

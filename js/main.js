@@ -98,8 +98,8 @@ function BusquedaCoctel(idBusq,idNobusq, chkNoBusq)
 var idBusqueda = document.getElementById(idBusq);
 var idEsconde = document.getElementById(idNobusq);
 var checkNoSel = document.getElementById(chkNoBusq);
-idEsconde.style.visibility="hidden";
-idBusqueda.style.visibility="visible";
+idEsconde.style.display="none";
+idBusqueda.style.display="block";
 checkNoSel.checked = false; 
 
 }

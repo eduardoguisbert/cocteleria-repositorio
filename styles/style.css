@@ -97,6 +97,8 @@ img {
 /* Header */
 
 .header {
+  /* position: fixed; */
+  /* width: 100%; */
   background-image: linear-gradient(
     to bottom,
     #22092c,
@@ -105,11 +107,10 @@ img {
     #6e1941,
     #872341
   );
-}
 
-.header {
   padding-bottom: 1rem;
 }
+
 
 .header-content {
   color: var(--white);
@@ -327,17 +328,23 @@ img {
   background-color: var(--black);
   max-height: 90rem;
 }
+
 #Bienvenida
 {
   color:white;
   background-color:#8723414b;
 }
+
 .selector-major-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--font-grey);
   background-color: rgba(135, 35, 65, .8);
   width: 100%;
   margin: 0 auto;
-  padding: 1.8rem;
+  padding: 2.5rem .3rem .3rem .3rem;
+  border-radius: .3rem;
 }
 
 .selector-major-container p {
@@ -378,12 +385,10 @@ img {
   justify-content: center;
   background-color: rgba(61, 52, 52, 0.7);
   width: 100%;
-  margin-left: 8%;
   padding: 4rem 2rem;
   border-radius: 0 0 .5rem .5rem ;
   color: var(--white);
-  visibility: hidden;
-  position: absolute;
+  margin: 0 auto;
 }
 
 .search-for-name-group input {
@@ -397,7 +402,7 @@ img {
 #search-ingred
 {
   position:relative;
-visibility: hidden;
+  display: none;
 }
 .form {
   background-color: rgba(61, 52, 52, 0.7);
@@ -495,7 +500,7 @@ visibility: hidden;
   }
 
   .btn-search {
-    width: 40%;
+    width: 50%;
     font-size: 1.8rem;
   }
 }
@@ -503,8 +508,17 @@ visibility: hidden;
 /* Banner + Formulario Media Queries pantallas desde 1200px */
 
 @media (min-width: 1200px) {
+
   .banner {
-    padding: 0 rem;
+    background: black;
+    background-image: url("../img/banner3.webp");
+    background-size:contain;
+    background-repeat:repeat-y;
+    background-position: right;
+  }
+
+  .banner {
+    padding: 8rem 0rem;
   }
 
   .selector-major-container p {
@@ -524,8 +538,14 @@ visibility: hidden;
   }
 
   .form {
+    background-color: rgba(61, 52, 52, .9);
     height: 45rem;
   }
+
+  .search-for-name {
+    background-color: rgba(61, 52, 52, 0.9);
+  }
+
 }
 
 /* Section recipe */
@@ -540,6 +560,23 @@ visibility: hidden;
   font-size: 5rem;
   font-weight: 100;
 }
+
+
+.btn-like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  border: 0.1rem solid var(--black);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 4.8rem;
+  margin-top: 1rem;
+} 
+
 
 .recipe-subtitle {
   text-align: center;
@@ -577,10 +614,10 @@ visibility: hidden;
   .recipe-container-major {
     max-width: 60rem;
   }
-
+  
   .btn-show,
   .btn-show-toggle {
-    width: 30%;
+    width: 100%;
   }
 }
 
@@ -600,9 +637,12 @@ visibility: hidden;
     grid-template-columns: repeat(2, 1fr);
   }
 
+
   .recipe-img {
     display: none;
   }
+
+  
 
   .recipe-ingredients,
   .recipe-preparation {
@@ -655,23 +695,8 @@ visibility: hidden;
   }
 }
 
-/* footer */
 
-.footer {
-  background-image: linear-gradient(
-    to top,
-    #22092c,
-    #3a0e36,
-    #54133d,
-    #6e1941,
-    #872341
-  );
 
-  color: var(--white);
-  font-size: 1.5rem;
-  padding: 2rem;
-  margin-top: 1rem
-}
 #PopUp
 {
 
