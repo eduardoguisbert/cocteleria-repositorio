@@ -90,20 +90,20 @@
                 </div>
             </div>
             <div class="Buscadores">
-                <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
-                    <div class="search-for-name-group">
-                        <input type="hidden" name="TipoBusqueda" value="1">
-                        <label for="name">
-                            Escribe el nombre del Coctel
-                        </label>
-                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
-                    </div>
+            <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+                <div class="search-for-name-group">
+                    <input type="hidden" name="TipoBusqueda" value="1">
+                    <label for="name">
+                        Escribe el nombre del Coctel
+                    </label>
+                    <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
+                </div>
 
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
 
-                <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+            <form class="form text-center" id="search-ingred" method="get" action="./index.html">
 
                     <div>
                         <div class="form-group">
@@ -147,10 +147,10 @@
     </div>
     <section class="recipe-container-major" id="resultados">
     </section>
-    <section class="ResList">
+    <section class="ResList" id="ResList">
 
-        <div class="Resultado-Lista">
-            <div class="Resultado-Contenedor">
+        <div class="Resultado-Lista" >
+            <div class="Resultado-Contenedor"  onclick="getResult('Bombay');">
                 <div class="Resultado-Detalles">
                     <div class="Resultado-Lista-Titulo">
                         <h3>Bombay</h3>
@@ -164,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <div class="Resultado-Lista">
+<div class="Resultado-Lista">
             <div class="Resultado-Contenedor">
                 <div class="Resultado-Detalles">
                     <div class="Resultado-Lista-Titulo">

@@ -826,6 +826,10 @@ width: 100%;
   z-index: 100;
   margin-bottom: 1px;
 }
+.Resultado-Contenedor:hover
+{
+  cursor: pointer;
+}
 .Resultado-Detalles
 {
  height: 100px;
