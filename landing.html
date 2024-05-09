@@ -46,7 +46,7 @@
             <nav class="nav text-center">
                 <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
 
-                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar
+                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-user"></i>Iniciar
                     sesion o Registrarse</a>
             </nav>
 
@@ -58,14 +58,32 @@
     <div id="PopUp">
         <div id="Mensaje"> No funciona si ve esto </div>
     </div> <!-- div para agregar los "iniciar sesion y registro"-->
-    <div id="Cookie">
-        <input type="checkbox" name="mejor" id="mejor" value=""><a> Acepto el uso de mis datos con el fin de mejorar la
-            experiencia de navegación.</a><br>
-        <input type="checkbox" name="marke" id="marke" value=""><a> Acepto el uso de mis datos con fines de análisis de
-            datos y marketing. (Tus datos nunca se compartirán con terceros)</a><br>
-        <input type="checkbox" name="Acept" id="AceptCookie" value=""><a> He leído la</a><a href="./politica.html"
-            target="_blank"> <u>Politica de Cookies</u></a><br>
-        <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
+
+    <div id="Cookie" class="cookies-major-container">
+        <div class="cookies-container">
+            <div class="cookie-title">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <h3>Sobre Cookies</h3>
+            </div>
+
+            <div class="cookie">
+                <input type="checkbox" name="mejor" id="mejor" value="">
+                <a> Acepto el uso de mis datos con el fin de mejorar la experiencia de navegación.</a><br>
+            </div>
+            <div class="cookie">
+                <input type="checkbox" name="marke" id="marke" value="">
+                <a> Acepto el uso de mis datos con fines de análisis de datos y marketing. (Tus datos nunca se compartirán
+                    con terceros)</a><br>
+            </div>
+            <div class="cookie">
+                <input type="checkbox" name="Acept" id="AceptCookie" value="">
+                <a> He leído la</a>
+                <a class="enlace-politicas" href="./politica.html" target="_blank"> <u>Politica de Cookies</u></a><br>
+            </div>
+            <div class="btn-cookie">
+                <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
+            </div>
+        </div>
     </div> <!-- div para agregar politicas de cookies-->
 
     <div class="banner text-center">
@@ -145,7 +163,7 @@
         </div>
     </div>
     <div class="recipe-container-major" id="resultados">
-        
+
     </div>
     <section class="ResList" id="ResList">
 
