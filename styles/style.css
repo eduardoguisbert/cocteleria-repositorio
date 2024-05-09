@@ -454,6 +454,10 @@ img {
 }
 
 /* Banner + Formulario - Media Queries pantallas desde 768px */
+.btn-welcome
+{
+  cursor: pointer;
+}
 
 @media (min-width: 768px) {
 
