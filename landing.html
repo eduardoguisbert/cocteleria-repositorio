@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="./fontawesome/fontawesome-free-6.5.2-web/css/all.css">
 
-    <link rel="stylesheet" href="./styles/normalize.css">
+
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/bievenidos.css">
 
@@ -69,7 +69,7 @@
         <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
     </div> <!-- div para agregar politicas de cookies-->
 
-    <div class="banner text-center">
+    <div class="banner text-center" id="Buscadores_padre">
 
         <div class="form-lg-center">
             <div class="selector-major-container">
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="Buscadores">
-            <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+            <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
                 <div class="search-for-name-group">
                     <input type="hidden" name="TipoBusqueda" value="1">
                     <label for="name">
@@ -103,13 +103,13 @@
                         Buscar</button>
                 </form>
 
-            <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+            <form class="form text-center" id="search-ingred">
 
                     <div>
                         <div class="form-group">
                             <input type="hidden" name="TipoBusqueda" value="2">
                             <label class="form-label">Ingrediente Principal</label>
-                            <select class=" form-select text-center" name="ingredientePr">
+                            <select class=" form-select text-center" id="ingredientePr">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
                                 <option value="whisky">Whisky</option>
@@ -136,52 +136,96 @@
 
                         </div>
 
-                        <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar</button>
+                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button> -->
+                            <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
 
                     </div>
                     <a>para buscar cocteleria de autor debes estar registrado/a</a>
                 </form>
             </div>
         </div>
-    </div>
-    <div class="recipe-container-major" id="resultados">
-        
-    </div>
-    <section class="ResList" id="ResList">
-
-        <div class="Resultado-Lista" >
-            <div class="Resultado-Contenedor"  onclick="getResult('Bombay');">
-                <div class="Resultado-Detalles">
-                    <div class="Resultado-Lista-Titulo">
-                        <h3>Bombay</h3>
-                    </div>
-                    <div class="Resultado-Lista-Subtitulo">
-                        <h5>Receta a base de Brandy</h5>
-                    </div>
+        <div id="Resultados">
+        <div id="Seleccion1">
+            <div class="Resultados">
+            <h2 class=" recipe-title text-center no-margin">Bombay</h2>
+            <div class="recipe-container">
+                <div class="recipe-img">
+                    <img src="../img/bombay.jpg" alt="bombay-img">
                 </div>
-                <div class="resultadoImagen">
-                    <img src="./img/bombay.jpg" alt="imagen resultado">
+    
+                <div class=" recipe-ingredients">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                    <ul>
+                        <li>1/2 de brandy</li>
+                        <li>1/4 de vermut blanco seco</li>
+                        <li>1/4 de vermut rojo</li>
+                        <li>1/4 de vermut rojo</li>
+                        <li>2 golpes de Curaçao (naranja a ser posible)</li>
+                    </ul>
+                </div>
+    
+                <div class="recipe-buttom text-center">
+                    <button class="btn-show" id="btn-show">Ver Preparación</button>
+                    <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
+                </div>
+    
+                <div class="recipe-preparation text-center">
+                    <div id="backdrop">
+                        <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
+                            Preparación
+                        </h3>
+                        <p class="no-margin">Se echan en vaso mezclador con unos cubitos de hielo.
+                            Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
+                            dos cubitos de hielo
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-<div class="Resultado-Lista">
-            <div class="Resultado-Contenedor">
-                <div class="Resultado-Detalles">
-                    <div class="Resultado-Lista-Titulo">
-                        <h3>Daikiri de frutilla</h3>
-                    </div>
-                    <div class="Resultado-Lista-Subtitulo">
-                        <h5>Receta a base de Ron</h5>
-                    </div>
+        </div>
+        <div id="Seleccion2">
+            <h2 class=" recipe-title text-center no-margin">Daikiri de frutilla</h2>
+            <div class="recipe-container">
+                <div class="recipe-img2">
+                    <img src="./img/daikiri.png " alt="Daikiri-img">
                 </div>
-                <div class="resultadoImagen">
-                    <img src="./img/daikiri.png" alt="imagen resultado">
+    
+                <div class="recipe-ingredients">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                    <ul>
+                        <li>1 puñado de frutillas frescas (6 o 7 u)</li>
+                        <li>Una cucharada panzona de azúcar</li>
+                        <li>2 cdas de jugo del lima o limón</li>
+                        <li>1/2 taza de ron blanco o dorado</li>
+                        <li>Hielo</li>
+                    </ul>
+                </div>
+    
+                <div class="recipe-buttom text-center">
+                    <button class="btn-show2" id="btn-show2">Ver Preparación</button>
+                    <button class="btn-show-toggle2 d-none" id="btn-show-toggle2">Ver preparacion</button>
+                </div>
+    
+                <div class="recipe-preparation2 text-center">
+                    <div id="backdrop2">
+                        <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
+                            Preparación
+                        </h3>
+                        <p class="no-margin">1 - Colocar todos los ingredientes en el vaso de la licuadora.
+                            2 - Licuar hasta que quede una mezcla cremosa.
+                            3 - Si se desea, decorar el borde del vaso con azúcar. Servir.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+    </div>
+    
+           
+     
+    
     
     <footer class="welcome-footer text-center">
         <div class="container">
@@ -198,7 +242,6 @@
     </footer>
 
     <script src="./js/main.js"></script>
-    <script src="./Resultados/search.js"></script>
     <script src="./Cookies/Cookies.js"></script>
 </body>
 
