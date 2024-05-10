@@ -199,6 +199,12 @@ img {
     z-index: 1;
   }
 }
+@keyframes Salida {
+ 
+    0% {opacity: 1;}
+    100% {opacity: 0;} 
+
+}
 
 .nav-link {
   display: block;
