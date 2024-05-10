@@ -876,18 +876,19 @@ margin-top: 5%;
   max-width: 60px;
   float: right;
 }
-<<<<<<< HEAD
-#Cookie
+.m-wid50
 {
-  background-color: rgba(70, 63, 63, 0.89);
-=======
-
+  max-width: 50%;
+}
+.cursor_p
+{
+  cursor: pointer;
+}
 
 /* Cookies */
 
 .cookies-major-container {
   background-color: rgba(0, 0, 0, .9);
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
   position: fixed;
   display: flex;
   flex-direction: column;
