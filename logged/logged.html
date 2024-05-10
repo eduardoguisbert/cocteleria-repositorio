@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/bievenidos.css">
     <link rel="stylesheet" href="../styles/about-cocktails.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +60,7 @@
         <div class="form-lg-center">
             <div class="selector-major-container">
 
-                <p>Buscar Coctel</p>
+                <p>Seleccionar Buscador</p>
                 <div class="selector-container">
                     <div class="selector-group">
                         <input type="radio" value="" id="chk-op1" name="chk-op1"
@@ -83,7 +82,7 @@
                         <label for="name">
                             Escribe el nombre del Coctel
                         </label>
-                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
+                        <input class="search-for-name-input" id="name" type="text" placeholder=" Ejemplo: daikiri" name="CoctelNombre">
                     </div>
 
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
@@ -95,7 +94,7 @@
                     <div>
                         <div class="form-group">
                             <input type="hidden" name="TipoBusqueda" value="2">
-                            <label class="form-label">Ingrediente Principal</label>
+                            <label class="form-label">Selecciona Ingrediente Principal</label>
                             <select class=" form-select text-center" name="ingredientePr">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
@@ -107,7 +106,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Tipo de Preparación</label>
+                            <label class="form-label">Selecciona Tipo de Preparación</label>
                             <select class="form-select text-center" name="TipoPrep">
                                 <option value="directos">Directos</option>
                                 <option value="vasomez">En vaso mezclador</option>
