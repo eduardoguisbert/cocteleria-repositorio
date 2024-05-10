@@ -10,6 +10,7 @@
 
 
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/bievenidos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +47,7 @@
             <nav class="nav text-center">
                 <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
 
-                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-user"></i>Iniciar
+                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar
                     sesion o Registrarse</a>
             </nav>
 
@@ -58,38 +59,21 @@
     <div id="PopUp">
         <div id="Mensaje"> No funciona si ve esto </div>
     </div> <!-- div para agregar los "iniciar sesion y registro"-->
-
-    <div id="Cookie" class="cookies-major-container">
-        <div class="cookies-container">
-            <div class="cookie-title">
-                <i class="fa-solid fa-cookie-bite"></i>
-                <h3>Sobre Cookies</h3>
-            </div>
-
-            <div class="cookie">
-                <input type="checkbox" name="mejor" id="mejor" value="">
-                <a> Acepto el uso de mis datos con el fin de mejorar la experiencia de navegación.</a><br>
-            </div>
-            <div class="cookie">
-                <input type="checkbox" name="marke" id="marke" value="">
-                <a> Acepto el uso de mis datos con fines de análisis de datos y marketing. (Tus datos nunca se compartirán
-                    con terceros)</a><br>
-            </div>
-            <div class="cookie">
-                <input type="checkbox" name="Acept" id="AceptCookie" value="">
-                <a> He leído la</a>
-                <a class="enlace-politicas" href="./politica.html" target="_blank"> <u>Politica de Cookies</u></a><br>
-            </div>
-            <div class="btn-cookie">
-                <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
-            </div>
-        </div>
+    <div id="Cookie">
+        <input type="checkbox" name="mejor" id="mejor" value=""><a> Acepto el uso de mis datos con el fin de mejorar la
+            experiencia de navegación.</a><br>
+        <input type="checkbox" name="marke" id="marke" value=""><a> Acepto el uso de mis datos con fines de análisis de
+            datos y marketing. (Tus datos nunca se compartirán con terceros)</a><br>
+        <input type="checkbox" name="Acept" id="AceptCookie" value=""><a> He leído la</a><a href="./politica.html"
+            target="_blank"> <u>Politica de Cookies</u></a><br>
+        <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
     </div> <!-- div para agregar politicas de cookies-->
 
     <div class="banner text-center" id="Buscadores_padre">
 
         <div class="form-lg-center">
             <div class="selector-major-container">
+
                 <p>Buscar Coctel</p>
                 <div class="selector-container">
                     <div class="selector-group">
@@ -105,9 +89,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="Buscadores">
-<<<<<<< HEAD
             <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
                 <div class="search-for-name-group">
                     <input type="hidden" name="TipoBusqueda" value="1">
@@ -116,26 +98,12 @@
                     </label>
                     <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
                 </div>
-=======
-                <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
-                    <div class="search-for-name-group">
-                        <input type="hidden" name="TipoBusqueda" value="1">
-                        <label for="name">
-                            Escribe el nombre del Coctel
-                        </label>
-                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
-                    </div>
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
 
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
 
-<<<<<<< HEAD
             <form class="form text-center" id="search-ingred">
-=======
-                <form class="form text-center" id="search-ingred" method="get" action="./index.html">
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
 
                     <div>
                         <div class="form-group">
@@ -153,7 +121,7 @@
 
                         <div class="form-group">
                             <label class="form-label">Tipo de Preparación</label>
-                            <select class="form-select text-center" name="TipoPrep">
+                            <select class="form-select text-center" id="TipoPrep">
                                 <option value="directos">Directos</option>
                                 <option value="vasomez">En vaso mezclador</option>
                                 <option value="coctelera">En coctelera</option>
@@ -177,7 +145,6 @@
                 </form>
             </div>
         </div>
-<<<<<<< HEAD
         <div id="Resultados">
         <div id="Seleccion1">
             <div class="Resultados">
@@ -185,23 +152,6 @@
             <div class="recipe-container">
                 <div class="recipe-img">
                     <img src="../img/bombay.jpg" alt="bombay-img">
-=======
-    </div>
-    <div class="recipe-container-major" id="resultados">
-
-    </div>
-    <section class="ResList" id="ResList">
-
-        <div class="Resultado-Lista">
-            <div class="Resultado-Contenedor" onclick="getResult('Bombay');">
-                <div class="Resultado-Detalles">
-                    <div class="Resultado-Lista-Titulo">
-                        <h3>Bombay</h3>
-                    </div>
-                    <div class="Resultado-Lista-Subtitulo">
-                        <h5>Receta a base de Brandy</h5>
-                    </div>
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
                 </div>
     
                 <div class=" recipe-ingredients">
@@ -233,24 +183,12 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
         </div>
         <div id="Seleccion2">
             <h2 class=" recipe-title text-center no-margin">Daikiri de frutilla</h2>
             <div class="recipe-container">
                 <div class="recipe-img2">
                     <img src="./img/daikiri.png " alt="Daikiri-img">
-=======
-        <div class="Resultado-Lista">
-            <div class="Resultado-Contenedor">
-                <div class="Resultado-Detalles">
-                    <div class="Resultado-Lista-Titulo">
-                        <h3>Daikiri de frutilla</h3>
-                    </div>
-                    <div class="Resultado-Lista-Subtitulo">
-                        <h5>Receta a base de Ron</h5>
-                    </div>
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
                 </div>
     
                 <div class="recipe-ingredients">
@@ -282,7 +220,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
     </div>
     
@@ -290,11 +227,6 @@
      
     
     
-=======
-    </section>
-
-
->>>>>>> b4807515188f1c59daecb1cf62df1e0cefd97ae8
     <footer class="welcome-footer text-center">
         <div class="container">
             <div class="welcome-social-media">

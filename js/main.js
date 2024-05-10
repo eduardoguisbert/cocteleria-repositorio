@@ -160,25 +160,52 @@ function MostrarResultado(idVisible, idInvisible)
   Tipo=document.getElementById(idInvisible);
   Tipo.style.visibility="hidden";
 }
+function OcultarResultados()
+{
+  var Tipo=document.getElementById("Resultados");
+  Tipo.style.visibility="hidden";
+
+  Tipo=document.getElementById("Seleccion1");
+  Tipo.style.visibility="hidden";
+  Tipo=document.getElementById("Seleccion2");
+  Tipo.style.visibility="hidden";
+
+}
 function BuscarIngred()
 {
   
   var Tipo=document.getElementById("ingredientePr");
   var Valor= Tipo.value;
+  var Tipo2 =document.getElementById("TipoPrep");
+  var Valor2 = Tipo2.value;
+
  switch(Valor)
  {
   case "brandy":
+    switch(Valor2)
+    {
+      case "directos":
+        MostrarResultado("Seleccion1","Seleccion2")
+        break;
+        default:
+          OcultarResultados();
+    }
     
-    MostrarResultado("Seleccion1","Seleccion2")
     break;
     
     case "ron":
-     
-      MostrarResultado("Seleccion2","Seleccion1")
+      switch(Valor2)
+      {
+        case "licuad":
+          MostrarResultado("Seleccion2","Seleccion1")
+          break;
+          default:
+            OcultarResultados();
+      }
       break;
 
     default:
-     
+      OcultarResultados();
  }
   
 }
