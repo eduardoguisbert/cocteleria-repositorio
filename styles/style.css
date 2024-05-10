@@ -202,7 +202,13 @@ img {
 @keyframes Salida {
  
     0% {opacity: 1;}
-    100% {opacity: 0;} 
+    100% {opacity: 0; visibility: hidden;} 
+
+}
+@keyframes Entrada {
+ 
+  0% {opacity: 0;visibility: visible;}
+  100% {opacity: 1;visibility: visible;} 
 
 }
 

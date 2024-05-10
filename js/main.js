@@ -153,22 +153,22 @@ function MostrarResultado(idVisible, idInvisible)
 {
   
   var Tipo=document.getElementById("Resultados");
-  Tipo.style.visibility="visible";
+  Tipo.style.animation="Entrada 0.9s 1 forwards";
 
   Tipo=document.getElementById(idVisible);
-  Tipo.style.visibility="visible";
+  Tipo.style.animation="Entrada 0.9s 1 forwards";
   Tipo=document.getElementById(idInvisible);
-  Tipo.style.visibility="hidden";
+  Tipo.style.animation="Salida 0.9s 1 forwards";
 }
 function OcultarResultados()
 {
   var Tipo=document.getElementById("Resultados");
-  Tipo.style.visibility="hidden";
-
+  //Tipo.style.visibility="hidden";
+  Tipo.style.animation="Salida 0.9s 1 forwards";
   Tipo=document.getElementById("Seleccion1");
-  Tipo.style.visibility="hidden";
+  Tipo.style.animation="Salida 0.9s 1 forwards";
   Tipo=document.getElementById("Seleccion2");
-  Tipo.style.visibility="hidden";
+  Tipo.style.animation="Salida 0.9s 1 forwards";
 
 }
 function BuscarIngred()
