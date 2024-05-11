@@ -106,8 +106,7 @@ img {
     #6e1941,
     #872341
   );
-
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 
@@ -200,6 +199,7 @@ img {
   }
 }
 
+
 .nav-link {
   display: block;
   font-size: 1.8rem;
@@ -243,6 +243,7 @@ img {
   .logo-title h1 {
     font-size: 6rem;
     font-weight: 400;
+
   }
   .logo-title span {
     display: inline;
@@ -320,7 +321,7 @@ img {
 
 .banner {
   background-color: black;
-  padding: 2rem;
+  padding: 3rem 0;
 }
 
 #Bienvenida
@@ -328,6 +329,7 @@ img {
   color:white;
   background-color:#8723414b;
 }
+
 
 .selector-major-container {
   display: flex;
@@ -342,20 +344,20 @@ img {
 }
 
 .selector-major-container p {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-family: var(--fuenteHeading);
   font-weight: 400;
   margin: 0;
-  padding-bottom:2rem ;
+  padding-bottom:1.5rem ;
 }
 
 .selector-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   padding: .5rem;
   font-family: var(--fuenteParrafos);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .selector-group {
@@ -366,9 +368,9 @@ img {
 }
 
 .selector-group input[type=radio]{
-  margin-right: 1rem;
-  width:2rem;
-  height: 2rem;
+  margin-right: .5rem;
+  width:1.3rem;
+  height: 1.3rem;
   border: none;
 }
 
@@ -407,7 +409,7 @@ img {
   width: 100%;
   height: 40rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 0 0 .5rem .5rem ;
   color: var(--white);
 }
@@ -461,14 +463,17 @@ img {
 
   .banner {
     background-color: black;
-    background-image: url("../img/banner3.webp");
+    background-image: url("../img/banner4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: right center;
 
    }
 
   .selector-major-container {
+    border-top: none;
     max-width: 50rem;
+    margin: 0rem auto;
   }
 
   .selector-container {
@@ -484,6 +489,7 @@ img {
   .form {
     max-width: 50rem;
     height: 50rem;
+    padding: 1rem;
   }
 
   .form-label {
@@ -730,7 +736,7 @@ img {
 .welcome-social-media {
   display: flex;
   justify-content: space-around;
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 
 @media (min-width: 1200px) {
