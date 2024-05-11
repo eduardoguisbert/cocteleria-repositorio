@@ -951,6 +951,8 @@ margin-top: 5%;
 }
 
 .btn-cookie {
+  width: 100%;
+  text-align: center;
   margin-top: 2rem;
 }
 
