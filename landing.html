@@ -44,13 +44,16 @@
             </div>
 
 
-            <nav class="nav text-center">
-                <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
-
-                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar
-                    sesion o Registrarse</a>
+            <nav class="nav-landing text-center" id="nav">
+                <div class="nav-link-landing">
+                    <i class="fa-solid fa-house"></i> 
+                    <a  href="./index.html">Inicio</a>
+                </div>
+                <div class="nav-link-landing">
+                    <i class="fa-regular fa-user"></i> 
+                    <a  onclick="showPopPup('/logActions.html');">Iniciar sesion o Registrarse</a>
+                </div>
             </nav>
-
         </div>
 
     </header>
@@ -91,8 +94,7 @@
                     href="./politica.html" target="_blank"> <u>Politica de Cookies</u></a>
             </div>
             <div class="btn-cookie">
-                <input type="Button" class="cursor_p" onclick="AceptarCookie();"
-                    value="Cerrar ventana">
+                <input type="Button" class="cursor_p" onclick="AceptarCookie();" value="Cerrar ventana">
             </div>
         </div>
     </div> <!-- div para agregar politicas de cookies-->
