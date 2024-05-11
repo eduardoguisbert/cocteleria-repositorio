@@ -212,6 +212,14 @@ img {
 
 }
 
+.btn-menu {
+  background-color: transparent;
+  border: none;
+  font-size: 2.8rem;
+  font-weight: 100;
+  color: white;
+}
+
 
 .nav-link {
   display: block;
@@ -264,6 +272,8 @@ img {
     font-size: 3rem;
     font-weight: 100;
   }
+
+
 }
 
 /* Header -  Media Queries pantallas desde 1024px*/
@@ -290,6 +300,14 @@ img {
   .logo-title span {
     display: block;
     padding-bottom: 2rem;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+  
+  .nav {
+    display: block;
   }
 
   .nav-link {
@@ -342,7 +360,11 @@ img {
 /* Banner + Buscadores */
 
 .banner {
-  background-color: black;
+  background-image: url("../img/banner3.webp");
+  background-size: cover;
+  background-repeat: no repeat;
+  background-position: center center;
+  padding: .2rem 0;
 }
 
 #Bienvenida
@@ -364,7 +386,6 @@ img {
   margin: 0 auto;
   padding: 2.5rem .3rem .3rem .3rem;
   border-radius: .3rem;
-  border-top: 1px solid var(--white);
 }
 
 .selector-major-container p {

@@ -2,10 +2,20 @@
 /* const media = matchMedia('(min-width: 1024px)'); */
 
 //Botones
+var btnMenu = document.querySelector("#btn-menu");
+var nav = document.querySelector("#nav");
+
+
+btnMenu.addEventListener("click", function saludar(){
+  nav.classList.toggle("d-none");
+})
+
+
 var btnShow = document.querySelector("#btn-show");
 var btnShowToggle = document.querySelector("#btn-show-toggle");
 var btnShow2 = document.querySelector("#btn-show2");
 var btnShowToggle2 = document.querySelector("#btn-show-toggle2");
+
 
 //Contenedores
 var recipePreparation = document.querySelector(".recipe-preparation");
@@ -13,11 +23,13 @@ var backDrop = document.querySelector("#backdrop");
 var recipePreparation2 = document.querySelector(".recipe-preparation2");
 var backDrop2 = document.querySelector("#backdrop2");
 
+
 //EventListener
 btnShow.addEventListener("click", show);
 btnShowToggle.addEventListener("click", showToggle);
 btnShow2.addEventListener("click", show2);
 btnShowToggle2.addEventListener("click", showToggle2);
+btnMenu.addEventListener("click", showToggleMenu );
 
 //Funciones
 
