@@ -198,6 +198,18 @@ img {
     z-index: 1;
   }
 }
+@keyframes Salida {
+ 
+    0% {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;} 
+
+}
+@keyframes Entrada {
+ 
+  0% {opacity: 0;visibility: visible;}
+  100% {opacity: 1;visibility: visible;} 
+
+}
 
 
 .nav-link {
@@ -550,7 +562,34 @@ img {
   }
 
   .form-lg-center {
-    width: 50%;
+    width: 47%;
+    max-width: 47%;
+    float: left;
+  }
+  #Resultados
+  {
+    background-color:#eff2f779;
+    float: right;
+    max-width: 46%;
+    margin-right: 3%;
+   
+    visibility: hidden;
+  }
+  #Seleccion1
+  {
+    float: right;
+    position: absolute;
+    max-width: 45.5%;
+    z-index: 5;
+    visibility: hidden;
+  }
+  #Seleccion2
+  {
+    float: right;;
+    position: relative;
+   
+    z-index: 4;
+    visibility: hidden;
   }
 
   .form {
@@ -612,8 +651,8 @@ img {
   margin: 1.5rem 0;
 }
 
-.btn-show,
-.btn-show-toggle {
+.btn-show, .btn-show2,
+.btn-show-toggle, .btn-show-toggle2 {
   width: 100%;
   border: 0.1rem solid var(--black);
   border-radius: 0.5rem;
@@ -631,8 +670,8 @@ img {
     max-width: 60rem;
   }
   
-  .btn-show,
-  .btn-show-toggle {
+  .btn-show, .btn-show2,
+  .btn-show-toggle, .btn-show-toggle {
     width: 100%;
   }
 }
@@ -657,11 +696,13 @@ img {
   .recipe-img {
     display: none;
   }
-
+  .recipe-img2 {
+    display: none;
+  }
   
 
   .recipe-ingredients,
-  .recipe-preparation {
+  .recipe-preparation, .recipe-preparation2 {
     margin: 0;
     padding: 0;
   }
@@ -678,7 +719,18 @@ img {
     background-color: rgb(255, 169, 169);
     
   }
-  
+  .recipe-preparation2 {
+    display: block;
+    background-image: url("/img/daikiri.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    grid-row: 1/6;
+    grid-column: 2/6;
+    color: transparent;
+    background-color: rgb(255, 169, 169);
+    
+  }
   .backdrop-filter-on,
   .backdrop-filter-off {
     display: flex;
@@ -697,15 +749,21 @@ img {
     transition: color 1.3s, backdrop-filter 1.3s;
   }
 
-  .btn-show {
+  .btn-show, .btn-show2 {
     display: none;
   }
 
   .btn-show:active {
     background-color: #872341;
   }
-
+  .btn-show2:active {
+    background-color: #872341;
+  }
   .btn-show-toggle {
+    display: block;
+    width: 100%;
+  }
+  .btn-show-toggle2 {
     display: block;
     width: 100%;
   }
@@ -836,7 +894,14 @@ margin-top: 5%;
   max-width: 60px;
   float: right;
 }
-
+.m-wid50
+{
+  max-width: 50%;
+}
+.cursor_p
+{
+  cursor: pointer;
+}
 
 /* Cookies */
 
@@ -946,52 +1011,17 @@ margin-top: 5%;
 .Resultado
 {
 width: 100%;
+
  /* visibility: hidden;*/
 }
-.Resultado-Contenedor
+#Buscadores_Padre
 {
-  width: 100%;
-  border-top: #3a0e36 solid 1px;
-  border-bottom:  #3a0e36 solid 1px;;
-  height: 200px;
-  max-height: 200px;
-   /*position: fixed;*/
-  z-index: 100;
-  margin-bottom: 1px;
+  max-width: 100%;
+ 
 }
-.Resultado-Contenedor:hover
+.Resultados
 {
-  cursor: pointer;
-}
-.Resultado-Detalles
-{
- height: 100px;
- float: left;
- width: 74%;
-}
-.Resultado-Lista-Titulo
-{
-  width: 80%;
-  margin-left: 10%;
-}
-.Resultado-Lista-Subtitulo
-{
- position: relative;
-  width: 80%;
-  margin-left: 15%;
-}
-.resultadoImagen
-{
-  margin-top: 10px;
-  height:90%;
-  width: 25%;
-  float: right;
-  margin-right: 1%;
-}
-.resultadoImagen img
-{
+ 
+  max-height: 100%;
   height: 100%;
-  width: 90%;
-  top:0px;
-
 }
