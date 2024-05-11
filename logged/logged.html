@@ -42,10 +42,10 @@
             </div>
 
             <div class="text-center">
-            <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+                <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
 
-            <nav class="nav text-center" id="nav">
+            <nav class="nav nav-visible text-center" id="nav">
                 <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i></i>Cocteles</a>
                 <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
                         class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
@@ -86,7 +86,7 @@
                             Escribe el nombre del Coctel
                         </label>
                         <input class="search-for-name-input" id="name" type="text" placeholder=" Ejemplo: daikiri"
-                            name="CoctelNombre">
+                            name="CoctelNombre" required>
                     </div>
 
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
@@ -430,6 +430,21 @@
     <script src="../js/main.js"></script>
     <script src="./Resultados/search.js"></script>
     <script src="../js/about-cocktails.js"></script>
+
+    <script>
+
+        // Menu desplegable
+        var btnMenu = document.querySelector("#btn-menu");
+        btnMenu.addEventListener("click", function showMenu() {
+            nav.classList.toggle("activo");
+        })
+
+        var btnSearch = document.querySelector("#btn-sfname");
+        btnSearch.addEventListener("click", function saludar(evt) {
+            evt.preventDefault;
+            console.log("hola");
+        })
+    </script>
 </body>
 
 </html>
