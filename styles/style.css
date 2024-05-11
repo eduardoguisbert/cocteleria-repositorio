@@ -107,6 +107,7 @@ img {
     #872341
   );
   padding-bottom: 1.5rem;
+  
 }
 
 
@@ -242,6 +243,7 @@ img {
 /* Header -  Media Queries pantallas desde 768px*/
 
 @media (min-width: 768px) {
+
   .header {
     padding-bottom: 2rem;
   }
@@ -267,8 +269,16 @@ img {
 /* Header -  Media Queries pantallas desde 1024px*/
 
 @media (min-width: 1024px) {
+  body {
+    padding-top: 19rem;
+  }
   .header {
+    max-height: 25rem;
     padding-bottom: 3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
   }
   .header-content {
     display: flex;
@@ -329,11 +339,10 @@ img {
 
 }
 
-/* Banner + Formulario */
+/* Banner + Buscadores */
 
 .banner {
   background-color: black;
-  padding: 3rem 0;
 }
 
 #Bienvenida
@@ -341,6 +350,8 @@ img {
   color:white;
   background-color:#8723414b;
 }
+
+/* Tipo de Buscador */
 
 
 .selector-major-container {
@@ -353,6 +364,7 @@ img {
   margin: 0 auto;
   padding: 2.5rem .3rem .3rem .3rem;
   border-radius: .3rem;
+  border-top: 1px solid var(--white);
 }
 
 .selector-major-container p {
@@ -361,6 +373,7 @@ img {
   font-weight: 400;
   margin: 0;
   padding-bottom:1.5rem ;
+  
 }
 
 .selector-container {
@@ -386,6 +399,9 @@ img {
   border: none;
 }
 
+
+/* Buscador por nombre */
+
 .search-for-name {
   display: flex;
   flex-direction: column;
@@ -393,14 +409,20 @@ img {
   justify-content: center;
   background-color: rgba(61, 52, 52, 0.7);
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 3rem;
   border-radius: 0 0 .5rem .5rem ;
   color: var(--white);
   margin: 0 auto;
 }
 
+
+
 .search-for-name-input {
  font-size: 1.5rem ;
+}
+
+.search-for-name-group {
+  width: 100%;
 }
 
 .search-for-name-group input {
@@ -410,6 +432,19 @@ img {
   border-radius: .5rem;
   border: none;
 }
+
+.btn-search {
+  width: 100%;
+  border: 0.1rem solid var(--orange);
+  border-radius: 0.5rem;
+  background-color: var(--maroon);
+  color: var(--white);
+  font-size: 1.7rem;
+  font-weight: 600;
+  height: 4.8rem;
+}
+
+/* Buscador por ingrediente */
 
 #search-ingred
 {
@@ -454,24 +489,9 @@ img {
   justify-content: center;
 }
 
-.btn-search {
-  width: 100%;
-  border: 0.1rem solid var(--orange);
-  border-radius: 0.5rem;
-  background-color: var(--maroon);
-  color: var(--white);
-  font-size: 1.7rem;
-  font-weight: 600;
-  height: 4.8rem;
-}
+/* Banner + Tipo de buscador + buscadores Media Queries pantallas desde 768px */
 
-/* Banner + Formulario - Media Queries pantallas desde 768px */
-.btn-welcome
-{
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
 
   .banner {
     background-color: black;
@@ -479,13 +499,16 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right center;
-
+    padding: 3rem 0;
    }
 
-  .selector-major-container {
+   /* tipo de buscador */
+
+   .selector-major-container {
     border-top: none;
     max-width: 50rem;
     margin: 0rem auto;
+    border-top: none;
   }
 
   .selector-container {
@@ -494,9 +517,26 @@ img {
     gap: 3rem;
   }
 
+  
+  .selector-major-container p {
+    font-size: 2rem;
+  }
+
+  .selector-group label{
+    font-size: 1.8rem;
+  }
+
+  /* buscador por nombre */
+
+  .search-for-name-group input{
+    width: 80%;
+  }
+    
   .search-for-name {
     max-width: 50rem;
   }
+
+  /* buscador por ingrediente */
 
   .form {
     max-width: 50rem;
@@ -512,7 +552,7 @@ img {
   .form-select {
     font-size: 1.8rem;
     height: 4rem;
-    width: 70%;
+    width: 80%;
   }
 
   .form-group-check {
@@ -528,12 +568,19 @@ img {
   }
 
   .btn-search {
-    width: 50%;
+    width: 80%;
     font-size: 1.8rem;
   }
+ }
+
+
+.btn-welcome
+{
+  cursor: pointer;
 }
 
-/* Banner + Formulario Media Queries pantallas desde 1200px */
+
+/* Banner + Tipo de buscador + buscadores Media Queries pantallas desde 1200px */
 
 @media (min-width: 1200px) {
 
@@ -543,22 +590,24 @@ img {
    background-size: contain;
    background-repeat: no-repeat;
    background-position:right;
+   padding: 8rem 0rem;
   }
 
-  .banner {
-    padding: 8rem 0rem;
-  }
-
-  .selector-major-container p {
-    font-size: 2rem;
-  }
-
-  .selector-group label{
-    font-size: 1.8rem;
-  }
+  /* buscador por nombre */
 
   .search-for-name label {
     font-size: 1.8rem;
+  }
+
+  .search-for-name {
+    background-color: rgba(61, 52, 52, 0.9);
+  }
+
+  /* buscador por ingrediente */
+
+  .form {
+    background-color: rgba(61, 52, 52, .9);
+    height: 45rem;
   }
 
   .form-lg-center {
@@ -592,14 +641,7 @@ img {
     visibility: hidden;
   }
 
-  .form {
-    background-color: rgba(61, 52, 52, .9);
-    height: 45rem;
-  }
 
-  .search-for-name {
-    background-color: rgba(61, 52, 52, 0.9);
-  }
 
 }
 
