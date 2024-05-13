@@ -4,6 +4,7 @@
 
 
 // Menu desplegable
+
 var btnMenu = document.querySelector("#btn-menu");
 btnMenu.addEventListener("click", function showMenu() {
   nav.classList.toggle("activo");
@@ -112,21 +113,6 @@ function showMensajeBr() {
 
   return;
 }
-function revisarPol() {
-  var chkpol = document.getElementById("aceptPol");
-  if (chkpol.checked == false) {
-    alert("Debe aceptar las políticas de privacidad para registrarse");
-    return;
-  }
-  ch = document.getElementById("cknews");
-  if (ch.checked == true) {
-    //este mensaje es solo para demostrar el filtro
-    showMensajeBr();
-    return;
-  }
-  location.href = "/registro/doReg.html";
-
-}
 
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
   var idBusqueda = document.getElementById(idBusq);
@@ -205,11 +191,3 @@ function BuscarIngred() {
   }
 
 }
-
-
-
-
-
-
-
-
