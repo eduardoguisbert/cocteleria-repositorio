@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <header class="header">
 
@@ -58,12 +58,11 @@
 
     </header>
 
-    <div class="banner text-center">
+    <div class="banner text-center" id="Buscadores_padre">
 
         <div class="form-lg-center">
             <div class="selector-major-container">
-
-                <p>Seleccionar Buscador</p>
+                <p>Buscar Coctel</p>
                 <div class="selector-container">
                     <div class="selector-group">
                         <input type="radio" value="" id="chk-op1" name="chk-op1"
@@ -78,28 +77,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="Buscadores">
-                <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+                <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
                     <div class="search-for-name-group">
                         <input type="hidden" name="TipoBusqueda" value="1">
                         <label for="name">
                             Escribe el nombre del Coctel
                         </label>
-                        <input class="search-for-name-input" id="name" type="text" placeholder=" Ejemplo: daikiri"
-                            name="CoctelNombre" required>
+                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
                     </div>
 
-                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                    <button type="sbmuit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
 
-                <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+                <form class="form text-center" id="search-ingred">
 
                     <div>
                         <div class="form-group">
                             <input type="hidden" name="TipoBusqueda" value="2">
-                            <label class="form-label">Selecciona Ingrediente Principal</label>
-                            <select class=" form-select text-center" name="ingredientePr">
+                            <label class="form-label">Ingrediente Principal</label>
+                            <select class=" form-select text-center" id="ingredientePr">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
                                 <option value="whisky">Whisky</option>
@@ -110,8 +109,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Selecciona Tipo de Preparación</label>
-                            <select class="form-select text-center" name="TipoPrep">
+                            <label class="form-label">Tipo de Preparación</label>
+                            <select class="form-select text-center" id="TipoPrep">
                                 <option value="directos">Directos</option>
                                 <option value="vasomez">En vaso mezclador</option>
                                 <option value="coctelera">En coctelera</option>
@@ -121,19 +120,24 @@
                         </div>
 
                         <div class="form-group form-group-check">
-                            <input type="checkbox" id="checkbox" class="form-input " name="Autor">
-                            <label for="checkbox" class="form-label-check">De Autor</label><br>
-
+                            <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
+                            <label for="checkbox" class="form-label-check">De Autor</label><br>                         
                         </div>
 
-                        <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar</button>
+                        <div class="mje-informativo">
+                            <p> Para buscar cocteleria de autor debes estar Registrado/a. </p>
+                            <a> Registrese Aquí</a>
+                        </div>
+                        
+                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button> -->
+                        <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
 
                     </div>
-
                 </form>
             </div>
         </div>
+
     </div>
 
     <section class="recipe-container-major">
@@ -169,6 +173,9 @@
                         dos cubitos de hielo
                     </p>
                 </div>
+            </div>
+            <div class=" btn-enlace text-center">
+                <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
             </div>
         </div>
 
@@ -427,9 +434,10 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-    <script src="./Resultados/search.js"></script>
+    <!-- <script src="../js/main.js"></script> -->
+    <!-- <script src="./Resultados/search.js"></script> -->
     <script src="../js/about-cocktails.js"></script>
+    <script src="../js/landing.js"></script>
 
 </body>
 
