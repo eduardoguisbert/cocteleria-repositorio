@@ -1,4 +1,3 @@
-
 var btnUp = document.querySelectorAll(".btn-up");
 var btnDown = document.querySelectorAll(".btn-down");
 var btnAngles = document.querySelectorAll('.btn-angles');
@@ -30,4 +29,3 @@ btnPrev.addEventListener("click", function prev(){
     scrollContainer.style.scrollBehavior = "smooth";
     scrollContainer.scrollLeft -= utensilContainer[0].scrollWidth;
 })
-

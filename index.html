@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="./fontawesome/fontawesome-free-6.5.2-web/css/all.css">
 
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/bievenidos.css">
     <link rel="stylesheet" href="./styles/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+
     <link
         href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
@@ -22,138 +23,64 @@
 
 </head>
 
-<body>
-   
+<body class="body-welcome">
 
-    <header class="header">
 
-        <div class="header-content container">
+    <header class="container">
 
-            <div class="logo text-center">
-                <div  class="logo-title no-margin">
-                    <h1>Bartender <span> On trial</span> </h1>
-                </div>
-                
-                <div class="animacion-container">
-                    <img class="animacion-img-coctelera animacion2-img-coctelera" src="./img/coctelera.png"
-                        alt="coctelera">
-                    <img class="animacion-img-copa" src="./img/copa.png" alt="copa">
-                    <img class="animacion-img-copallena" src="./img/copallena.png" alt="copa-llena">
-                </div>
+        <div class="welcome-logo-container  text-center">
+            <div class="welcome-logo-title no-margin">
+                <h1>Bartender <span> On trial</span> </h1>
             </div>
 
-
-            <nav class="nav text-center">
-                <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
-                <!--
-                <a class="nav-link" href="../logged/logged.html"><i class="fa-solid fa-magnifying-glass"></i>Cocteles</a>
-                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
-                <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
-                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesion</a>
-                -->
-                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar sesion o Registrarse</a>
-            </nav>
-            
+            <div class="welcome-logo-img">
+                <img class="welcome-logo-coct" src="./img/coctelera.png" alt="coctelera">
+                <img class="welcome-logo-copa" src="./img/copa.png" alt="copa">
+            </div>
         </div>
-   <!--     <div class="Busqueda"><input class="recipe-buttom text-center" id="inBusqueda" type="text" placeholder="Ingrese su busqueda"><img src="/img/Search.png" alt="Buscar" id="imgBusqueda" onclick="doBusqueda();"></div> -->
+
     </header>
 
-    
-    <div id="PopUp"> <div id="Mensaje"> No funciona si ve esto </div></div> <!-- div para agregar los "iniciar sesion y registro"-->
-    <div id="Cookie"> 
-        <input type="checkbox" name="mejor" id="mejor" value=""><a> Acepto el uso de mis datos con el fin de mejorar la experiencia de navegación.</a><br>
-        <input type="checkbox" name="marke" id="marke" value=""><a> Acepto el uso de mis datos con fines de análisis de datos y marketing. (Tus datos nunca se compartirán con terceros)</a><br>
-        <input type="checkbox" name="Acept" id="AceptCookie" value=""><a> He leído la</a><a href="./politicasCookies.html" target="_blank"> <u>Politica de Cookies</u></a><br>
-        <input type="Button" onclick="AceptarCookie();" value="Aceptar y cerrar">
-    </div> <!-- div para agregar politicas de cookies-->
 
-<!--
-    <div class="banner text-center">
+    <section class="welcome-section container">
 
-        <div class="form-lg-center">
-
-            <form class="form text-center">
-
-                <div class="form-group">
-                    <label class="form-label">Ingrediente Principal</label>
-                    <select class=" form-select text-center">
-                        <option value="">Brandy</option>
-                        <option value="">Ginebra</option>
-                        <option value="">Whisky</option>
-                        <option value="">Cava</option>
-                        <option value="">Ron</option>
-                        <option value="">Tequila</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Tipo de Preparación</label>
-                    <select class="form-select text-center">
-                        <option value="">Directos</option>
-                        <option value="">En vaso mezclador</option>
-                        <option value="">En coctelera</option>
-                        <option value="">En licuadora</option>
-                        <option value="">Flambeados</option>
-                    </select>
-                </div>
-
-                <div class="form-group form-group-check">
-                    <input type="checkbox" id="checkbox" class="form-input">
-                    <label for="checkbox" class="form-label-check">De Autor</label>
-                </div>
-
-                <button type="submit" class="btn-search">Buscar</button>
-            </form>
-        </div>
-    </div>
--->
-    <section class="recipe-container-major" id="resultados">
-        <h2 class=" recipe-title text-center no-margin" id="TituloBusqueda">Bombay</h2>
-        <div class="recipe-container">
-            <div class="recipe-img" id="ResultadoImagen">
-                <img src="./img/bombay.jpg" alt="bombay-img">
-            </div>
-
-            <div class=" recipe-ingredients">
-                <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
-                <ul id = "Ingredientes">
-                    <li>1/2 de brandy</li>
-                    <li>1/4 de vermut blanco seco</li>
-                    <li>1/4 de vermut rojo</li>
-                    <li>1/4 de vermut rojo</li>
-                    <li>2 golpes de Curaçao (naranja a ser posible)</li>
-                </ul>
-            </div>
-          
-            <div class="recipe-buttom text-center">
-                <button class="btn-show" id="btn-show" >Ver Preparación</button>
-                <button class="btn-show-toggle d-none"  id="btn-show-toggle">Ver preparacion</button>
-            </div>
-
-            <div class="recipe-preparation text-center">
-                <div id="backdrop">
-                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
-                        Preparación
-                    </h3>
-                    <p class="no-margin" id="Preparacion">Se echan en vaso mezclador con unos cubitos de hielo.
-                        Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
-                        dos cubitos de hielo
-                    </p>
-                </div>
-            </div>
+        <div class="bg-gif">
+            <img src="./img/servewhisky.gif" alt="serve">
         </div>
 
+        <div class="welcome-text">
+            <h2 class="welcome-text-bienvenido text-center">Bienvenidos</h2>
+
+            <p class="no-margin"> <span class="welcome-text-logo"> Bartender On trial </span> es la página mas completa
+                para preparar su coctel. En esta página usted puede buscar su cockel de preferencia, ya sea por su
+                nombre o su ingrediente de
+                preparación</p>
+            <p>
+                Si usted sabe preparar tragos, ya sea de autor o general, puede registrarse y completar
+                nuestro catalogo de bebidas para que otros puedan disfrutarla. <br>
+                Esperamos que su visita sea agradable
+            </p>
+
+            <div class="text-center">
+                <button class="btn-welcome" onclick="javascript: location.href='landing.html'">Descubrila</button>
+            </div>
+        </div>
     </section>
 
-    <footer class="footer text-center">
-        <p>Contacto: <a href="mailto: bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i> </a> <a href="https://www.facebook.com/bartenderontrial/"> <i class="fa-brands fa-facebook"> </i> </a> <a href="https://www.instagram.com/bartenderontrial.ok/"> <i class="fa-brands fa-instagram"></i> </a> <a href="https://wa.link/7rzq05"><i class="fa-brands fa-whatsapp"></i> </a> </p>
-        <p>Todos los derechos reservados 
-            <script>document.write( new Date().getFullYear() );</script>. BartenderOnTrial SRL ©
+
+    <footer class="welcome-footer-ppal text-center">
+        <div class="welcome-social-media-ppal">
+            <a href="mailto:bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.facebook.com/bartenderontrial/"> <i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bartenderontrial.ok/"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.link/7rzq05"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p>Todos los derechos reservados
+            <script>document.write(new Date().getFullYear());</script>. <span>BartenderOnTrial SRL ©</span>
         </p>
     </footer>
 
     <script src="./js/main.js"></script>
-    <script src="./Resultados/search.js"></script>
     <script src="./Cookies/Cookies.js"></script>
 </body>
 

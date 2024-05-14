@@ -1,5 +1,0 @@
-                    <li>Azúcar a gusto</li>
-                    <li>30 ml de jugo de lima recién exprimido</li>
-                    <li>60 ml de ron</li>
-                    <li>90 ml de pulpa de frutilla</li>
-                    <li>Hielo</li>

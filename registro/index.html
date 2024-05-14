@@ -1,18 +1,20 @@
-
+<img src="../img/xCerrar.png"  onclick="closePopUp();" />
 <div class="frm_80pc">
-<form action="./registro/doReg.html" method="post">
-   <input type="text" class="btn-show-toggle" placeholder="Apellido" name="surname" required>
-   <input type="text" class="btn-show-toggle" placeholder="Nombre/s" name="name" required>
-   <input type="text" class="btn-show-toggle" placeholder="Usuario" name="user" required>
-   <input type="password" class="btn-show-toggle" placeholder="Contraseña" name="pass" required>
-   <input type="password" class="btn-show-toggle" placeholder="Repetir Contraseña" name="rpass" required>
-   <input type="email" class="btn-show-toggle" placeholder="Correo Electronico" name="mail" required>
+   
+<form action="../registro/doReg.html" id="registroForm">
+   <input type="text" class="btn-show-toggle" id="Nick" placeholder="Nick (apodo)" name="nick" required>
+   <input type="text" class="btn-show-toggle" id="Usuario" placeholder="Usuario" name="user" required>
+   <input type="password" class="btn-show-toggle" id="Pass" placeholder="Contraseña" name="pass" required>
+   <input type="password" class="btn-show-toggle" id="PassR" placeholder="Repetir Contraseña" name="rpass" required>
+   <input type="email" class="btn-show-toggle" id="Correo" placeholder="Correo Electronico" name="mail" required>
    <br>
-   <input type="checkbox" name="aceptPol" id="aceptPol" value=""><a>Acepto que leí las </a><a href="Politicas.html">Politicas de privacidad</a><a> y las comprendo</a><br>
+   
+   <input type="checkbox" name="aceptPol" id="aceptPol" value="" required><a>Acepto que leí las </a><a href="Politicas.html">Politicas de privacidad</a><a> y las comprendo</a><br>
    <input type="checkbox" name="cknews" id="cknews" value=""><a>Acepto recibir NewsLetters con las últimas novedades sobre recetas y cambios</a><br>
-   <a><button type="button"   onclick="revisarPol();" class="btn-show-toggle d-none btnlogin"> Registrarse</button></a>
+   <input type="button" onclick="Registrar();" class="btn-show-toggle d-none btnlogin" value="Registrarse">
    <!-- no se pone button submit porque no funciona correctamente en vscode-->
 </form>
 </div>
+
 
    

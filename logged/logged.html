@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <header class="header">
 
@@ -41,86 +41,103 @@
                 </div>
             </div>
 
+            <div class="text-center">
+                <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
 
-            <nav class="nav text-center">
+            <nav class="nav nav-visible text-center" id="nav">
                 <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i></i>Cocteles</a>
                 <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
                         class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
                 <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
-                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar
+                <a class="nav-link nav-close" href="../landing.html"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar
                     sesion</a>
             </nav>
         </div>
 
     </header>
 
-    <div class="banner text-center">
+    <div class="banner text-center" id="Buscadores_padre">
 
         <div class="form-lg-center">
-
             <div class="selector-major-container">
-                <p>Seleccionar Buscador</p>
+                <p>Buscar Coctel</p>
                 <div class="selector-container">
                     <div class="selector-group">
-                        <input type="radio" value="" id="chk-op1">
+                        <input type="radio" value="" id="chk-op1" name="chk-op1"
+                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
                         <label for="chk-op1">Nombre del cóctel </label>
                     </div>
 
                     <div class="selector-group">
-                        <input type="radio" value="" id="chk-op2">
+                        <input type="radio" value="" id="chk-op2" name="chk-op2"
+                            onclick="BusquedaCoctel('search-ingred', 'search-for-name','chk-op1')">
                         <label for="chk-op2">Ingrediente Principal</label>
                     </div>
                 </div>
             </div>
 
-            <form class="search-for-name">
-                <div class="search-for-name-group">
-                    <label for="name">
-                        Escribe el nombre del Coctel
-                    </label>
-                    <input id="name" type="text" placeholder="  Ejemplo: daikiri">
-                </div>
-
-                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
-            </form>
-
-
-            <form class="form text-center">
-
-                <div>
-                    <div class="form-group">
-                        <label class="form-label">Ingrediente Principal</label>
-                        <select class=" form-select text-center">
-                            <option value="">Brandy</option>
-                            <option value="">Ginebra</option>
-                            <option value="">Whisky</option>
-                            <option value="">Cava</option>
-                            <option value="">Ron</option>
-                            <option value="">Tequila</option>
-                        </select>
+            <div class="Buscadores">
+                <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
+                    <div class="search-for-name-group">
+                        <input type="hidden" name="TipoBusqueda" value="1">
+                        <label for="name">
+                            Escribe el nombre del Coctel
+                        </label>
+                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Tipo de Preparación</label>
-                        <select class="form-select text-center">
-                            <option value="">Directos</option>
-                            <option value="">En vaso mezclador</option>
-                            <option value="">En coctelera</option>
-                            <option value="">En licuadora</option>
-                            <option value="">Flambeados</option>
-                        </select>
+                    <button type="sbmuit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                        Buscar</button>
+                </form>
+
+                <form class="form text-center" id="search-ingred">
+
+                    <div>
+                        <div class="form-group">
+                            <input type="hidden" name="TipoBusqueda" value="2">
+                            <label class="form-label">Ingrediente Principal</label>
+                            <select class=" form-select text-center" id="ingredientePr">
+                                <option value="brandy">Brandy</option>
+                                <option value="ginebra">Ginebra</option>
+                                <option value="whisky">Whisky</option>
+                                <option value="cava">Cava</option>
+                                <option value="ron">Ron</option>
+                                <option value="tequila">Tequila</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Preparación</label>
+                            <select class="form-select text-center" id="TipoPrep">
+                                <option value="directos">Directos</option>
+                                <option value="vasomez">En vaso mezclador</option>
+                                <option value="coctelera">En coctelera</option>
+                                <option value="licuad">En licuadora</option>
+                                <option value="flambead">Flambeados</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group-check">
+                            <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
+                            <label for="checkbox" class="form-label-check">De Autor</label><br>                         
+                        </div>
+
+                        <div class="mje-informativo">
+                            <p> Para buscar cocteleria de autor debes estar Registrado/a. </p>
+                            <a> Registrese Aquí</a>
+                        </div>
+                        
+                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button> -->
+                        <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
+
                     </div>
-
-                    <div class="form-group form-group-check">
-                        <input type="checkbox" id="checkbox" class="form-input">
-                        <label for="checkbox" class="form-label-check">De Autor</label>
-                    </div>
-
-                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
-
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
+
     </div>
 
     <section class="recipe-container-major">
@@ -156,6 +173,9 @@
                         dos cubitos de hielo
                     </p>
                 </div>
+            </div>
+            <div class=" btn-enlace text-center">
+                <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
             </div>
         </div>
 
@@ -400,12 +420,25 @@
 
 
 
-    <footer class="footer text-center">
-        <p>Todos los derechos reservados</p>
+    <footer class="welcome-footer text-center">
+        <div class="container">
+            <div class="welcome-social-media">
+                <a href="mailto: bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.facebook.com/bartenderontrial/"> <i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/bartenderontrial.ok/"> <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.link/7rzq05"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>Todos los derechos reservados
+                <script>document.write(new Date().getFullYear());</script>. <span>BartenderOnTrial SRL ©</span>
+            </p>
+        </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <!-- <script src="../js/main.js"></script> -->
+    <!-- <script src="./Resultados/search.js"></script> -->
     <script src="../js/about-cocktails.js"></script>
+    <script src="../js/landing.js"></script>
+
 </body>
 
 </html>

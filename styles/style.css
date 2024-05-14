@@ -8,6 +8,7 @@
   --white: #ffffff;
   --black: #22092c;
   --maroon: #872341;
+  --ligthMaroon: #54133d;
   --red: #be3144;
   --orange: #f05941;
 }
@@ -15,7 +16,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1 rem = 10px */
-  min-height: 100vh
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -33,8 +35,9 @@ body {
   background-color: var(--grey);
   display:grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  grid-template-columns: 100vw;
   min-height: 100vh;
+  margin: 0;
 }
 
 
@@ -105,11 +108,10 @@ img {
     #6e1941,
     #872341
   );
+  padding-bottom: 1.5rem;
+  
 }
 
-.header {
-  padding-bottom: 1rem;
-}
 
 .header-content {
   color: var(--white);
@@ -200,6 +202,38 @@ img {
   }
 }
 
+@keyframes Salida {
+ 
+    0% {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;} 
+
+}
+@keyframes Entrada {
+ 
+  0% {opacity: 0;visibility: visible;}
+  100% {opacity: 1;visibility: visible;} 
+
+}
+
+.nav-landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: 400;
+  padding: 1.5rem;
+}
+.nav-link-landing {
+  display: flex;
+  align-items:center;
+  gap: .6rem;
+  font-size: 1.5rem;
+}
+
+.nav-link-landing i {
+  font-size: 1.3rem;
+}
+
 .nav-link {
   display: block;
   font-size: 1.8rem;
@@ -227,9 +261,34 @@ img {
   letter-spacing: 0.5rem;
 }
 
+/* Menu desplegable */
+
+@media (max-width: 768px) { 
+  .nav{
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+  }
+  
+  .nav.activo {
+    height: max-content;
+  }
+  
+  
+  .btn-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: white;
+  }
+ }
+
+
 /* Header -  Media Queries pantallas desde 768px*/
 
 @media (min-width: 768px) {
+
   .header {
     padding-bottom: 2rem;
   }
@@ -243,19 +302,30 @@ img {
   .logo-title h1 {
     font-size: 6rem;
     font-weight: 400;
+
   }
   .logo-title span {
     display: inline;
     font-size: 3rem;
     font-weight: 100;
   }
+
+
 }
 
 /* Header -  Media Queries pantallas desde 1024px*/
 
 @media (min-width: 1024px) {
+  body {
+    padding-top: 19rem;
+  }
   .header {
+    max-height: 25rem;
     padding-bottom: 3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
   }
   .header-content {
     display: flex;
@@ -267,6 +337,14 @@ img {
   .logo-title span {
     display: block;
     padding-bottom: 2rem;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+  
+  .nav {
+    display: block;
   }
 
   .nav-link {
@@ -316,41 +394,53 @@ img {
 
 }
 
-/* Banner + Formulario */
+/* Banner + Buscadores */
 
 .banner {
-  background-image: url("../img/banner4.jpg");
+  background-image: url("../img/banner3.webp");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no repeat;
   background-position: center center;
-  padding: 2rem;
-  background-color: var(--black);
-  max-height: 90rem;
+  padding: .2rem 0;
 }
 
+#Bienvenida
+{
+  color:white;
+  background-color:#8723414b;
+}
+
+/* Tipo de Buscador */
+
+
 .selector-major-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--font-grey);
-  background-color: rgba(135, 35, 65, .8);
+  background-color: var(--maroon);
   width: 100%;
   margin: 0 auto;
-  padding: 1.8rem;
+  padding: 2.5rem .3rem .3rem .3rem;
+  border-radius: .3rem;
 }
 
 .selector-major-container p {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-family: var(--fuenteHeading);
   font-weight: 400;
   margin: 0;
-  padding-bottom:2rem ;
+  padding-bottom:1.5rem ;
+  
 }
 
 .selector-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   padding: .5rem;
   font-family: var(--fuenteParrafos);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .selector-group {
@@ -361,11 +451,14 @@ img {
 }
 
 .selector-group input[type=radio]{
-  margin-right: 1rem;
-  width:2rem;
-  height: 2rem;
+  margin-right: .5rem;
+  width:1.3rem;
+  height: 1.3rem;
   border: none;
 }
+
+
+/* Buscador por nombre */
 
 .search-for-name {
   display: flex;
@@ -374,10 +467,20 @@ img {
   justify-content: center;
   background-color: rgba(61, 52, 52, 0.7);
   width: 100%;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3rem;
   border-radius: 0 0 .5rem .5rem ;
   color: var(--white);
+  margin: 0 auto;
+}
+
+
+
+.search-for-name-input {
+ font-size: 1.5rem ;
+}
+
+.search-for-name-group {
+  width: 100%;
 }
 
 .search-for-name-group input {
@@ -388,13 +491,31 @@ img {
   border: none;
 }
 
+.btn-search {
+  width: 100%;
+  border: 0.1rem solid var(--orange);
+  border-radius: 0.5rem;
+  background-color: var(--maroon);
+  color: var(--white);
+  font-size: 1.7rem;
+  font-weight: 600;
+  height: 4.8rem;
+  margin-top: 1.2rem;
+}
 
+/* Buscador por ingrediente */
+
+#search-ingred
+{
+  position:relative;
+  display: none;
+}
 .form {
   background-color: rgba(61, 52, 52, 0.7);
   width: 100%;
-  height: 40rem;
+  min-height: 40rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 0 0 .5rem .5rem ;
   color: var(--white);
 }
@@ -402,7 +523,7 @@ img {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-label,
@@ -427,23 +548,50 @@ img {
   justify-content: center;
 }
 
-.btn-search {
+.mje-informativo {
+  margin: 0 auto;
+  font-family: var(--fuenteParrafos);
+  line-height: 2rem;
   width: 100%;
-  border: 0.1rem solid var(--orange);
-  border-radius: 0.5rem;
-  background-color: var(--maroon);
-  color: var(--white);
-  font-size: 1.7rem;
-  font-weight: 600;
-  height: 4.8rem;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: .5rem;
+  border-radius: .5rem;
 }
 
-/* Banner + Formulario - Media Queries pantallas desde 768px */
+.mje-informativo p{
+  display: inline;
+  font-size: 1.4rem;
+  color: var(--grey);
+}
 
-@media (min-width: 768px) {
+.mje-informativo a {
+  color: var(--orange);
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-  .selector-major-container {
+
+/* Banner + Tipo de buscador + buscadores Media Queries pantallas desde 768px */
+
+@media (min-width: 768px) { 
+
+  .banner {
+    background-color: black;
+    background-image: url("../img/banner4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 3rem 0;
+   }
+
+   /* tipo de buscador */
+
+   .selector-major-container {
+    border-top: none;
     max-width: 50rem;
+    margin: 0rem auto;
+    border-top: none;
   }
 
   .selector-container {
@@ -452,24 +600,40 @@ img {
     gap: 3rem;
   }
 
+  
+  .selector-major-container p {
+    font-size: 2rem;
+  }
+
+  .selector-group label{
+    font-size: 1.8rem;
+  }
+
+  /* buscador por nombre */
+
+  .search-for-name-group input{
+    width: 80%;
+  }
+    
   .search-for-name {
     max-width: 50rem;
   }
 
+  /* buscador por ingrediente */
+
   .form {
     max-width: 50rem;
-    height: 50rem;
+    padding: 4rem 0;
   }
 
   .form-label {
     font-size: 1.8rem;
-    margin-top: 3.5rem;
   }
 
   .form-select {
     font-size: 1.8rem;
     height: 4rem;
-    width: 70%;
+    width: 80%;
   }
 
   .form-group-check {
@@ -480,42 +644,89 @@ img {
     width: 2.5rem;
   }
 
+  .mje-informativo{
+    width: 80% ;
+  }
+
   .form-label-check {
     font-size: 1.8rem;
   }
 
   .btn-search {
-    width: 40%;
+    width: 80%;
     font-size: 1.8rem;
   }
+ }
+
+
+.btn-welcome
+{
+  cursor: pointer;
 }
 
-/* Banner + Formulario Media Queries pantallas desde 1200px */
+
+/* Banner + Tipo de buscador + buscadores Media Queries pantallas desde 1200px */
 
 @media (min-width: 1200px) {
+
   .banner {
-    padding: 0 rem;
+   background-color: black;
+   background-image: url("../img/banner3.webp");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position:right;
+   padding: 8rem 0rem;
   }
 
-  .selector-major-container p {
-    font-size: 2rem;
-  }
-
-  .selector-group label{
-    font-size: 1.8rem;
-  }
+  /* buscador por nombre */
 
   .search-for-name label {
     font-size: 1.8rem;
   }
 
-  .form-lg-center {
-    width: 50%;
+  .search-for-name {
+    background-color: rgba(61, 52, 52, 0.9);
   }
 
+  /* buscador por ingrediente */
+
   .form {
-    height: 45rem;
+    background-color: rgba(61, 52, 52, .9);
   }
+
+  .form-lg-center {
+    width: 47%;
+    max-width: 47%;
+    float: left;
+  }
+  #Resultados
+  {
+    background-color:#eff2f779;
+    float: right;
+    max-width: 46%;
+    margin-right: 3%;
+   
+    visibility: hidden;
+  }
+  #Seleccion1
+  {
+    float: right;
+    position: absolute;
+    max-width: 45.5%;
+    z-index: 5;
+    visibility: hidden;
+  }
+  #Seleccion2
+  {
+    float: right;;
+    position: relative;
+   
+    z-index: 4;
+    visibility: hidden;
+  }
+
+
+
 }
 
 /* Section recipe */
@@ -530,6 +741,37 @@ img {
   font-size: 5rem;
   font-weight: 100;
 }
+
+
+.btn-enlace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 4.8rem;
+  background-image: linear-gradient(to right top, #770850, #760c4d, #74104a, #731347, #711644, #721843, #731942, #741b41, #791d41, #7e1f41, #822141, #872341);
+  color: var(--white);
+  font-size: 1.7rem;
+  font-weight: 400;
+  border: .2rem solid var(--black);
+  border-radius: 0.8rem;
+  margin-top: 2rem;
+} 
+
+.btn-enlace a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-enlace a > i {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
 
 .recipe-subtitle {
   text-align: center;
@@ -549,8 +791,8 @@ img {
   margin: 1.5rem 0;
 }
 
-.btn-show,
-.btn-show-toggle {
+.btn-show, .btn-show2,
+.btn-show-toggle, .btn-show-toggle2 {
   width: 100%;
   border: 0.1rem solid var(--black);
   border-radius: 0.5rem;
@@ -568,9 +810,14 @@ img {
     max-width: 60rem;
   }
 
-  .btn-show,
-  .btn-show-toggle {
-    width: 30%;
+  #recipe-container-major{
+    scroll-margin-top: 20rem;
+    
+  }
+  
+  .btn-show, .btn-show2,
+  .btn-show-toggle, .btn-show-toggle {
+    width: 100%;
   }
 }
 
@@ -578,6 +825,7 @@ img {
 
 @media (min-width: 1024px) {
   .recipe-container-major {
+    padding: 5rem;
     max-width: 100rem;
   }
   .recipe-subtitle {
@@ -590,12 +838,17 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+
   .recipe-img {
     display: none;
   }
+  .recipe-img2 {
+    display: none;
+  }
+  
 
   .recipe-ingredients,
-  .recipe-preparation {
+  .recipe-preparation, .recipe-preparation2 {
     margin: 0;
     padding: 0;
   }
@@ -612,7 +865,18 @@ img {
     background-color: rgb(255, 169, 169);
     
   }
-  
+  .recipe-preparation2 {
+    display: block;
+    background-image: url("/img/daikiri.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    grid-row: 1/6;
+    grid-column: 2/6;
+    color: transparent;
+    background-color: rgb(255, 169, 169);
+    
+  }
   .backdrop-filter-on,
   .backdrop-filter-off {
     display: flex;
@@ -631,15 +895,21 @@ img {
     transition: color 1.3s, backdrop-filter 1.3s;
   }
 
-  .btn-show {
+  .btn-show, .btn-show2 {
     display: none;
   }
 
   .btn-show:active {
     background-color: #872341;
   }
-
+  .btn-show2:active {
+    background-color: #872341;
+  }
   .btn-show-toggle {
+    display: block;
+    width: 100%;
+  }
+  .btn-show-toggle2 {
     display: block;
     width: 100%;
   }
@@ -647,24 +917,55 @@ img {
 
 /* footer */
 
-.footer {
+.welcome-footer {
   background-image: linear-gradient(
-    to top,
+    to bottom,
     #22092c,
     #3a0e36,
     #54133d,
     #6e1941,
     #872341
   );
-
   color: var(--white);
   font-size: 1.5rem;
-  padding: 2rem;
-  margin-top: 1rem
+  padding: 4rem 1rem 1rem;
 }
+
+.welcome-footer p {
+  font-size: 1.5rem;
+  padding-top: 3rem;
+}
+
+.welcome-social-media {
+  display: flex;
+  justify-content: space-around;
+  font-size: 3.5rem;
+}
+
+@media (min-width: 1200px) {
+  .welcome-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+
+  .welcome-footer p {
+    padding-top: 0 ;
+  }
+  .welcome-social-media {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 3rem;
+  }
+}
+
+
+
 #PopUp
 {
-
 width: 100%;
 height: 100%;
 visibility: hidden;
@@ -672,17 +973,19 @@ visibility: hidden;
 position:fixed;
 z-index: 20;
 }
-#PopUp #Mensaje
+#Mensaje
 {
 width: 40%;
 min-height: 60%;
 /* visibility: hidden;*/
 margin-left: 30%;
-margin-top: 5%;
 z-index: 21;
 border-radius: 5px;
 border-style: solid;
-border-color:#22092c ;
+border-color:#22092c;
+background-image: url("../img/banner4.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 background-color: rgba(157, 139, 139, 0.645);
 position:fixed;
 color:white;
@@ -698,14 +1001,18 @@ margin-top: 20%;
 {
 margin-top: 15px;
 }
-#PopUp #Mensaje img{
+#Mensaje img{
   width: 25px;
+  float: right;
+  background-color: #9e4a3dcb;
+  margin-bottom:20px;
+  border-radius: 5px;
 }
 
 .frm_80pc
 {
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 80%;
 }
 .btnlogin
@@ -730,18 +1037,97 @@ margin-top: 5%;
   max-width: 60px;
   float: right;
 }
-#Cookie
+.m-wid50
 {
-  background-color: rgba(61, 52, 52, 0.8);
-  position: fixed;
-  bottom: 0px;
-  text-align: center;
-  width: 100%;
-  color: white;
- 
+  max-width: 50%;
+}
+.cursor_p
+{
+  cursor: pointer;
 }
 
-#cookie-policy h1{
+/* Cookies */
+
+.cookies-major-container {
+  background-color: rgba(0, 0, 0, .9);
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  visibility: visible;
+}
+
+.cookies-container {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  padding: 1rem;
+  width: 90%;
+}
+
+.cookie-title {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.cookie-title h3 {
+  display: inline;
+}
+.cookie-title i {
+  font-size: 4rem;
+}
+
+.cookie {
+  padding-bottom: 2rem;
+}
+
+.cookie input {
+ width: 1.5rem;
+ height: 1.5rem;
+}
+.enlace-politicas {
+  color: var(--orange);
+  font-size: 1.9rem;
+}
+
+.btn-cookie {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-cookie input {
+  width: 100%;
+  background-color: var(--grey);
+  border: none;
+  border-radius: .5rem;
+  color: black;
+  font-size: 1.7rem;
+  font-weight: 600;
+  height: 4.8rem;
+}
+
+@media (min-width: 768px) { 
+  .cookies-container {
+    width: 60%;
+  }
+ }
+
+ @media (min-width: 1200px) { 
+  .btn-cookie {
+    width: 100%;
+    text-align: center;
+  }
+  .btn-cookie input{
+    width: 30%;
+  }
+  }
+
+/* #cookie-policy h1{
   font-size: 2.5em; 
   text-align: center;
   font-family: var(--fuenteHeading);
@@ -767,4 +1153,21 @@ margin-top: 5%;
 #cookie-policy #cookie-type .cookie-type-name{
   display: inline;
   font-weight: bold;
+} */
+.Resultado
+{
+width: 100%;
+
+ /* visibility: hidden;*/
+}
+#Buscadores_Padre
+{
+  max-width: 100%;
+ 
+}
+.Resultados
+{
+ 
+  max-height: 100%;
+  height: 100%;
 }
