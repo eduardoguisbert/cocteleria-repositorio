@@ -17,6 +17,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1 rem = 10px */
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -499,6 +500,7 @@ img {
   font-size: 1.7rem;
   font-weight: 600;
   height: 4.8rem;
+  margin-top: 1.2rem;
 }
 
 /* Buscador por ingrediente */
@@ -807,6 +809,11 @@ img {
   .recipe-container-major {
     max-width: 60rem;
   }
+
+  #recipe-container-major{
+    scroll-margin-top: 20rem;
+    
+  }
   
   .btn-show, .btn-show2,
   .btn-show-toggle, .btn-show-toggle {
@@ -818,6 +825,7 @@ img {
 
 @media (min-width: 1024px) {
   .recipe-container-major {
+    padding: 5rem;
     max-width: 100rem;
   }
   .recipe-subtitle {

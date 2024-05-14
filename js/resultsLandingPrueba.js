@@ -1,4 +1,4 @@
-
+// Datos en Array de Objetos
 
 var cocteles = [
     {
@@ -9,36 +9,49 @@ var cocteles = [
 
     {
         nombre: "Daikiri",
-        ingredientes: ["ing1", "ing2"],
-        preparacion: "Lorem Daikiri ipsum"
+        ingredientes: ["1 puñado de frutillas frescas (6 o 7 u)", "Una cucharada panzona de azúcar", "2 cdas de jugo del lima o limón", "1/2 taza de ron blanco o dorado", "Hielo"],
+        preparacion: "Colocar todos los ingredientes en el vaso de la licuadora. Licuar hasta que quede una mezcla cremosa. Si se desea, decorar el borde del vaso con azúcar. Servir"
     },
 ]
 
-
-var searchForNameForm = document.querySelector("#search-for-name");
+//Botones
 var btnSearchIng = document.querySelector("#btn-search-ing");
-var coctelName = document.querySelector("#coctel-name");
 
+// Contenedores
+var searchForNameForm = document.querySelector("#search-for-name");
+var recipeContainerMajor = document.querySelector(".recipe-container-major");
+var coctelName = document.querySelector("#coctel-name");
 var recipeTitle = document.querySelector("#recipe-title");
 var listRecipeIngredients = document.querySelector("#list-recipe-ingredients");
 var recipePrep = document.querySelector("#recipe-prep");
-var banner = document.querySelector(".banner");
-var bannerHeight= banner.style.height;
+var recipeTitle = document.querySelector("#recipe-title");
+var listRecipeIngredients = document.querySelector("#list-recipe-ingredients");
+var recipePrep = document.querySelector("#recipe-prep");
+var formGroupCheck = document.querySelector(".form-group-check");
+var informativeMessage = document.querySelector(".mje-informativo");
 
-console.log(banner.style.height);
+//Event Listener
 
-btnSearchIng.addEventListener("click", function procesar(e){
+formGroupCheck.addEventListener("click", showMessage);
+btnSearchIng.addEventListener("click", procesar);
+
+
+
+//Funciones
+
+
+function procesar(e){
     e.preventDefault();
     var coctelValue = coctelName.value;
     searchForName(coctelValue);
-})
+    recipeContainerMajor.style.display = "block";
+}
 
 function searchForName(coctelValue){
     cocteles.forEach(coctel=> {
-        if(coctelValue == coctel.nombre){
+        if(coctelValue.toLowerCase() == coctel.nombre.toLowerCase()){
             embedElements(coctel.nombre, coctel.ingredientes, coctel.preparacion);
         }
-        window.scrollBy(0, 7);
     });
 }
 
@@ -57,6 +70,11 @@ function listIngredientes(coctelIngredientes){
         listRecipeIngredients.appendChild(li);
     }
 }
+
+function showMessage (){
+    informativeMessage.classList.remove('d-none');
+}
+
 
 
 
