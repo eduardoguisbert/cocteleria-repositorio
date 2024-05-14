@@ -920,8 +920,7 @@ img {
   );
   color: var(--white);
   font-size: 1.5rem;
-  padding: 4rem 1rem 1rem;
-  margin-top: 1rem;
+  padding: 4rem 1rem 1rem
 }
 
 .welcome-footer p {
