@@ -11,6 +11,15 @@ class Registro
     }
 
 }
+class Login
+{
+    constructor(Nick,Correo)
+    {
+        this.nick=Nick;
+        this.correo=Correo;
+    }
+
+}
 
 function validaFormulario ()
  {
@@ -82,4 +91,55 @@ savedata(Registrodat);
 function savedata(reg)
 {
     localStorage.setItem("Registro",JSON.stringify(reg));
+}
+function loadData(usr,pass)
+{
+    let rk = localStorage.getItem("Registro");
+    rg = JSON.parse(rk);
+    if(usr==rg.usuario)
+        {
+        if(pass==rg.password)
+            {
+            let lg = new Login(rg.nick, rg.correo);
+        return lg;
+            }
+        }
+        return new Login("","");
+    /*alert (rg.nick);
+    alert (rg.usuario);
+    alert (rg.password);
+    alert (rg.correo);
+    */
+}
+function tryIs()
+{
+    const formul = document.getElementById("#Loginform");
+    const User = document.querySelector("#lgUser");
+    const Pass = document.querySelector("#lgPass");
+    
+    let valida = true;
+    if(User.value.length < 3)
+        {
+               alert("Usuario o contraseña incorrectos!");
+               valida=false;
+               return; 
+        }
+     if(Pass.value.length < 6)
+        {
+               alert("Usuario o contraseña incorrectos!");
+               valida=false;
+               return; 
+        }
+    let loginData=loadData(User.value,Pass.value);
+    if(loginData.nick=="" ||loginData.correo=="" )
+        {
+            alert("Usuario o contraseña incorrectos!");
+            valida=false;
+            return; 
+        }
+        if(valida==true)
+            {
+                location.href="/logged/logged.html"
+                //formul.submit();
+            }
 }
