@@ -139,6 +139,7 @@ function tryIs()
         }
         if(valida==true)
             {
+                alert("Bienvenid@!!!! -> " + loginData.nick + "\nAhora se te dirigirá a la página principal!");
                 location.href="/logged/logged.html"
                 //formul.submit();
             }
