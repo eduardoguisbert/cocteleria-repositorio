@@ -4,8 +4,7 @@
 
 
 //let formRegistro (event) =  document.getElementById("registroForm");
-let formu = document.getElementById("registroForm");
-formu.addEventListener('submit', validaFormulario);
+
 /*
         function validar(evt) {
             let cla1 = document.getElementById("clave1").value;
@@ -16,12 +15,11 @@ formu.addEventListener('submit', validaFormulario);
             }
         }
         */
-function validaFormulario (ev)
+function validaFormulario ()
  {
+    let formu = document.getElementById("registroForm");
+    //formu.addEventListener('submit', validaFormulario);
 
-//  event.preventDefault();
-    
-ev.preventDefault();
 
     const Nickname = document.querySelector("#Nick");
     const User = document.querySelector("#Usuario");
@@ -36,43 +34,40 @@ ev.preventDefault();
         {
             alert("Tu Apodo debe tener entre 3 y 20 caracteres");
             validation = false;
-        //    return;
+            return;
         }
 
         if(User.value.length < 3 || User.value.length > 20)
             {
                 alert("Tu usuario debe tener entre 3 y 20 caracteres");
                 validation = false;
-        //        return;
+                return;
             }
         if(Pass.value.length < 6 || Pass.value.length > 20)
         {
             alert("Tu Contraseña debe tener entre 6 y 20 caracteres");
             validation = false;
-        //    return;
+           return;
         }
         if(PassR.value != Pass.value)
         {
             alert("Las contraseñas no coinciden");
             validation = false;
-        //    return;
+            return;
          }
            
           if (chkpol.checked == false) {
          alert("Debe aceptar las políticas de privacidad para registrarse");
          validation = false;
-       //  return;
+         return;
           }
 
     if(validation==true){
-        alert("llega!");
-        
-        formRegistro.submit();
+        formu.submit();
     } else{
-    ev.preventDefault(); ev.stopPropagation();  ev.stopImmediatePropagation();
+
         return false;
     }
-
 
 }
 /*
