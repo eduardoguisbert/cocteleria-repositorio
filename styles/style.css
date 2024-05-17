@@ -263,27 +263,7 @@ img {
   letter-spacing: 0.5rem;
 }
 
-/* Menu desplegable */
 
-@media (max-width: 768px) {
-  .nav {
-    height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-  }
-
-  .nav.activo {
-    height: max-content;
-  }
-
-  .btn-menu {
-    background-color: transparent;
-    border: none;
-    font-size: 2.8rem;
-    font-weight: 100;
-    color: white;
-  }
-}
 
 /* Header -  Media Queries pantallas desde 768px*/
 
@@ -1077,13 +1057,15 @@ img {
   width: 100%;
   height: 100%;
   visibility: hidden;
-  /* background-color: rgba(71, 60, 60, 0.7);*/
+  background-color: rgba(71, 60, 60, 0.4);
   position: fixed;
   z-index: 20;
 }
 #Mensaje {
+  position: absolute;
   width: 40%;
   min-height: 60%;
+  margin-top: 3%;
   /* visibility: hidden;*/
   margin-left: 30%;
   z-index: 21;
@@ -1143,7 +1125,33 @@ img {
 .cursor_p {
   cursor: pointer;
 }
+/* Menu desplegable */
 
+@media (max-width: 768px) {
+  .nav {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  #Mensaje{
+  width: 90%;
+  min-height: 60%;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+
+  .nav.activo {
+    height: max-content;
+  }
+
+  .btn-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: white;
+  }
+}
 /* Cookies */
 
 .cookies-major-container {

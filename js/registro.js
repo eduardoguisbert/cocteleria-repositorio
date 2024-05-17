@@ -3,13 +3,25 @@
 
 
 
-let formRegistro = document.getElementById("registroForm");
-function validaFormulario ()
+//let formRegistro (event) =  document.getElementById("registroForm");
+let formu = document.getElementById("registroForm");
+formu.addEventListener('submit', validaFormulario);
+/*
+        function validar(evt) {
+            let cla1 = document.getElementById("clave1").value;
+            let cla2 = document.getElementById("clave2").value;
+            if (cla1 != cla2) {
+                alert('Las claves ingresadas son distintas');
+                evt.preventDefault();
+            }
+        }
+        */
+function validaFormulario (ev)
  {
 
 //  event.preventDefault();
     
-   
+ev.preventDefault();
 
     const Nickname = document.querySelector("#Nick");
     const User = document.querySelector("#Usuario");
@@ -54,18 +66,19 @@ function validaFormulario ()
 
     if(validation==true){
         alert("llega!");
+        
         formRegistro.submit();
     } else{
-
+    ev.preventDefault(); ev.stopPropagation();  ev.stopImmediatePropagation();
         return false;
     }
 
 
 }
-
+/*
 function Registrar()
 {
  validaFormulario();
 }
-
+*/
 //formRegistro.addEventListener("submit",validaFormulario)
