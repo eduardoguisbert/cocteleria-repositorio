@@ -44,6 +44,12 @@
 }
 
 @media (min-width: 1020px) {
+
+  .welcome-logo-container{
+    justify-content: right;
+    padding-right: 10%;
+  }
+    
   .welcome-logo-title span {
     display: inline;
     font-size: 3.8rem;

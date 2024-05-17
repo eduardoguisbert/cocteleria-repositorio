@@ -30,12 +30,18 @@ function show() {
     }
   }
 
-  function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
-    var idBusqueda = document.getElementById(idBusq);
-    var idEsconde = document.getElementById(idNobusq);
-    var checkNoSel = document.getElementById(chkNoBusq);
-    idEsconde.style.display = "none";
-    idBusqueda.style.display = "block";
-    checkNoSel.checked = false;
+  // function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
+  //   var idBusqueda = document.getElementById(idBusq);
+  //   var idEsconde = document.getElementById(idNobusq);
+  //   var checkNoSel = document.getElementById(chkNoBusq);
+  //   idEsconde.style.display = "none";
+  //   idBusqueda.style.display = "block";
+  //   checkNoSel.checked = false;
+
+  //   if(idBusq == 'search-for-name'){
+  //     console.log("for name");
+  //   }else {
+  //     console.log("for ingredient")
+  //   }
   
-  }
+  // }

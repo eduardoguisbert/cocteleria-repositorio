@@ -107,7 +107,7 @@
                 <div class="selector-container">
                     <div class="selector-group">
                         <input type="radio" value="" id="chk-op1" name="chk-op1"
-                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
+                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')" checked>
                         <label for="chk-op1">Nombre del cóctel </label>
                     </div>
 
@@ -126,10 +126,13 @@
                         <label for="coctel-name">
                             Escribe el nombre del Coctel
                         </label>
-                        <input id="coctel-name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre" required>
+                        <input id="coctel-name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre"
+                            required>
+                        <p class="validation-feedback">Por favor escriba el nombre del Coctel</p>
                     </div>
-                    
-                    <button type="submit" class="btn-search" id="btn-search-ing" onclick="window.location.href ='#recipe-container-major' "><i class="fa-solid fa-magnifying-glass"></i>
+
+                    <button type="submit" class="btn-search" id="btn-search-ing"
+                        onclick="window.location.href ='#results' "><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
 
@@ -162,14 +165,14 @@
 
                         <div class="form-group form-group-check">
                             <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
-                            <label for="checkbox" class="form-label-check">De Autor</label><br>                         
+                            <label for="checkbox" class="form-label-check">De Autor</label><br>
                         </div>
 
                         <div class="mje-informativo d-none">
                             <p> Para buscar cocteleria de autor debes estar Registrado/a. </p>
                             <a> Registrese Aquí</a>
                         </div>
-                        
+
                         <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
                             Buscar</button> -->
                         <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
@@ -180,40 +183,65 @@
         </div>
     </div>
 
-    <section class="recipe-container-major d-none" id="recipe-container-major">
-        <h2 class=" recipe-title text-center no-margin" id="recipe-title"></h2>
-        <div class="recipe-container">
-            <div class="recipe-img">
-                <img src="../img/bombay.jpg" alt="coctel-img" id="recipe-img">
-            </div>
+    <div id="results">
 
-            <div class=" recipe-ingredients">
-                <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
-                <ul id="list-recipe-ingredients"></ul>
-            </div>
-
-            <div class="recipe-buttom text-center">
-                <button class="btn-show" id="btn-show">Ver Preparación</button>
-                <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
-            </div>
-
-            <div class="recipe-preparation text-center">
-                <div id="backdrop">
-                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
-                        Preparación
-                    </h3>
-                    <p class="no-margin" id="recipe-prep"></p>
+        <div class="not-found-container text-center" id="not-found-container">
+            <div>
+                <i class="fa-regular fa-face-frown"></i>
+                <p>Lo sentimos, no se encontraron resultados para esa búsqueda</p>
+                <div class=" btn-enlace" id="new-search">
+                    <a href="#body">Buscar otro</a>
                 </div>
-            </div>
-            <div class=" btn-enlace text-center">
-                <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
             </div>
         </div>
 
-    </section>
 
+        <section class="list-group-container-major text-center">
 
-   
+            <h3 class="list-title">Listado de tragos con <span>Brandy</span></h3>
+            <div class="list-group-container">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Bombay</a></li>
+                    <li class="list-group-item"><a href="#">Brandy Alexander</a></li>
+                    <li class="list-group-item"><a href="#">French Connection</a></li>
+                    <li class="list-group-item"><a href="#">Stinger</a></li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="recipe-container-major" id="recipe-container-major">
+            <h2 class=" recipe-title text-center no-margin" id="recipe-title"></h2>
+            <div class="recipe-container">
+                <div class="recipe-img">
+                    <img src="../img/bombay.jpg" alt="coctel-img" id="recipe-img">
+                </div>
+
+                <div class=" recipe-ingredients">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                    <ul id="list-recipe-ingredients"></ul>
+                </div>
+
+                <div class="recipe-buttom text-center">
+                    <button class="btn-show" id="btn-show">Ver Preparación</button>
+                    <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
+                </div>
+
+                <div class="recipe-preparation text-center">
+                    <div id="backdrop">
+                        <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
+                            Preparación
+                        </h3>
+                        <p class="no-margin" id="recipe-prep"></p>
+                    </div>
+                </div>
+                <div class=" btn-enlace text-center">
+                    <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <footer class="welcome-footer text-center">
         <div class="container">
             <div class="welcome-social-media">
@@ -229,7 +257,7 @@
     </footer>
 
     <!-- <script src="./js/main.js"></script> -->
-    
+
     <script src="./js/resultsLandingPrueba.js"></script>
     <script src="./js/landing.js"></script>
     <script src="./Cookies/Cookies.js"></script>
