@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <header class="header">
 
@@ -46,7 +46,7 @@
             </div>
 
             <nav class="nav nav-visible text-center" id="nav">
-                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i></i>Cocteles</a>
+                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i>Cocteles</a>
                 <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
                         class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
                 <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
@@ -58,16 +58,15 @@
 
     </header>
 
-    <div class="banner text-center">
+    <div class="banner text-center" id="Buscadores_padre">
 
         <div class="form-lg-center">
             <div class="selector-major-container">
-
-                <p>Seleccionar Buscador</p>
+                <p>Buscar Coctel</p>
                 <div class="selector-container">
                     <div class="selector-group">
                         <input type="radio" value="" id="chk-op1" name="chk-op1"
-                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
+                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')" checked>
                         <label for="chk-op1">Nombre del cóctel </label>
                     </div>
 
@@ -78,28 +77,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="Buscadores">
-                <form class="search-for-name" id="search-for-name" method="get" action="./index.html">
+                <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
                     <div class="search-for-name-group">
                         <input type="hidden" name="TipoBusqueda" value="1">
                         <label for="name">
                             Escribe el nombre del Coctel
                         </label>
-                        <input class="search-for-name-input" id="name" type="text" placeholder=" Ejemplo: daikiri"
-                            name="CoctelNombre" required>
+                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
                     </div>
 
-                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                    <button type="sbmuit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
 
-                <form class="form text-center" id="search-ingred" method="get" action="./index.html">
+                <form class="form text-center" id="search-ingred">
 
                     <div>
                         <div class="form-group">
                             <input type="hidden" name="TipoBusqueda" value="2">
-                            <label class="form-label">Selecciona Ingrediente Principal</label>
-                            <select class=" form-select text-center" name="ingredientePr">
+                            <label class="form-label">Ingrediente Principal</label>
+                            <select class=" form-select text-center" id="ingredientePr">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
                                 <option value="whisky">Whisky</option>
@@ -110,8 +109,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Selecciona Tipo de Preparación</label>
-                            <select class="form-select text-center" name="TipoPrep">
+                            <label class="form-label">Tipo de Preparación</label>
+                            <select class="form-select text-center" id="TipoPrep">
                                 <option value="directos">Directos</option>
                                 <option value="vasomez">En vaso mezclador</option>
                                 <option value="coctelera">En coctelera</option>
@@ -121,19 +120,24 @@
                         </div>
 
                         <div class="form-group form-group-check">
-                            <input type="checkbox" id="checkbox" class="form-input " name="Autor">
-                            <label for="checkbox" class="form-label-check">De Autor</label><br>
-
+                            <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
+                            <label for="checkbox" class="form-label-check">De Autor</label><br>                         
                         </div>
 
-                        <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar</button>
+                        <div class="mje-informativo">
+                            <p> Para buscar cocteleria de autor debes estar Registrado/a. </p>
+                            <a> Registrese Aquí</a>
+                        </div>
+                        
+                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button> -->
+                        <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
 
                     </div>
-
                 </form>
             </div>
         </div>
+
     </div>
 
     <section class="recipe-container-major">
@@ -170,6 +174,9 @@
                     </p>
                 </div>
             </div>
+            <div class=" btn-enlace text-center">
+                <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
+            </div>
         </div>
 
     </section>
@@ -190,7 +197,7 @@
                 <p class="p-hidden">Mezclas preparadas directamente en el vaso, y que contienen
                     alguna base fuerte (vino, destilado, licor...) y azúcar. Lo demás depende
                     de cada cóctel en particular.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
@@ -210,7 +217,7 @@
                 <p class="p-hidden">Bebida larga (long-drink) refrescante que se prepara
                     directamente en el vaso y lleva una base fuerte a la que se le añade azúcar
                     y soda. Suele adornarse con una rodaja de limón.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
@@ -230,7 +237,7 @@
                 <p class="p-hidden">Bebida larga que se prepara directamente en el vaso. Se puede
                     emplear cualquier destilado como base, al que se le añade ginger ale, sidra,
                     cerveza o champán/cava o vino.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
@@ -474,10 +481,11 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
-    <script src="./Resultados/search.js"></script>
+    <!-- <script src="../js/main.js"></script> -->
+    <!-- <script src="./Resultados/search.js"></script> -->
     <script src="../js/about-cocktails.js"></script>
     <script src="../js/favorites.js"></script>
+    <script src="../js/landing.js"></script>
 
 </body>
 
