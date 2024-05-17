@@ -1,20 +1,17 @@
 
 //Seccion Registro
+class Registro
+{
+    constructor(Nick,Usuario,Pass,Correo)
+    {
+        this.nick=Nick;
+        this.usuario=Usuario;
+        this.correo=Correo;
+        this.password=Pass;
+    }
 
+}
 
-
-//let formRegistro (event) =  document.getElementById("registroForm");
-
-/*
-        function validar(evt) {
-            let cla1 = document.getElementById("clave1").value;
-            let cla2 = document.getElementById("clave2").value;
-            if (cla1 != cla2) {
-                alert('Las claves ingresadas son distintas');
-                evt.preventDefault();
-            }
-        }
-        */
 function validaFormulario ()
  {
     let formu = document.getElementById("registroForm");
@@ -26,7 +23,7 @@ function validaFormulario ()
     const Pass = document.querySelector("#Pass");
     const PassR = document.querySelector("#PassR");
     const chkpol = document.querySelector("#aceptPol");
-
+    const email = document.querySelector("#Correo");
     //const Correo = document.querySelector("#Correo");
     var validation = true;
 
@@ -63,17 +60,25 @@ function validaFormulario ()
           }
 
     if(validation==true){
-        formu.submit();
+       // formu.submit();
+       tryReg(Nickname.value, User.value, Pass.value, email.value );
+       alert("Datos guardados, utilice 'iniciar sesion' para testearlos")
     } else{
 
         return false;
     }
 
 }
-/*
-function Registrar()
+/* La siguiente funcion guarda los datos de registro de la persona para usarlo como si se guardara en la bd,
+    este método solo será utilizado para guardar la info de registro a modo de usar el login y se borrará cuando
+    se programe el backend */
+    
+function tryReg(apodo, usuario, pass, email)
 {
- validaFormulario();
+    const Registrodat= new Registro(apodo, usuario, pass, email);
+savedata(Registrodat);
 }
-*/
-//formRegistro.addEventListener("submit",validaFormulario)
+function savedata(reg)
+{
+    localStorage.setItem("Registro",JSON.stringify(reg));
+}

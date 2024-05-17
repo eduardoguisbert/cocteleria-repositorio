@@ -1,5 +1,4 @@
 
-/* const media = matchMedia('(min-width: 1024px)'); */
 
 
 
