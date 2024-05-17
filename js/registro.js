@@ -62,7 +62,8 @@ function validaFormulario ()
     if(validation==true){
        // formu.submit();
        tryReg(Nickname.value, User.value, Pass.value, email.value );
-       alert("Datos guardados, utilice 'iniciar sesion' para testearlos")
+       alert("Datos guardados, utilice 'iniciar sesion' para testearlos!")
+       location.href="/"
     } else{
 
         return false;
