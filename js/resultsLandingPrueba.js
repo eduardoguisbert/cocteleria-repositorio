@@ -57,8 +57,6 @@ function process(e) {
         validationFeedback.style.display = "block";
         recipeContainerMajor.style.display = "none";
         notFoundContainer.style.display = "none";
-        
-        console.log ("Esta vacio");
     }else {
         validationFeedback.style.display = "none";
         searchForName(coctelValue);
