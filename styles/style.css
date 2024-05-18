@@ -474,13 +474,36 @@ img {
   width: 100%;
 }
 
-
 .search-for-name-group input {
   width: 100%;
   height: 4.5rem;
   margin: 0.5rem 0rem;
   border-radius: 0.5rem;
   border: none;
+}
+
+.validation-feedback {
+  display: none;
+  width: 100%;
+  margin: .5rem auto;
+  background-color: rgba(0, 0, 0, 0.4); 
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  border-radius: 0px 0px 2rem 2rem;
+}
+
+.validation-feedback p {
+  display: inline;
+  padding-left: .5rem;
+  margin: 0;
+}
+
+.validation-feedback i{
+  color: var(--orange);
+  font-size:1.8rem;
 }
 
 .btn-search {
@@ -605,10 +628,6 @@ img {
 
   .validation-feedback {
     width: 80%;
-    margin: 0 auto;
-    background-color: orange;
-    font-size: 1.6rem;
-    line-height: 1.6rem;
   }
 
   .search-for-name {
@@ -651,6 +670,7 @@ img {
   .btn-search {
     width: 80%;
     font-size: 1.8rem;
+    margin-top: 2rem;
   }
 }
 

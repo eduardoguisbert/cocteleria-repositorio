@@ -40,6 +40,7 @@ var recipeContainerMajor = document.querySelector(".recipe-container-major");
 var listGroupContainerMajor = document.querySelector(".list-group-container-major");
 var notFoundContainer = document.querySelector(".not-found-container");
 var results = document.querySelector(".results");
+var validationFeedback = document.querySelector(".validation-feedback");
 
 //Event Listener
 
@@ -50,8 +51,18 @@ btnSearchIng.addEventListener("click", process);
 //Funciones
 function process(e) {
     e.preventDefault();
-    var coctelValue = coctelName.value;
-    searchForName(coctelValue);
+    coctelValue= coctelName.value;
+
+    if (coctelValue === ""){
+        validationFeedback.style.display = "block";
+        recipeContainerMajor.style.display = "none";
+        notFoundContainer.style.display = "none";
+        
+        console.log ("Esta vacio");
+    }else {
+        validationFeedback.style.display = "none";
+        searchForName(coctelValue);
+    }  
 }
 
 function searchForName(coctelValue){
