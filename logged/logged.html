@@ -94,7 +94,7 @@
                         <p>Por favor escriba el nombre del Coctel</p>
                     </div>
 
-                    <button type="submit" class="btn-search" id="btn-search-ing"
+                    <button type="submit" class="btn-search" id="btn-search-name"
                         onclick="window.location.href ='#results' "><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
@@ -106,7 +106,7 @@
                         <div class="form-group">
                             <input type="hidden">
                             <label class="form-label" for="ingredientePr">Ingrediente Principal</label>
-                            <select class=" form-select text-center" id="ingredientePr">
+                            <select class=" form-select text-center" id="main-ingredient">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
                                 <option value="whisky">Whisky</option>
@@ -118,12 +118,12 @@
 
                         <div class="form-group">
                             <label class="form-label" for="TipoPrep">Tipo de Preparación</label>
-                            <select class="form-select text-center" id="TipoPrep">
-                                <option value="directos">Directos</option>
-                                <option value="vasomez">En vaso mezclador</option>
+                            <select class="form-select text-center" id="types-of-preparation">
+                                <option value="directo">Directos</option>
+                                <option value="vasomezclador">En vaso mezclador</option>
                                 <option value="coctelera">En coctelera</option>
-                                <option value="licuad">En licuadora</option>
-                                <option value="flambead">Flambeados</option>
+                                <option value="licuadora">En licuadora</option>
+                                <option value="flambeado">Flambeados</option>
                             </select>
                         </div>
 
@@ -137,9 +137,8 @@
                             <a> Registrese Aquí</a>
                         </div>
 
-                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar</button> -->
-                        <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
+                            <button onclick="window.location.href ='#results'" type="submit" class="btn-search" id="btn-search-ing" Value="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button>
 
                     </div>
                 </form>
@@ -162,14 +161,9 @@
 
         <section class="list-group-container-major text-center">
 
-            <h3 class="list-title">Listado de tragos con <span>Brandy</span></h3>
+            <h3 class="list-title" >Listado de tragos con <span></span></h3>
             <div class="list-group-container">
-                <ul class="list-group">
-                    <li class="list-group-item"><a href="#">Bombay</a></li>
-                    <li class="list-group-item"><a href="#">Brandy Alexander</a></li>
-                    <li class="list-group-item"><a href="#">French Connection</a></li>
-                    <li class="list-group-item"><a href="#">Stinger</a></li>
-                </ul>
+                <ul class="list-group"></ul>
             </div>
 
         </section>

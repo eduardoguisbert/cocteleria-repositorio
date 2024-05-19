@@ -1,15 +1,49 @@
 // Datos en Array de Objetos
+var tipos = ["directo","vaso mezclador","coctelera","licuadora", "flambeado"];
+var ingredientePpal = ["brandy","ginebra", "whisky", "cava", "ron", "tequila"];
+
 
 var cocteles = [
     {
         nombre: "Bombay",
+        ingrediente: "brandy",
+        tipo: "directo",
         ingredientes: ["1/4 de vermut blanco seco", "1/4 de vermut rojo", "1/4 de vermut rojo", "2 golpes de Curaçao (naranja a ser posible)"],
         preparacion: "Se echan en vaso mezclador con unos cubitos de hielo. Remover y servir en vaso bajo y ancho(old fashioned), agregando uno odos cubitos de hielo",
         imagen:"../img/bombay.jpg"
     },
 
     {
+        nombre: "Brandy Alexander",
+        ingrediente: "brandy",
+        tipo: "coctelera",
+        ingredientes: ["1/3 de brandy", "1/4 de vermut rojo", "1/3 de crema de cacao", "1/3 de nata liquida o crema de leche"],
+        preparacion: "Agite bien todos los ingredientes en una coctelera con hielo picado.Sírvalo sin colar en copa de cóctel.Si se desea añada un poco de nuez moscada.",
+        imagen:"../img/bombay.jpg"
+    },
+
+    {
+        nombre: "French Connection",
+        ingrediente: "brandy",
+        tipo: "directo",
+        ingredientes: ["1/2 de brandy", "1/2 de Amaretto"],
+        preparacion: "Vierta todos los ingredientes directamente en un vaso bajo y ancho (old fashioned) con cubitos de hielo. Revuelva suavemente..",
+        imagen:"../img/bombay.jpg"
+    },
+
+    {
+        nombre: "Stinger",
+        ingrediente: "brandy",
+        tipo: "coctelera",
+        ingredientes: ["2/3 de brandy", "1/3 de crema de menta"],
+        preparacion: "Mezclar en la coctelera con un poco de hielo picado.Agitar y servir en copa de cóctel previamente enfriada.",
+        imagen:"../img/bombay.jpg"
+    },
+
+    {
         nombre: "Daikiri",
+        tipo:"coctelera", 
+        ingrediente: "ron",
         ingredientes: ["1 puñado de frutillas frescas (6 o 7 u)", "Una cucharada panzona de azúcar", "2 cdas de jugo del lima o limón", "1/2 taza de ron blanco o dorado", "Hielo"],
         preparacion: "Colocar todos los ingredientes en el vaso de la licuadora. Licuar hasta que quede una mezcla cremosa. Si se desea, decorar el borde del vaso con azúcar. Servir",
         imagen:"../img/daikiri.jpg"
@@ -17,8 +51,9 @@ var cocteles = [
 
 ]
 
+
 //Botones
-var btnSearchIng = document.querySelector("#btn-search-ing");
+var btnSearchName = document.querySelector("#btn-search-name");
 var btnNewSearch = document.querySelector("#new-search");
 
 // Contenedores
@@ -41,14 +76,30 @@ var notFoundContainer = document.querySelector(".not-found-container");
 var results = document.querySelector(".results");
 var validationFeedback = document.querySelector(".validation-feedback");
 
+var typesOfPreparation = document.querySelector("#types-of-preparation");
+var mainIngredient = document.querySelector("#main-ingredient");
+
+var btnSearchIng = document.querySelector("#btn-search-ing");
+
+
+var listGroup = document.querySelector(".list-group");
+var listTitle = document.querySelector(".list-title span");
+var listGroupItem = document.querySelector(".list-group-item");
+var listGroupContainerMajor = document.querySelector(".list-group-container-major");
+
+
+
+
 //Event Listener
 
 formGroupCheck.addEventListener("click", showMessage);
-btnSearchIng.addEventListener("click", process);
+btnSearchName.addEventListener("click", processName);
+
+btnSearchIng.addEventListener("click", processIngredient);
 
 
 //Funciones
-function process(e) {
+function processName(e) {
     e.preventDefault();
     coctelValue = coctelName.value;
 
@@ -115,7 +166,50 @@ function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
     if (idBusq == 'search-for-name') {
         listGroupContainerMajor.style.display = "none";
     } else {
-        listGroupContainerMajor.style.display = "block";
+        recipeContainerMajor.style.display = "none";
     }
 
 }
+
+function processIngredient(e) {
+ e.preventDefault();
+ var selectedOptionType = typesOfPreparation.value;
+ var selectedOptionIng = mainIngredient.value;
+
+ searchForIngredient(selectedOptionIng, selectedOptionType)
+
+}
+
+
+function searchForIngredient(ingredientePrincipal, tipoDePreparacion){
+    notFoundContainer.style.display = 'none';
+    listGroup.innerHTML = "";
+    listTitle.textContent = ingredientePrincipal;
+    cocteles.forEach(coctel => {
+        if(coctel.tipo == tipoDePreparacion){
+            toList(coctel.nombre);     
+        }
+    })
+
+    if(listGroup.childElementCount != 0){
+        listGroupContainerMajor.style.display = "block"; 
+    } else {
+        listGroupContainerMajor.style.display = "none";
+        notFoundContainer.style.display = 'block'
+    }
+    
+}
+
+function toList(coctelNombre){
+        let li = document.createElement("li");
+        let anchor = document.createElement("a");
+        let aContent = document.createTextNode(coctelNombre);
+        anchor.appendChild(aContent);
+        li.appendChild(anchor);
+        li.classList.add("list-group-item");
+        listGroup.appendChild(li);   
+}
+
+
+
+
