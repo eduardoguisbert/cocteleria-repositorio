@@ -900,14 +900,14 @@ img {
 
   .recipe-preparation {
     display: block;
-    background-image: url("/img/bombay.jpg");
+    background-image:'';
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; 
     grid-row: 1/6;
     grid-column: 2/6;
     color: transparent;
-    background-color: rgb(255, 169, 169);
+    background: '';
   }
   .recipe-preparation2 {
     display: block;
