@@ -4,20 +4,17 @@ var cocteles = [
     {
         nombre: "Bombay",
         ingredientes: ["1/4 de vermut blanco seco", "1/4 de vermut rojo", "1/4 de vermut rojo", "2 golpes de Curaçao (naranja a ser posible)"],
-        preparacion: "Se echan en vaso mezclador con unos cubitos de hielo. Remover y servir en vaso bajo y ancho(old fashioned), agregando uno odos cubitos de hielo"
+        preparacion: "Se echan en vaso mezclador con unos cubitos de hielo. Remover y servir en vaso bajo y ancho(old fashioned), agregando uno odos cubitos de hielo",
+        imagen:"../img/bombay.jpg"
     },
 
     {
         nombre: "Daikiri",
         ingredientes: ["1 puñado de frutillas frescas (6 o 7 u)", "Una cucharada panzona de azúcar", "2 cdas de jugo del lima o limón", "1/2 taza de ron blanco o dorado", "Hielo"],
-        preparacion: "Colocar todos los ingredientes en el vaso de la licuadora. Licuar hasta que quede una mezcla cremosa. Si se desea, decorar el borde del vaso con azúcar. Servir"
+        preparacion: "Colocar todos los ingredientes en el vaso de la licuadora. Licuar hasta que quede una mezcla cremosa. Si se desea, decorar el borde del vaso con azúcar. Servir",
+        imagen:"../img/daikiri.jpg"
     },
 
-    {
-        nombre: "lala",
-        ingredientes: ["1 puñado de frutillas frescas (6 o 7 u)", "Una cucharada panzona de azúcar", "2 cdas de jugo del lima o limón", "1/2 taza de ron blanco o dorado", "Hielo"],
-        preparacion: "Colocar todos los ingredientes en el vaso de la licuadora. Licuar hasta que quede una mezcla cremosa. Si se desea, decorar el borde del vaso con azúcar. Servir"
-    },
 ]
 
 //Botones
@@ -30,8 +27,10 @@ var recipeContainerMajor = document.querySelector(".recipe-container-major");
 var coctelName = document.querySelector("#coctel-name");
 var recipeTitle = document.querySelector("#recipe-title");
 var listRecipeIngredients = document.querySelector("#list-recipe-ingredients");
+var recipePreparation = document.querySelector('.recipe-preparation');
 var recipePrep = document.querySelector("#recipe-prep");
 var recipeTitle = document.querySelector("#recipe-title");
+var recipeImage = document.querySelector("#recipe-img");
 var listRecipeIngredients = document.querySelector("#list-recipe-ingredients");
 var recipePrep = document.querySelector("#recipe-prep");
 var formGroupCheck = document.querySelector(".form-group-check");
@@ -40,28 +39,37 @@ var recipeContainerMajor = document.querySelector(".recipe-container-major");
 var listGroupContainerMajor = document.querySelector(".list-group-container-major");
 var notFoundContainer = document.querySelector(".not-found-container");
 var results = document.querySelector(".results");
+var validationFeedback = document.querySelector(".validation-feedback");
 
 //Event Listener
 
 formGroupCheck.addEventListener("click", showMessage);
 btnSearchIng.addEventListener("click", process);
-// btnNewSearch.addEventListener("click", removeContent);
+
 
 //Funciones
 function process(e) {
     e.preventDefault();
-    var coctelValue = coctelName.value;
-    searchForName(coctelValue);
+    coctelValue = coctelName.value;
+
+    if (coctelValue === "") {
+        validationFeedback.style.display = "block";
+        recipeContainerMajor.style.display = "none";
+        notFoundContainer.style.display = "none";
+    } else {
+        validationFeedback.style.display = "none";
+        searchForName(coctelValue);
+    }
 }
 
-function searchForName(coctelValue){
+function searchForName(coctelValue) {
     recipeContainerMajor.style.display = "none";
     cocteles.every(coctel => {
-        if(coctel.nombre.toLowerCase() == coctelValue.toLowerCase()){
+        if (coctel.nombre.toLowerCase() == coctelValue.toLowerCase()) {
             notFoundContainer.style.display = "none";
-            embedElements(coctel.nombre, coctel.ingredientes, coctel.preparacion);
+            embedElements(coctel.nombre, coctel.ingredientes, coctel.preparacion, coctel.imagen);
             return false;
-        }else {
+        } else {
             notFoundContainer.style.display = "block";
             recipeContainerMajor.style.display = "none";
             return true;
@@ -69,11 +77,14 @@ function searchForName(coctelValue){
     });
 }
 
-function embedElements(coctelName, coctelIngredients, coctelPreparation) {
+function embedElements(coctelName, coctelIngredients, coctelPreparation, coctelImage) {
     recipeTitle.textContent = coctelName;
     recipePrep.textContent = coctelPreparation;
-    recipeContainerMajor.style.display = "block";
+    recipePreparation.style.backgroundImage =`url(${coctelImage})`;
+    recipeImage.setAttribute("src",coctelImage);
     listIngredientes(coctelIngredients);
+    recipeContainerMajor.style.display = "block";
+    
 }
 
 
@@ -91,7 +102,6 @@ function listIngredientes(coctelIngredientes) {
 function showMessage() {
     informativeMessage.classList.remove('d-none');
 }
-
 
 
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {

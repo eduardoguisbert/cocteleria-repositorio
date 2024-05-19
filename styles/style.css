@@ -263,27 +263,7 @@ img {
   letter-spacing: 0.5rem;
 }
 
-/* Menu desplegable */
 
-@media (max-width: 768px) {
-  .nav {
-    height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-  }
-
-  .nav.activo {
-    height: max-content;
-  }
-
-  .btn-menu {
-    background-color: transparent;
-    border: none;
-    font-size: 2.8rem;
-    font-weight: 100;
-    color: white;
-  }
-}
 
 /* Header -  Media Queries pantallas desde 768px*/
 
@@ -474,13 +454,36 @@ img {
   width: 100%;
 }
 
-
 .search-for-name-group input {
   width: 100%;
   height: 4.5rem;
   margin: 0.5rem 0rem;
   border-radius: 0.5rem;
   border: none;
+}
+
+.validation-feedback {
+  display: none;
+  width: 100%;
+  margin: .5rem auto;
+  background-color: rgba(0, 0, 0, 0.4); 
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  border-radius: 0px 0px 2rem 2rem;
+}
+
+.validation-feedback p {
+  display: inline;
+  padding-left: .5rem;
+  margin: 0;
+}
+
+.validation-feedback i{
+  color: var(--orange);
+  font-size:1.8rem;
 }
 
 .btn-search {
@@ -605,10 +608,6 @@ img {
 
   .validation-feedback {
     width: 80%;
-    margin: 0 auto;
-    background-color: orange;
-    font-size: 1.6rem;
-    line-height: 1.6rem;
   }
 
   .search-for-name {
@@ -651,6 +650,7 @@ img {
   .btn-search {
     width: 80%;
     font-size: 1.8rem;
+    margin-top: 2rem;
   }
 }
 
@@ -696,13 +696,14 @@ img {
     float: right;
     max-width: 46%;
     margin-right: 3%;
-
+    height: 500px;
     visibility: hidden;
   }
   #Seleccion1 {
     float: right;
     position: absolute;
     max-width: 45.5%;
+    height: auto;
     z-index: 5;
     visibility: hidden;
   }
@@ -899,14 +900,14 @@ img {
 
   .recipe-preparation {
     display: block;
-    background-image: url("/img/bombay.jpg");
+    background-image:'';
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; 
     grid-row: 1/6;
     grid-column: 2/6;
     color: transparent;
-    background-color: rgb(255, 169, 169);
+    background: '';
   }
   .recipe-preparation2 {
     display: block;
@@ -1077,13 +1078,15 @@ img {
   width: 100%;
   height: 100%;
   visibility: hidden;
-  /* background-color: rgba(71, 60, 60, 0.7);*/
+  background-color: rgba(71, 60, 60, 0.4);
   position: fixed;
   z-index: 20;
 }
 #Mensaje {
+  position: absolute;
   width: 40%;
   min-height: 60%;
+  margin-top: 3%;
   /* visibility: hidden;*/
   margin-left: 30%;
   z-index: 21;
@@ -1143,7 +1146,33 @@ img {
 .cursor_p {
   cursor: pointer;
 }
+/* Menu desplegable */
 
+@media (max-width: 768px) {
+  .nav {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  #Mensaje{
+  width: 90%;
+  min-height: 60%;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+
+  .nav.activo {
+    height: max-content;
+  }
+
+  .btn-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: white;
+  }
+}
 /* Cookies */
 
 .cookies-major-container {

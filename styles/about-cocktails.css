@@ -14,9 +14,11 @@
   }
   
   .cocktails-container-title {
+    margin-top: 3.5rem;
+    padding: .3rem;
     text-align: center;
     font-family: var(--fuenteCursiva);
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 300;
   }
   
