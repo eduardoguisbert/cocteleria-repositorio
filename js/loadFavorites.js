@@ -36,9 +36,9 @@ const showHTML = () => {
         const isFavorite = favorites.some(
             element => element.id === cocktailId);
         const favoritesIcon = cocktailContainer.querySelectorAll('.fa-heart');
-        favoritesIcon.forEach(icon => icon.classList.toggle('active', isFavorite))
+        favoritesIcon.forEach(icon => icon.classList.toggle('active', isFavorite));
     });
-}
+};
 
 btnsFavorite.forEach(button => {
     button.addEventListener('click', (event) => {
@@ -54,4 +54,3 @@ btnsFavorite.forEach(button => {
 });
 
 loadFavoritesFromLocalStorage();
-
