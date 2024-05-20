@@ -19,7 +19,7 @@ var cocteles = [
         tipo: "coctelera",
         ingredientes: ["1/3 de brandy", "1/4 de vermut rojo", "1/3 de crema de cacao", "1/3 de nata liquida o crema de leche"],
         preparacion: "Agite bien todos los ingredientes en una coctelera con hielo picado.Sírvalo sin colar en copa de cóctel.Si se desea añada un poco de nuez moscada.",
-        imagen:"../img/bombay.jpg"
+        imagen:"../img/brandyalexander.png"
     },
 
     {
@@ -28,7 +28,7 @@ var cocteles = [
         tipo: "directo",
         ingredientes: ["1/2 de brandy", "1/2 de Amaretto"],
         preparacion: "Vierta todos los ingredientes directamente en un vaso bajo y ancho (old fashioned) con cubitos de hielo. Revuelva suavemente..",
-        imagen:"../img/bombay.jpg"
+        imagen:"../img/frenchconnection.webp"
     },
 
     {
@@ -37,7 +37,7 @@ var cocteles = [
         tipo: "coctelera",
         ingredientes: ["2/3 de brandy", "1/3 de crema de menta"],
         preparacion: "Mezclar en la coctelera con un poco de hielo picado.Agitar y servir en copa de cóctel previamente enfriada.",
-        imagen:"../img/bombay.jpg"
+        imagen:"../img/stinger.jpg"
     },
 
     {
@@ -70,7 +70,6 @@ var listRecipeIngredients = document.querySelector("#list-recipe-ingredients");
 var recipePrep = document.querySelector("#recipe-prep");
 var formGroupCheck = document.querySelector(".form-group-check");
 var informativeMessage = document.querySelector(".mje-informativo");
-var recipeContainerMajor = document.querySelector(".recipe-container-major");
 var listGroupContainerMajor = document.querySelector(".list-group-container-major");
 var notFoundContainer = document.querySelector(".not-found-container");
 var results = document.querySelector(".results");
@@ -114,9 +113,8 @@ function processName(e) {
 }
 
 function searchForName(coctelValue) {
-    recipeContainerMajor.style.display = "none";
     cocteles.every(coctel => {
-        if (coctel.nombre.toLowerCase() == coctelValue.toLowerCase()) {
+        if (coctel.nombre.toLowerCase().replace(" ", "") == coctelValue.toLowerCase().replace(" ", "")) {
             notFoundContainer.style.display = "none";
             embedElements(coctel.nombre, coctel.ingredientes, coctel.preparacion, coctel.imagen);
             return false;
@@ -176,7 +174,7 @@ function processIngredient(e) {
  var selectedOptionType = typesOfPreparation.value;
  var selectedOptionIng = mainIngredient.value;
 
- searchForIngredient(selectedOptionIng, selectedOptionType)
+ searchForIngredient(selectedOptionIng, selectedOptionType);
 
 }
 
@@ -186,13 +184,14 @@ function searchForIngredient(ingredientePrincipal, tipoDePreparacion){
     listGroup.innerHTML = "";
     listTitle.textContent = ingredientePrincipal;
     cocteles.forEach(coctel => {
-        if(coctel.tipo == tipoDePreparacion){
-            toList(coctel.nombre);     
+        if(coctel.tipo == tipoDePreparacion && coctel.ingrediente == ingredientePrincipal){
+            toList(coctel.nombre);  
         }
     })
 
     if(listGroup.childElementCount != 0){
-        listGroupContainerMajor.style.display = "block"; 
+        addEvent(listGroup);
+        listGroupContainerMajor.style.display = "block";
     } else {
         listGroupContainerMajor.style.display = "none";
         notFoundContainer.style.display = 'block'
@@ -203,12 +202,24 @@ function searchForIngredient(ingredientePrincipal, tipoDePreparacion){
 function toList(coctelNombre){
         let li = document.createElement("li");
         let anchor = document.createElement("a");
+        anchor.setAttribute(`href`, `#recipe-container-major`);
         let aContent = document.createTextNode(coctelNombre);
         anchor.appendChild(aContent);
         li.appendChild(anchor);
         li.classList.add("list-group-item");
         listGroup.appendChild(li);   
 }
+
+function addEvent(contenedor){
+    let  items = contenedor.getElementsByTagName('li');
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function search(){
+            searchForName(items[i].textContent);
+        })
+    }
+}
+
+
 
 
 

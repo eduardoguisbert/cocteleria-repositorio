@@ -409,10 +409,10 @@ img {
 .selector-container {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.8rem;
   padding: 0.5rem;
   font-family: var(--fuenteParrafos);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .selector-group {
@@ -769,7 +769,7 @@ img {
 
 .recipe-title {
   font-family: var(--fuenteCursiva);
-  font-size: 5rem;
+  font-size: 3.8rem;
   font-weight: 100;
 }
 
@@ -824,13 +824,19 @@ img {
 
 .recipe-preparation {
   display: none;
+  background-image: url("");
 }
+
+#backdrop {
+  background-color: var(--white);
+  padding: 2rem;
+}
+
 
 .recipe-ingredients,
 .recipe-preparation {
   border: 1px solid var(--black);
   background-color: var(--white);
-  padding: 2rem;
   margin: 1.5rem 0;
 }
 
@@ -851,11 +857,16 @@ img {
 /* Section recipe - Media Queries pantallas desde 768px */
 
 @media (min-width: 768px) {
+
   .recipe-container-major {
     max-width: 60rem;
   }
 
   #results {
+    scroll-margin-top: 18rem;
+  }
+
+  #recipe-container-major {
     scroll-margin-top: 18rem;
   }
 
@@ -909,6 +920,11 @@ img {
     color: transparent;
     background: '';
   }
+
+  #backdrop {
+    background-color: transparent;
+  }
+  
   .recipe-preparation2 {
     display: block;
     background-image: url("/img/daikiri.png");
@@ -973,7 +989,8 @@ img {
 .list-title {
   font-family: var(--fuenteHeading);
   font-weight: 300;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
+  padding: .5rem;
 }
 
 .list-title > span {
@@ -992,7 +1009,6 @@ img {
 .list-group-item {
   width: 100%;
   margin-bottom: 1rem;
-  padding: 2.5rem;
   border: 0.5rem solid var(--red);
   border-radius: 0.5rem;
   list-style: none;
@@ -1002,6 +1018,12 @@ img {
   color: white;
   font-family: var(--fuenteHeading);
   letter-spacing: 0.5rem;
+}
+
+.list-group-item a {
+  background-color: #711644;
+  padding: 2.5rem;
+  display: block;
 }
 
 .list-group-item:hover {
