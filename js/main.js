@@ -1,5 +1,34 @@
 
+//Seccion Registro
+class Registro
+{
+    constructor(Nick,Usuario,Pass,Correo)
+    {
+        this.nick=Nick;
+        this.usuario=Usuario;
+        this.correo=Correo;
+        this.password=Pass;
+    }
 
+}
+class Login
+{
+    constructor(Nick,Correo)
+    {
+        this.nick=Nick;
+        this.correo=Correo;
+    }
+
+}
+
+
+// Menu desplegable
+/*
+var btnMenu = document.querySelector("#btn-menu");
+btnMenu.addEventListener("click", function showMenu() {
+  nav.classList.toggle("activo");
+})
+*/
 //Botones
 var nav = document.querySelector("#nav");
 var btnShow = document.querySelector("#btn-show");
@@ -181,3 +210,21 @@ function BuscarIngred() {
   }
 
 }
+function CargarSesion()
+{
+    let dtSesion = localStorage.getItem("SesionUs");
+    let indtSesion = JSON.parse(dtSesion);
+    if(indtSesion.nick!="")
+        {
+            location.href = "/logged/logged.html"
+        }
+}
+
+function CerrarSesion()
+{
+  let DestroyUs = new Login("","");
+  localStorage.setItem("SesionUs",JSON.stringify(DestroyUs));
+  alert("Sesion Cerrada");
+  location.href = "/"
+}
+CargarSesion();
