@@ -8,9 +8,13 @@
 
     <link rel="stylesheet" href="./fontawesome/fontawesome-free-6.5.2-web/css/all.css">
 
-
+<!--
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/bievenidos.css">
+-->
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/about-cocktails.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,12 +107,11 @@
 
         <div class="form-lg-center">
             <div class="selector-major-container">
-
                 <p>Buscar Coctel</p>
                 <div class="selector-container">
                     <div class="selector-group">
                         <input type="radio" value="" id="chk-op1" name="chk-op1"
-                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')">
+                            onclick="BusquedaCoctel('search-for-name', 'search-ingred', 'chk-op2')" checked>
                         <label for="chk-op1">Nombre del cóctel </label>
                     </div>
 
@@ -119,27 +122,36 @@
                     </div>
                 </div>
             </div>
+
             <div class="Buscadores">
-                <form class="search-for-name" id="search-for-name" method="get" action="./landing.html">
+
+                <form class="search-for-name" id="search-for-name">
                     <div class="search-for-name-group">
-                        <input type="hidden" name="TipoBusqueda" value="1">
-                        <label for="name">
+                        <label for="coctel-name">
                             Escribe el nombre del Coctel
                         </label>
-                        <input id="name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre">
+                        <input id="coctel-name" type="text" placeholder="  Ejemplo: daikiri" name="CoctelNombre"
+                            required>
                     </div>
 
-                    <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="validation-feedback">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>Por favor escriba el nombre del Coctel</p>
+                    </div>
+
+                    <button type="submit" class="btn-search" id="btn-search-name"
+                        onclick="window.location.href ='#results' "><i class="fa-solid fa-magnifying-glass"></i>
                         Buscar</button>
                 </form>
+
 
                 <form class="form text-center" id="search-ingred">
 
                     <div>
                         <div class="form-group">
-                            <input type="hidden" name="TipoBusqueda" value="2">
-                            <label class="form-label">Ingrediente Principal</label>
-                            <select class=" form-select text-center" id="ingredientePr">
+                            <input type="hidden">
+                            <label class="form-label" for="ingredientePr">Ingrediente Principal</label>
+                            <select class=" form-select text-center" id="main-ingredient">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
                                 <option value="whisky">Whisky</option>
@@ -150,111 +162,87 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Tipo de Preparación</label>
-                            <select class="form-select text-center" id="TipoPrep">
-                                <option value="directos">Directos</option>
-                                <option value="vasomez">En vaso mezclador</option>
+                            <label class="form-label" for="TipoPrep">Tipo de Preparación</label>
+                            <select class="form-select text-center" id="types-of-preparation">
+                                <option value="directo">Directos</option>
+                                <option value="vasomezclador">En vaso mezclador</option>
                                 <option value="coctelera">En coctelera</option>
-                                <option value="licuad">En licuadora</option>
-                                <option value="flambead">Flambeados</option>
+                                <option value="licuadora">En licuadora</option>
+                                <option value="flambeado">Flambeados</option>
                             </select>
                         </div>
 
                         <div class="form-group form-group-check">
-                            <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
+                            <input type="checkbox" id="checkbox" class="form-input " name="Autor">
                             <label for="checkbox" class="form-label-check">De Autor</label><br>
-
                         </div>
 
-                        <!--<button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar</button> -->
-                        <input type="Button" class="btn-search" Value="Buscar" onclick="BuscarIngred();">
+
+                        <button onclick="window.location.href ='#results'" type="submit" class="btn-search"
+                            id="btn-search-ing" Value="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar</button>
 
                     </div>
-                    <a>para buscar cocteleria de autor debes estar registrado/a</a>
                 </form>
             </div>
         </div>
     </div>
 
-    
-    <div id="Resultados">
-        <div id="Seleccion1">
-            <div class="Resultados">
-                <h2 class=" recipe-title text-center no-margin">Bombay</h2>
-                <div class="recipe-container">
-                    <div class="recipe-img">
-                        <img src="../img/bombay.jpg" alt="bombay-img">
-                    </div>
+    <div id="results">
 
-                    <div class=" recipe-ingredients">
-                        <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i>
-                            Ingredientes</h3>
-                        <ul>
-                            <li>1/2 de brandy</li>
-                            <li>1/4 de vermut blanco seco</li>
-                            <li>1/4 de vermut rojo</li>
-                            <li>1/4 de vermut rojo</li>
-                            <li>2 golpes de Curaçao (naranja a ser posible)</li>
-                        </ul>
-                    </div>
-
-                    <div class="recipe-buttom text-center">
-                        <button class="btn-show" id="btn-show">Ver Preparación</button>
-                        <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
-                    </div>
-
-                    <div class="recipe-preparation text-center">
-                        <div id="backdrop">
-                            <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
-                                Preparación
-                            </h3>
-                            <p class="no-margin">Se echan en vaso mezclador con unos cubitos de hielo.
-                                Remover y servir en vaso bajo y ancho (old fashioned), agregando uno o
-                                dos cubitos de hielo
-                            </p>
-                        </div>
-                    </div>
+        <div class="not-found-container text-center" id="not-found-container">
+            <div>
+                <i class="fa-regular fa-face-frown"></i>
+                <p>Lo sentimos, no se encontraron resultados para esa búsqueda</p>
+                <div class=" btn-enlace" id="new-search">
+                    <a href="#body">Buscar otro</a>
                 </div>
             </div>
         </div>
-        <div id="Seleccion2">
-            <h2 class=" recipe-title text-center no-margin">Daikiri de frutilla</h2>
+
+        <section class="list-group-container-major text-center">
+
+            <h3 class="list-title">Listado de tragos con <span></span></h3>
+            <div class="list-group-container">
+                <ul class="list-group"></ul>
+            </div>
+
+        </section>
+
+        <section class="recipe-container-major" id="recipe-container-major">
+            <h2 class=" recipe-title text-center no-margin" id="recipe-title"></h2>
             <div class="recipe-container">
-                <div class="recipe-img2">
-                    <img src="./img/daikiri.png " alt="Daikiri-img">
+                <div class="recipe-img">
+                    <img src="../img/bombay.jpg" alt="coctel-img" id="recipe-img">
                 </div>
 
-                <div class="recipe-ingredients">
-                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes
-                    </h3>
-                    <ul>
-                        <li>1 puñado de frutillas frescas (6 o 7 u)</li>
-                        <li>Una cucharada panzona de azúcar</li>
-                        <li>2 cdas de jugo del lima o limón</li>
-                        <li>1/2 taza de ron blanco o dorado</li>
-                        <li>Hielo</li>
-                    </ul>
+                <div class=" recipe-ingredients">
+                    <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-wine-bottle"></i> Ingredientes</h3>
+                    <ul id="list-recipe-ingredients"></ul>
                 </div>
 
                 <div class="recipe-buttom text-center">
-                    <button class="btn-show2" id="btn-show2">Ver Preparación</button>
-                    <button class="btn-show-toggle2 d-none" id="btn-show-toggle2">Ver preparacion</button>
+                    <button class="btn-show" id="btn-show">Ver Preparación</button>
+                    <button class="btn-show-toggle d-none" id="btn-show-toggle">Ver preparacion</button>
                 </div>
 
-                <div class="recipe-preparation2 text-center">
-                    <div id="backdrop2">
+                <div class="recipe-preparation text-center">
+                    <div id="backdrop">
                         <h3 class="recipe-subtitle no-margin"><i class="fa-solid fa-martini-glass-citrus"></i>
                             Preparación
                         </h3>
-                        <p class="no-margin">1 - Colocar todos los ingredientes en el vaso de la licuadora.
-                            2 - Licuar hasta que quede una mezcla cremosa.
-                            3 - Si se desea, decorar el borde del vaso con azúcar. Servir.
-                        </p>
+                        <p class="no-margin" id="recipe-prep"></p>
                     </div>
                 </div>
+                <div class=" btn-enlace text-center">
+                    <a href="#body"><i class="fa-solid fa-arrow-up"></i> Volver</a>
+                </div>
             </div>
-        </div>
+        </section>
+
+
+
+
     </div>
 
 
