@@ -11,15 +11,7 @@ class Registro
     }
 
 }
-class Login
-{
-    constructor(Nick,Correo)
-    {
-        this.nick=Nick;
-        this.correo=Correo;
-    }
 
-}
 
 
 // Menu desplegable
@@ -29,6 +21,7 @@ btnMenu.addEventListener("click", function showMenu() {
   nav.classList.toggle("activo");
 })
 */
+/*
 //Botones
 var nav = document.querySelector("#nav");
 var btnShow = document.querySelector("#btn-show");
@@ -47,11 +40,13 @@ var backDrop2 = document.querySelector("#backdrop2");
 //EventListener
 btnShow.addEventListener("click", show);
 btnShowToggle.addEventListener("click", showToggle);
-btnShow2.addEventListener("click", show2);
-btnShowToggle2.addEventListener("click", showToggle2);
+
+*/
+/* btnShow2.addEventListener("click", show2); */
+/* btnShowToggle2.addEventListener("click", showToggle2); */
 
 //Funciones
-
+/*
 function show() {
   recipePreparation.style.display = "block";
   btnShow.style.display = "none";
@@ -94,7 +89,7 @@ function showToggle2() {
 
   }
 }
-
+*/
 function showPopPup(pagina) {
 
   var elemento = document.getElementById('PopUp');
@@ -132,7 +127,7 @@ function showMensajeBr() {
 
   return;
 }
-
+/*
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
   var idBusqueda = document.getElementById(idBusq);
   var idEsconde = document.getElementById(idNobusq);
@@ -210,6 +205,7 @@ function BuscarIngred() {
   }
 
 }
+*/
 function CargarSesion()
 {
     let dtSesion = localStorage.getItem("SesionUs");
