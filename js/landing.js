@@ -1,4 +1,13 @@
 
+class Login
+{
+    constructor(Nick,Correo)
+    {
+        this.nick=Nick;
+        this.correo=Correo;
+    }
+
+}
 var btnShow = document.querySelector("#btn-show");
 var btnShowToggle = document.querySelector("#btn-show-toggle");
 
@@ -30,3 +39,21 @@ function show() {
     }
   }
 
+  function CerrarSesion()
+  {
+    let DestroyUs = new Login("","");
+    localStorage.setItem("SesionUs",JSON.stringify(DestroyUs));
+
+    location.href = "/"
+  }
+
+  function CargarSesion()
+{
+    let dtSesion = localStorage.getItem("SesionUs");
+    let indtSesion = JSON.parse(dtSesion);
+    if(indtSesion.nick=="")
+        {
+        location.href = "/landing.html"
+        }
+}
+CargarSesion();

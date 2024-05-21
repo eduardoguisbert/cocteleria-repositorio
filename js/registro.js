@@ -1,26 +1,4 @@
 
-//Seccion Registro
-class Registro
-{
-    constructor(Nick,Usuario,Pass,Correo)
-    {
-        this.nick=Nick;
-        this.usuario=Usuario;
-        this.correo=Correo;
-        this.password=Pass;
-    }
-
-}
-class Login
-{
-    constructor(Nick,Correo)
-    {
-        this.nick=Nick;
-        this.correo=Correo;
-    }
-
-}
-
 function validaFormulario ()
  {
     let formu = document.getElementById("registroForm");
@@ -139,8 +117,13 @@ function tryIs()
         }
         if(valida==true)
             {
-                alert("Bienvenid@!!!! -> " + loginData.nick + "\nAhora se te dirigirá a la página principal!");
+                let usData = new Login(loginData.nick,loginData.correo);
+                GuardarSesion(usData);
                 location.href="/logged/logged.html"
                 //formul.submit();
             }
+}
+function GuardarSesion(usuario)
+{
+    localStorage.setItem("SesionUs",JSON.stringify(usuario));
 }
