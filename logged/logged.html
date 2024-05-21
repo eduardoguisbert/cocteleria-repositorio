@@ -105,7 +105,7 @@
                     <div>
                         <div class="form-group">
                             <input type="hidden">
-                            <label class="form-label" for="ingredientePr">Ingrediente Principal</label>
+                            <label class="form-label" for="main-ingredient">Ingrediente Principal</label>
                             <select class=" form-select text-center" id="main-ingredient">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="TipoPrep">Tipo de Preparación</label>
+                            <label class="form-label" for="types-of-preparation">Tipo de Preparación</label>
                             <select class="form-select text-center" id="types-of-preparation">
                                 <option value="directo">Directos</option>
                                 <option value="vasomezclador">En vaso mezclador</option>
@@ -165,7 +165,7 @@
         </section>
 
         <section class="recipe-container-major" id="recipe-container-major">
-            <h2 class=" recipe-title text-center no-margin" id="recipe-title"></h2>
+            <h2 class=" recipe-title text-center no-margin" id="recipe-title">Title</h2>
             <div class="recipe-container">
                 <div class="recipe-img">
                     <img src="../img/bombay.jpg" alt="coctel-img" id="recipe-img">
@@ -203,15 +203,11 @@
     <h1 class="cocktails-container-title">Tipos de Cocteles</h1>
     <section class="cocktails-container">
 
-        <div class="cocktail-container" data-cocktail-id="1">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/cobbler.webp" alt="img-cobbler">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Cobbler</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Cobbler</h2>
                 </div>
                 <p class="p-hidden">Mezclas preparadas directamente en el vaso, y que contienen
                     alguna base fuerte (vino, destilado, licor...) y azúcar. Lo demás depende
@@ -223,15 +219,11 @@
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="2">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/collins.webp" alt="img-collins">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Collins</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Collins</h2>
                 </div>
                 <p class="p-hidden">Bebida larga (long-drink) refrescante que se prepara
                     directamente en el vaso y lleva una base fuerte a la que se le añade azúcar
@@ -243,15 +235,11 @@
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="3">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/cooler.webp" alt="img-cooler">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Cooler</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Cooler</h2>
                 </div>
                 <p class="p-hidden">Bebida larga que se prepara directamente en el vaso. Se puede
                     emplear cualquier destilado como base, al que se le añade ginger ale, sidra,
@@ -263,58 +251,46 @@
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="4">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/eggNog.webp" alt="img-eggnog">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Egg-Nog</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Egg-Nog</h2>
                 </div>
                 <p class="p-hidden">Bebida preparada a base de yema de huevo, azúcar, un
                     destilado y crema de leche. Se puede servir fría o caliente.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="5">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/fizz.webp" alt="img-fizz">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Fizz</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Fizz</h2>
                 </div>
                 <p class="p-hidden">Bebida larga preparada en coctelera a base de un destilado, jugo
                     de limón y azúcar, alargando luego con soda.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="6">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/highBall.webp" alt="img-highball">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>High-ball</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>High-ball</h2>
                 </div>
                 <p class="p-hidden">Bebida larga consistente en un destilado al que se le añade
                     cualquier refresco con gas. Es la clase de combinado más consumido.Es el típico
                     “whisky con cola”, “gin con tónica”, “vodka con naranja”...</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
@@ -322,39 +298,31 @@
         </div>
 
 
-        <div class="cocktail-container" data-cocktail-id="7">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/julep.webp" alt="img-julep">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Julep</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Julep</h2>
                 </div>
                 <p class="p-hidden">Bebida larga preparada directamente en el vaso, con hierbabuena
                     fresca, azúcar y algún destilado. Se suele decorar con rodajas de limón y
                     hojas de hierbabuena.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
             </div>
         </div>
 
-        <div class="cocktail-container" data-cocktail-id="8">
+        <div class="cocktail-container">
             <img class="cocktail-img" src="../img/sour.webp" alt="img-sour">
             <div class="cocktail-body">
                 <div class="cocktail-favorite">
-                    <h1>Sour</h1>
-                    <button class="favorite">
-                        <i class="far fa-heart" id="no-favorite"></i>
-                        <i class="fa fa-heart" id="added-favorite"></i>
-                    </button>
+                    <h2>Sour</h2>
                 </div>
                 <p class="p-hidden">Bebida corta preparada en coctelera con azúcar, zumo de limón y
                     un destilado.</p>
-                <div class="btn-angles" id="btn-angles">
+                <div class="btn-angles">
                     <button class="btn-up"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="btn-down d-none"><i class="fa-solid fa-angles-down"></i></button>
                 </div>
@@ -368,7 +336,7 @@
 
         <div class="btns-carousel-container">
             <button id="btn-prev"><i class="fa-solid fa-left-long"></i></button>
-            <h1 class="utensils-container-title">Utensillos</h1>
+            <h2 class="utensils-container-title">Utensillos</h2>
             <button id="btn-next"><i class="fa-solid fa-right-long"></i></button>
         </div>
 
@@ -489,7 +457,7 @@
     <footer class="welcome-footer text-center">
         <div class="container">
             <div class="welcome-social-media">
-                <a href="mailto: bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="mailto:bartenderontrial@protonmail.com"><i class="fa-regular fa-envelope"></i></a>
                 <a href="https://www.facebook.com/bartenderontrial/"> <i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/bartenderontrial.ok/"> <i class="fa-brands fa-instagram"></i></a>
                 <a href="https://wa.link/7rzq05"><i class="fa-brands fa-whatsapp"></i></a>

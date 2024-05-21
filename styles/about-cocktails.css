@@ -40,7 +40,7 @@
     justify-content: space-between;
   }
   
-  .cocktail-favorite h1 {
+  .cocktail-favorite h2 {
     text-shadow: 2px 2px 2px black;
     font-family: var(--fuenteCursiva);
     font-size: 4rem;
