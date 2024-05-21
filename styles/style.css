@@ -288,6 +288,11 @@ img {
     font-size: 3rem;
     font-weight: 100;
   }
+
+
+  .btn-menu {
+    display: none;
+  }
 }
 
 /* Header -  Media Queries pantallas desde 1024px*/
@@ -316,9 +321,7 @@ img {
     padding-bottom: 2rem;
   }
 
-  .btn-menu {
-    display: none;
-  }
+
 
   .nav {
     display: block;
@@ -658,6 +661,12 @@ img {
 .btn-welcome {
   cursor: pointer;
 }
+
+@media (min-width: 1020px) { 
+    .selector-major-container {
+      margin-top: 5rem;
+    }
+ }
 
 /* Banner + Tipo de buscador + buscadores Media Queries pantallas desde 1200px */
 
