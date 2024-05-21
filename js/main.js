@@ -10,6 +10,7 @@ class Registro
         this.password=Pass;
     }
 
+<<<<<<< HEAD
 }
 class Login
 {
@@ -29,6 +30,8 @@ btnMenu.addEventListener("click", function showMenu() {
   nav.classList.toggle("activo");
 })
 */
+=======
+>>>>>>> e7092e82369e4777c256deab4e6ee37547bfb0c0
 //Botones
 var nav = document.querySelector("#nav");
 var btnShow = document.querySelector("#btn-show");

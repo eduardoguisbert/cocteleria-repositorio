@@ -9,9 +9,6 @@
     margin-bottom: 5rem;
   }
   
-  .cocktails-container::-webkit-scrollbar {
-    display: none;
-  }
   
   .cocktails-container-title {
     margin-top: 3.5rem;
@@ -116,7 +113,6 @@
   @media (min-width: 768px) {
     .cocktails-container {
       padding: 2rem;
-      overflow-x: auto;
     }
   
     .cocktails-container-title {
@@ -128,8 +124,9 @@
     .cocktails-container {
       width: 95%;
       gap: 3.5rem;
-      overflow-x: scroll;
     }
+
+ 
   
     .cocktail-container {
       margin-right: 0rem;
