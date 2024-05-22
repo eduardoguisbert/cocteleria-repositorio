@@ -50,6 +50,8 @@
     
     ]
 
+let listForShowFavorites = [];
+
   // Menu desplegable
 
   if(window.location.href.indexOf("logged.html") > -1){
@@ -66,6 +68,8 @@
 var btnSearchName = document.querySelector("#btn-search-name");
 var btnNewSearch = document.querySelector("#new-search");
 var btnSearchIng = document.querySelector("#btn-search-ing");
+
+const btnShowFavotite = document.querySelector('#btn-show-toggle-favorite')
 
 // Contenedores
 var searchForNameForm = document.querySelector("#search-for-name");
@@ -108,6 +112,10 @@ btnSearchIng.addEventListener("click", processIngredient);
 
 //Funciones
 
+const loadFavoritesFromStorage = () => {
+    const storageFavorites = localStorage.getItem('Favorites');
+    listForShowFavorites = JSON.parse(storageFavorites);
+}
 
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
     var idBusqueda = document.getElementById(idBusq);
@@ -164,6 +172,8 @@ function searchForName(coctelValue) {
     });
 }
 
+
+
 function embedElements(coctelName, coctelIngredients, coctelPreparation, coctelImage) {
     recipeTitle.textContent = coctelName;
     recipePrep.textContent = coctelPreparation;
@@ -171,9 +181,19 @@ function embedElements(coctelName, coctelIngredients, coctelPreparation, coctelI
     recipeImage.setAttribute("src",coctelImage);
     listIngredientes(coctelIngredients);
     recipeContainerMajor.style.display = "block";
-    
-}
 
+    loadFavoritesFromStorage()
+   
+    const index = listForShowFavorites.findIndex(
+        element =>  element.name === coctelName
+    );
+
+    if (index != -1){
+        btnShowFavotite.textContent='Retirar de favoritos';
+    }else{
+        btnShowFavotite.textContent='Agregar a favoritos';
+    }
+}
 
 
 function listIngredientes(coctelIngredientes) {
@@ -237,7 +257,6 @@ function addEvent(contenedor){
         })
     }
 }
-
 
 
 
