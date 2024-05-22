@@ -49,11 +49,14 @@ function show() {
 
   function CargarSesion()
 {
+  if(document.location.href.indexOf("/logged/logged.html")> -1)
+    {
     let dtSesion = localStorage.getItem("SesionUs");
     let indtSesion = JSON.parse(dtSesion);
     if(indtSesion.nick=="")
         {
         location.href = "/landing.html"
         }
+      }
 }
 CargarSesion();
