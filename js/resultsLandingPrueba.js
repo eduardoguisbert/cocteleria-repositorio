@@ -54,10 +54,15 @@ let listForShowFavorites = [];
 
   // Menu desplegable
 
-var btnMenu = document.querySelector("#btn-menu");
-btnMenu.addEventListener("click", function showMenu() {
-  nav.classList.toggle("activo");
-})
+  if(window.location.href.indexOf("logged.html") > -1){
+
+    var btnMenu = document.querySelector("#btn-menu");
+    btnMenu.addEventListener("click", function showMenu() {
+      nav.classList.toggle("activo");
+    })
+}
+
+
 
     //Botones
 var btnSearchName = document.querySelector("#btn-search-name");
@@ -127,7 +132,7 @@ function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
 
 }
 
-if(window.location.href.indexOf("landingPrueba.html") > -1){
+if(window.location.href.indexOf("landing.html") > -1){
 
     formGroupCheck.addEventListener("click", showMessage);
     let informativeMessage = document.querySelector(".mje-informativo");
