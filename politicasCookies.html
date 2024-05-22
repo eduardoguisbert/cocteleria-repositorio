@@ -30,32 +30,33 @@
         <div class="header-content container">
 
             <div class="logo text-center">
-                <div  class="logo-title no-margin">
+                <div class="logo-title no-margin">
                     <h1>Bartender <span> On trial</span> </h1>
                 </div>
-                
+
                 <div class="animacion-container">
-                    <img class="animacion-img-coctelera animacion2-img-coctelera" src="./img/coctelera.png"
+                    <img class="animacion-img-coctelera animacion2-img-coctelera" src="../img/coctelera.png"
                         alt="coctelera">
-                    <img class="animacion-img-copa" src="./img/copa.png" alt="copa">
-                    <img class="animacion-img-copallena" src="./img/copallena.png" alt="copa-llena">
+                    <img class="animacion-img-copa" src="../img/copa.png" alt="copa">
+                    <img class="animacion-img-copallena" src="../img/copallena.png" alt="copa-llena">
                 </div>
             </div>
 
+            <div class="text-center">
+                <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
 
-            <nav class="nav text-center">
-                <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>Inicio</a>
-                <!--
-                <a class="nav-link" href="../logged/logged.html"><i class="fa-solid fa-magnifying-glass"></i>Cocteles</a>
-                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i class="fa-solid fa-user-ninja"></i>Cocteleria del Autor</a>
+            <nav class="nav nav-visible text-center" id="nav">
+                <a class="nav-link" href="./logged.html"><i class="fa-solid fa-martini-glass"></i>Cocteles</a>
+                <a class="nav-link" href="../author-cocktails/author-cocktails.html"><i
+                        class="fa-solid fa-user-ninja"></i>Cocteleria de autor</a>
                 <a class="nav-link" href="../favorites/favorites.html"><i class="fa-solid fa-heart"></i>Favoritos</a>
-                <a class="nav-link nav-close" href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesion</a>
-                -->
-                <a class="nav-link" onclick="showPopPup('/logActions.html');"><i class="fa-solid fa-spoon"></i>Iniciar sesion o Registrarse</a>
+                <a class="nav-link nav-close" id="loginbtn" onclick="CerrarSesion();"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar
+                    sesion</a>
             </nav>
-            
         </div>
-        <div class="Busqueda"><input class="recipe-buttom text-center" id="inBusqueda" type="text" placeholder="Ingrese su busqueda"><img src="/img/Search.png" alt="Buscar" id="imgBusqueda" onclick="doBusqueda();"></div>
+
     </header>
 
     
@@ -119,6 +120,7 @@
     <script src="./js/main.js"></script>
     <script src="./Resultados/search.js"></script>
     <script src="./Cookies/Cookies.js"></script>
+    <script src="../js/resultsLandingPrueba.js"></script>
 </body>
 
 </html>
