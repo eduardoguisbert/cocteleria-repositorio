@@ -61,18 +61,6 @@
     </header>
 
 
-    <!-- div para agregar los "iniciar sesion y registro"-->
-    <!-- <div class="cookies-major-container" id="Cookie">
-        <a><input type="checkbox" name="mejor" id="mejor" value="">Acepto el uso de mis datos con el fin de mejorar la
-            experiencia de navegación.</a>
-        <a> <input type="checkbox" name="marke" id="marke" value="">Acepto el uso de mis datos con fines de análisis de
-            datos y marketing. (Tus datos nunca se compartirán con terceros)</a>
-        <a><input type="checkbox" name="Acept" id="AceptCookie" value=""> He leído la</a><a href="./politica.html"
-            target="_blank"> <u>Politica de Cookies</u></a>
-        <input type="Button" class="btn-show-toggle btnlogin m-wid50 cursor_p" onclick="AceptarCookie();"
-            value="Cerrar ventana">
-    </div> div para agregar politicas de cookies -->
-
     <div id="Cookie" class="cookies-major-container">
         <div class="cookies-container">
             <div class="cookie-title">
@@ -131,7 +119,7 @@
                     </div>
 
                     <div class="validation-feedback">
-                        <i class="fa-solid fa-circle-exclamation"></i> 
+                        <i class="fa-solid fa-circle-exclamation"></i>
                         <p>Por favor escriba el nombre del Coctel</p>
                     </div>
 
@@ -141,12 +129,12 @@
                 </form>
 
 
-                 <form class="form text-center" id="search-ingred">
+                <form class="form text-center" id="search-ingred">
 
                     <div>
                         <div class="form-group">
                             <input type="hidden">
-                            <label class="form-label" for="ingredientePr">Ingrediente Principal</label>
+                            <label class="form-label" for="main-ingredient">Ingrediente Principal</label>
                             <select class=" form-select text-center" id="main-ingredient">
                                 <option value="brandy">Brandy</option>
                                 <option value="ginebra">Ginebra</option>
@@ -158,7 +146,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="TipoPrep">Tipo de Preparación</label>
+                            <label class="form-label" for="types-of-preparation">Tipo de Preparación</label>
                             <select class="form-select text-center" id="types-of-preparation">
                                 <option value="directo">Directos</option>
                                 <option value="vasomezclador">En vaso mezclador</option>
@@ -178,7 +166,9 @@
                             <a> Registrese Aquí</a>
                         </div>
 
-                            <button onclick="window.location.href ='#results'" type="submit" class="btn-search" id="btn-search-ing" Value="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
+
+                        <button onclick="window.location.href ='#results'" type="submit" class="btn-search"
+                            id="btn-search-ing" Value="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
                             Buscar</button>
 
                     </div>
@@ -199,10 +189,9 @@
             </div>
         </div>
 
-        
         <section class="list-group-container-major text-center">
 
-            <h3 class="list-title" >Listado de tragos con <span></span></h3>
+            <h3 class="list-title">Listado de tragos con <span></span></h3>
             <div class="list-group-container">
                 <ul class="list-group"></ul>
             </div>
@@ -210,7 +199,7 @@
         </section>
 
         <section class="recipe-container-major" id="recipe-container-major">
-            <h2 class=" recipe-title text-center no-margin" id="recipe-title"></h2>
+            <h2 class=" recipe-title text-center no-margin" id="recipe-title">Title</h2>
             <div class="recipe-container">
                 <div class="recipe-img">
                     <img src="../img/bombay.jpg" alt="coctel-img" id="recipe-img">
@@ -259,11 +248,12 @@
         </div>
     </footer>
 
-    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/main.js"></script>
 
     <script src="./js/resultsLandingPrueba.js"></script>
     <script src="./js/landing.js"></script>
     <script src="./Cookies/Cookies.js"></script>
+    <script src="./js/registro.js"></script>
 </body>
 
 </html>
