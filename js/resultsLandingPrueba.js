@@ -124,7 +124,7 @@ function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
 
 }
 
-if(window.location.href.indexOf("landingPrueba.html") > -1){
+if(window.location.href.indexOf("landing.html") > -1){
 
     formGroupCheck.addEventListener("click", showMessage);
     let informativeMessage = document.querySelector(".mje-informativo");

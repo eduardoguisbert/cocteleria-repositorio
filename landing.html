@@ -47,8 +47,9 @@
             </div>
 
             <div class="text-center">
-                <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+                <button class="btn-menu" id="btn-menu"><i class="fa-solid fa-bars" style="color: transparent;"></i></button>
             </div>
+
             <nav class="nav-landing text-center" id="nav">
                 <div class="nav-link-landing">
                     <i class="fa-solid fa-house"></i> 
@@ -163,10 +164,14 @@
                     </div>
 
                     <div class="form-group form-group-check">
-                        <input type="checkbox" id="checkbox" class="form-input " name="Autor">
+                        <input type="checkbox" id="checkbox" class="form-input " name="Autor" disabled>
                         <label for="checkbox" class="form-label-check">De Autor</label><br>
                     </div>
 
+                    <div class="mje-informativo d-none">
+                        <p> Para buscar cocteleria de autor debes estar Registrado/a. </p>
+                        <a onclick="showPopPup('/registro/index.html')"> Registrese Aquí</a>
+                    </div>
 
                     <button onclick="window.location.href ='#results'" type="submit" class="btn-search"
                         id="btn-search-ing" Value="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
