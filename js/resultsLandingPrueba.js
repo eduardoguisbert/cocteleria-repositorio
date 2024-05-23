@@ -114,7 +114,7 @@ btnSearchIng.addEventListener("click", processIngredient);
 
 const loadFavoritesFromStorage = () => {
     const storageFavorites = localStorage.getItem('Favorites');
-    listForShowFavorites = listForShowFavorites ? JSON.parse(storageFavorites) : [];
+    listForShowFavorites = storageFavorites ? JSON.parse(storageFavorites) : [];
 };
 
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {

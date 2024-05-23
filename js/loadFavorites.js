@@ -10,7 +10,7 @@ const updateFavoritesLocalStorage = () => {
 // Bajar los datos de localStorage a la lista para mostrar los cambios
 const loadFavoritesFromLocalStorage = () => {
     const storedFavorites = localStorage.getItem('Favorites');
-    favorites = favorites ? JSON.parse(storedFavorites) : [];
+    favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
 };
 
 // Agregar o quitar de la favorite list
