@@ -114,8 +114,8 @@ btnSearchIng.addEventListener("click", processIngredient);
 
 const loadFavoritesFromStorage = () => {
     const storageFavorites = localStorage.getItem('Favorites');
-    listForShowFavorites = JSON.parse(storageFavorites);
-}
+    listForShowFavorites = listForShowFavorites ? JSON.parse(storageFavorites) : [];
+};
 
 function BusquedaCoctel(idBusq, idNobusq, chkNoBusq) {
     var idBusqueda = document.getElementById(idBusq);
@@ -190,8 +190,10 @@ function embedElements(coctelName, coctelIngredients, coctelPreparation, coctelI
 
     if (index != -1){
         btnShowFavotite.textContent='Retirar de favoritos';
+        console.log("Se sugirió retirar de favoritos")
     }else{
         btnShowFavotite.textContent='Agregar a favoritos';
+        console.log("Se sugirió retirar agragar a favoritos")
     }
 }
 

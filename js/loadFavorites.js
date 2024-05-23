@@ -10,8 +10,7 @@ const updateFavoritesLocalStorage = () => {
 // Bajar los datos de localStorage a la lista para mostrar los cambios
 const loadFavoritesFromLocalStorage = () => {
     const storedFavorites = localStorage.getItem('Favorites');
-    favorites = JSON.parse(storedFavorites);
-    // showHTML();
+    favorites = favorites ? JSON.parse(storedFavorites) : [];
 };
 
 // Agregar o quitar de la favorite list
@@ -42,7 +41,7 @@ btnShowToggleFavotite.addEventListener('click',(event) =>{
         img : recipeContainer.querySelector('#recipe-img').getAttribute('src'),
         name : recipeContainer.querySelector('#recipe-title').textContent,
     }
+    loadFavoritesFromLocalStorage();
     toggleFavorite(cocktail)
 })
 
-loadFavoritesFromLocalStorage();
